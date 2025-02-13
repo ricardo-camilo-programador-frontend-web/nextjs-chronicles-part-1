@@ -117,7 +117,7 @@ const ConfirmationStep: FC = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-4 items-center justify-between mt-8">
-        <Link href="/checkout?step=payment">
+        <Link href="/checkout?step=payment" className="w-max">
           <Button
             type="button"
             label={t("backButton")}
@@ -125,7 +125,7 @@ const ConfirmationStep: FC = () => {
           />
         </Link>
 
-        <Link href="/orders">
+        <Link href="/orders" className="w-max ml-auto">
           <Button
             type="button"
             label={t("confirmOrder")}
