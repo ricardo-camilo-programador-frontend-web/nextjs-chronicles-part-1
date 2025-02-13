@@ -520,7 +520,8 @@
       "confirmOrder": "Confirmar Pedido"
     },
     "continue": "Continuar",
-    "back": "Voltar"
+    "back": "Voltar",
+    "next": "Avançar"
   },
   "payment": {
     "processingPayment": "Processando pagamento...",

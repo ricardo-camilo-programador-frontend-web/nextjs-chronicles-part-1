@@ -519,7 +519,8 @@
       "confirmOrder": "Potwierdź zamówienie"
     },
     "continue": "Przejdź",
-    "back": "Wstecz"
+    "back": "Wstecz",
+    "next": "Dalej"
   },
   "payment": {
     "processingPayment": "Przetwarzanie płatności...",

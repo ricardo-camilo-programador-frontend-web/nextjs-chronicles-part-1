@@ -519,7 +519,8 @@
       "confirmOrder": "आदेश सुनिश्चित करें"
     },
     "continue": "जारी रखें",
-    "back": "वापस"
+    "back": "वापस",
+    "next": "अगला"
   },
   "payment": {
     "processingPayment": "भुगतान संसाधन है...",

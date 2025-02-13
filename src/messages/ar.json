@@ -520,7 +520,8 @@
       "confirmOrder": "تأكيد الطلب"
     },
     "continue": "متابعة",
-    "back": "رجوع"
+    "back": "رجوع",
+    "next": "التالي"
   },
   "payment": {
     "processingPayment": "يتم معالجة الدفع...",

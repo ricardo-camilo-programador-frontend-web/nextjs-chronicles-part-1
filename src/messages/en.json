@@ -360,7 +360,8 @@
     "clear": "Clear",
     "clearCartConfirmation": "Are you sure you want to clear the cart?",
     "noItemsInCart": "No items in cart",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping"
   },
   "checkout": {
     "title": "Checkout",
@@ -415,7 +416,8 @@
         "required": "Please select a shipping method"
       },
       "continue": "Continue",
-      "back": "Back"
+      "back": "Back",
+      "next": "Next"
     },
     "customer": {
       "cnpj": {

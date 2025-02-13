@@ -519,7 +519,8 @@
       "confirmOrder": "注文確認"
     },
     "continue": "続ける",
-    "back": "戻る"
+    "back": "戻る",
+    "next": "次へ"
   },
   "payment": {
     "processingPayment": "支払いを処理中...",

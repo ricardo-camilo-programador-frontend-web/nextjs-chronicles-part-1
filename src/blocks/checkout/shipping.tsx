@@ -96,7 +96,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
           <Link href="/checkout?step=customer" className="w-auto ml-auto">
             <Button
               type="button"
-              label={t("back")}
+              label={t("next")}
               className="w-auto ml-auto bg-green-500 hover:bg-green-600"
               disabled={selectedCountry === ""}
             />
