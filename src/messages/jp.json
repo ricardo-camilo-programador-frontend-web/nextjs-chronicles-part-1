@@ -403,8 +403,10 @@
         "express": "速達配送",
         "overnight": "翌日配送",
         "days": "営業日",
-        "day": "営業日"
-      }
+        "day": "営業日",
+        "required": "配送方法を選択してください"
+      },
+      "continue": "顧客情報へ"
     },
     "customer": {
       "cnpj": {
@@ -493,7 +495,23 @@
       "createAccountButton": "支払いへ",
       "createAccountButtonLabel": "支払いへ",
       "createAccountButtonTitle": "支払いへ"
-    }
+    },
+    "confirmation": {
+      "title": "注文確認",
+      "orderSummary": "注文サマリー",
+      "quantity": "数量",
+      "subtotal": "小計",
+      "shipping": "配送",
+      "total": "合計",
+      "deliveryInformation": "配送情報",
+      "estimatedDelivery": "推定配送",
+      "customerInformation": "顧客情報",
+      "paymentInformation": "支払い情報",
+      "backButton": "戻る",
+      "confirmOrder": "注文確認"
+    },
+    "continue": "続ける",
+    "back": "戻る"
   },
   "payment": {
     "paymentMethods": "支払い方法",

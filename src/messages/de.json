@@ -403,8 +403,10 @@
         "express": "Expressversand",
         "overnight": "Übernachtversand",
         "days": "Werktage",
-        "day": "Werktag"
-      }
+        "day": "Werktag",
+        "required": "Bitte wählen Sie eine Versandmethode"
+      },
+      "continue": "Weiter zu Kundeninformationen"
     },
     "customer": {
       "cnpj": {
@@ -493,7 +495,23 @@
       "createAccountButton": "Zur Kasse",
       "createAccountButtonLabel": "Zur Kasse",
       "createAccountButtonTitle": "Zur Kasse"
-    }
+    },
+    "confirmation": {
+      "title": "Bestellbestätigung",
+      "orderSummary": "Bestellübersicht",
+      "quantity": "Menge",
+      "subtotal": "Zwischensumme",
+      "shipping": "Versand",
+      "total": "Gesamt",
+      "deliveryInformation": "Lieferinformationen",
+      "estimatedDelivery": "Geschätzte Lieferung",
+      "customerInformation": "Kundeninformationen",
+      "paymentInformation": "Zahlungsinformationen",
+      "backButton": "Zurück",
+      "confirmOrder": "Bestellung bestätigen"
+    },
+    "continue": "Weiter",
+    "back": "Zurück"
   },
   "payment": {
     "paymentMethods": "Zahlungsarten",

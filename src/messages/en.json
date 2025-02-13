@@ -403,8 +403,11 @@
         "express": "Express Shipping",
         "overnight": "Overnight Shipping",
         "days": "business days",
-        "day": "business day"
-      }
+        "day": "business day",
+        "required": "Please select a shipping method"
+      },
+      "continue": "Continue",
+      "back": "Back"
     },
     "customer": {
       "cnpj": {
@@ -494,7 +497,23 @@
       "createAccountButton": "Continue to Payment",
       "createAccountButtonLabel": "Continue to Payment",
       "createAccountButtonTitle": "Continue to Payment"
-    }
+    },
+    "confirmation": {
+      "title": "Order Confirmation",
+      "orderSummary": "Order Summary",
+      "quantity": "Quantity",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "deliveryInformation": "Delivery Information",
+      "estimatedDelivery": "Estimated Delivery",
+      "customerInformation": "Customer Information",
+      "paymentInformation": "Payment Information",
+      "backButton": "Back",
+      "confirmOrder": "Confirm Order"
+    },
+    "continue": "Continue",
+    "back": "Back"
   },
   "payment": {
     "paymentMethods": "Payment Methods",

@@ -403,8 +403,11 @@
         "express": "الشحن السريع",
         "overnight": "الشحن الليلي",
         "days": "أيام عمل",
-        "day": "يوم عمل"
-      }
+        "day": "يوم عمل",
+        "required": "يرجى اختيار طريقة الشحن"
+      },
+      "continue": "متابعة",
+      "back": "رجوع"
     },
     "customer": {
       "cnpj": {
@@ -493,7 +496,23 @@
       "createAccountButton": "متابعة إلى الدفع",
       "createAccountButtonLabel": "متابعة إلى الدفع",
       "createAccountButtonTitle": "متابعة إلى الدفع"
-    }
+    },
+    "confirmation": {
+      "title": "تأكيد الطلب",
+      "orderSummary": "ملخص الطلب",
+      "quantity": "الكمية",
+      "subtotal": "المجموع الفرعي",
+      "shipping": "الشحن",
+      "total": "المجموع",
+      "deliveryInformation": "معلومات التوصيل",
+      "estimatedDelivery": "تقدير التوصيل",
+      "customerInformation": "معلومات العميل",
+      "paymentInformation": "معلومات الدفع",
+      "backButton": "رجوع",
+      "confirmOrder": "تأكيد الطلب"
+    },
+    "continue": "متابعة",
+    "back": "رجوع"
   },
   "payment": {
     "paymentMethods": "طرق الدفع",

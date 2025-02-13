@@ -403,8 +403,10 @@
         "express": "Entrega Expressa",
         "overnight": "Entrega no Dia Seguinte",
         "days": "dias úteis",
-        "day": "dia útil"
-      }
+        "day": "dia útil",
+        "required": "Por favor, selecione uma opção de entrega"
+      },
+      "continue": "Continuar para Informações do Cliente"
     },
     "customer": {
       "cnpj": {
@@ -494,7 +496,23 @@
       "createAccountButton": "Continuar para Pagamento",
       "createAccountButtonLabel": "Continuar para Pagamento",
       "createAccountButtonTitle": "Continuar para Pagamento"
-    }
+    },
+    "confirmation": {
+      "title": "Confirmação de Pedido",
+      "orderSummary": "Resumo do Pedido",
+      "quantity": "Quantidade",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "total": "Total",
+      "deliveryInformation": "Informações de Entrega",
+      "estimatedDelivery": "Entrega Estimada",
+      "customerInformation": "Informações do Cliente",
+      "paymentInformation": "Informações de Pagamento",
+      "backButton": "Voltar",
+      "confirmOrder": "Confirmar Pedido"
+    },
+    "continue": "Continuar",
+    "back": "Voltar"
   },
   "payment": {
     "paymentMethods": "Formas de Pagamento",

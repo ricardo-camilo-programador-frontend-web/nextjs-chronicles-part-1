@@ -403,8 +403,10 @@
         "express": "Dostawa Ekspresowa",
         "overnight": "Dostawa Nocna",
         "days": "dni roboczych",
-        "day": "dzień roboczy"
-      }
+        "day": "dzień roboczy",
+        "required": "Proszę wybrać metodę dostawy"
+      },
+      "continue": "Przejdź do informacji o kliencie"
     },
     "customer": {
       "cnpj": {
@@ -493,7 +495,23 @@
       "createAccountButton": "Do kasy",
       "createAccountButtonLabel": "Do kasy",
       "createAccountButtonTitle": "Do kasy"
-    }
+    },
+    "confirmation": {
+      "title": "Potwierdzenie zamówienia",
+      "orderSummary": "Podsumowanie zamówienia",
+      "quantity": "Ilość",
+      "subtotal": "Podsumowanie",
+      "shipping": "Dostawa",
+      "total": "Razem",
+      "deliveryInformation": "Informacje o dostawie",
+      "estimatedDelivery": "Oszacowana dostawa",
+      "customerInformation": "Informacje o kliencie",
+      "paymentInformation": "Informacje o płatności",
+      "backButton": "Wstecz",
+      "confirmOrder": "Potwierdź zamówienie"
+    },
+    "continue": "Przejdź",
+    "back": "Wstecz"
   },
   "payment": {
     "paymentMethods": "Metody płatnosci",

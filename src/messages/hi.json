@@ -403,8 +403,10 @@
         "express": "एक्सप्रेस शिपिंग",
         "overnight": "ओवरनाइट शिपिंग",
         "days": "व्यावसायिक दिन",
-        "day": "व्यावसायिक दिन"
-      }
+        "day": "व्यावसायिक दिन",
+        "required": "कृपया एक शिपिंग विधि चुनें"
+      },
+      "continue": "ग्राहक जानकारी के लिए जारी रखें"
     },
     "customer": {
       "cnpj": {
@@ -493,7 +495,23 @@
       "createAccountButton": "भुगतान करने के लिए जारी रखें",
       "createAccountButtonLabel": "भुगतान करने के लिए जारी रखें",
       "createAccountButtonTitle": "भुगतान करने के लिए जारी रखें"
-    }
+    },
+    "confirmation": {
+      "title": "आदेश सुनिश्चित करें",
+      "orderSummary": "आदेश सारांश",
+      "quantity": "मात्रा",
+      "subtotal": "उप-कुल",
+      "shipping": "शिपिंग",
+      "total": "कुल",
+      "deliveryInformation": "शिपिंग जानकारी",
+      "estimatedDelivery": "अनुमानित शिपिंग",
+      "customerInformation": "ग्राहक जानकारी",
+      "paymentInformation": "भुगतान जानकारी",
+      "backButton": "वापस",
+      "confirmOrder": "आदेश सुनिश्चित करें"
+    },
+    "continue": "जारी रखें",
+    "back": "वापस"
   },
   "payment": {
     "paymentMethods": "भुगतान कार्ड",
