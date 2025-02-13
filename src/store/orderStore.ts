@@ -30,7 +30,7 @@ export const useOrderStore = create<OrderStore>()(
     (set, get) => ({
       orders: [],
       addOrder: (orderData) => {
-        const orderId = `ORDER-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        const orderId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
         const newOrder = {
           ...orderData,
           orderId,

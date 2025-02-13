@@ -16,21 +16,23 @@ const OrdersPage: FC = () => {
     <DefaultLayout>
       <RandomBackground />
 
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-4 py-8 max-w-4xl z-10 text-white">
-          <h2 className="text-2xl font-bold mb-6">{t("ordersTitle")}</h2>
+      <div className="min-h-screen flex justify-center">
+        <div className="w-full flex flex-col items-center mx-auto px-4 py-8 max-w-7xl z-10 text-white">
+          <h2 className="text-2xl font-bold mb-6 mr-auto">
+            {t("ordersTitle")}
+          </h2>
 
           {allOrders.length === 0 ? (
             <p className="text-center">{t("noOrders")}</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               {allOrders.map((order) => (
                 <div
                   key={order.orderId}
                   className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20"
                 >
                   <Link
-                    href={`/orders/${order.orderId}`}
+                    href={`/order/${order.orderId}`}
                     className="text-lg font-bold mb-2"
                   >
                     {t("orderId")}: {order.orderId}
