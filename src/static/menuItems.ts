@@ -6,19 +6,24 @@ export const menuItems: MenuItem[] = [
     to: "/",
     ariaLabel: "Home"
   },
+  // {
+  //   menuItemKey: "typesOfPlants",
+  //   to: "#",
+  //   ariaLabel: "Plants Types"
+  // },
   {
-    menuItemKey: "typesOfPlants",
-    to: "#",
-    ariaLabel: "Plants Types"
-  },
-  {
-    menuItemKey: "more",
+    menuItemKey: "plants",
     to: "/plants",
-    ariaLabel: "More"
+    ariaLabel: "Plants"
   },
   {
     menuItemKey: "contactLink",
     to: "/contact",
     ariaLabel: "Contact"
+  },
+  {
+    menuItemKey: "orders",
+    to: "/orders",
+    ariaLabel: "Orders"
   },
 ];

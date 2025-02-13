@@ -342,7 +342,9 @@
     "termsOfService": "利用規約",
     "aboutUs": "会社概要",
     "faq": "よくある質問",
-    "blog": "ブログ"
+    "blog": "ブログ",
+    "orders": "注文",
+    "plants": "植物"
   },
   "bestProducts": {
     "title": "最高の酸素"

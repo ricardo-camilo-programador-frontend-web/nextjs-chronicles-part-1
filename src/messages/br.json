@@ -342,7 +342,9 @@
     "termsOfService": "Termos de Serviço",
     "aboutUs": "Sobre Nós",
     "faq": "Perguntas Frequentes",
-    "blog": "Blog"
+    "blog": "Blog",
+    "orders": "Pedidos",
+    "plants": "Plantas"
   },
   "bestProducts": {
     "title": "Nosso Melhor o2"

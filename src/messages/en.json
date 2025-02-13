@@ -313,7 +313,9 @@
     "termsOfService": "Terms of Service",
     "aboutUs": "About Us",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "orders": "Orders",
+    "plants": "Plants"
   },
   "footer": {
     "home": "Home",
