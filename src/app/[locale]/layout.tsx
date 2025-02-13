@@ -14,6 +14,7 @@ import "@/assets/styles/globals.css";
 import "@/assets/styles/pageTransition.css";
 import "@/assets/styles/animatedUnderline.css";
 import "@/assets/styles/scrollDriven.css";
+import { AmbientSound } from "@/components/AmbientSound";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -113,6 +114,10 @@ export default async function RootLayout({
           customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300"
           showText={false}
         />
+
+        <div className="fixed bottom-[5rem] left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999]">
+          <AmbientSound />
+        </div>
       </body>
 
       <Script
