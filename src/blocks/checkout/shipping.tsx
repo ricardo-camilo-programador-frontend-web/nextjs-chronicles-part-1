@@ -172,7 +172,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
     <div className="w-full transition-all duration-300 ease-in-out">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <Button
-          label="Delivery"
+          label={t("shipping.delivery")}
           icon={<FaTruck />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
             isDelivery ? "bg-green-500" : "bg-gray-500"
@@ -192,7 +192,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
         </Button>
 
         <Button
-          label="Pickup"
+          label={t("shipping.pickup")}
           icon={<FaStore />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
             isDelivery ? "bg-gray-500" : "bg-green-500"
