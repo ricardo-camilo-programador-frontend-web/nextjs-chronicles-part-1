@@ -16,3 +16,14 @@ export interface PaymentInformation {
   creditCard?: CreditCardInfo;
   boleto?: BoletoInfo;
 }
+
+export interface OrderPaymentInfo {
+  paymentMethod: PaymentMethod;
+  creditCard?: CreditCardInfo;
+  boleto?: BoletoInfo;
+  qrCodeUrl?: string;
+  boletoUrl?: string;
+  paypalUrl?: string;
+  pixUrl?: string;
+  bitcoinUrl?: string;
+}
