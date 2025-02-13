@@ -36,7 +36,7 @@ export function formatCurrency(
   } = options;
 
   const adjustedValue = currency === 'BRL'
-    ? convertedToNumber * 1.90
+    ? convertedToNumber * 3
     : convertedToNumber;
 
   const formatter = new Intl.NumberFormat(locale, {
