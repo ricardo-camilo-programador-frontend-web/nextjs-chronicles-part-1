@@ -520,7 +520,18 @@
     "back": "Zurück"
   },
   "payment": {
+    "processingPayment": "Zahlung wird verarbeitet...",
+    "paymentTitle": "Zahlung",
     "paymentMethods": "Zahlungsarten",
+    "orderSummary": "Bestellübersicht",
+    "customerInfo": "Kundeninformationen",
+    "paymentMethod": "Zahlungsmethode",
+    "creditCardProcessing": "Kreditkarte wird verarbeitet...",
+    "downloadBoleto": "Boleto herunterladen",
+    "proceedToPayPal": "Zum PayPal weiterleiten",
+    "orderId": "Bestellnummer",
+    "total": "Gesamt",
+    "scanQRCode": "QR-Code scannen",
     "methods": {
       "creditCard": "Kreditkarte",
       "debitCard": "Debitkarte",
@@ -612,5 +623,11 @@
     "title": "Wächst in Kürze",
     "subtitle": "Wir kultivieren etwas Besonderes für Pflanzenliebhaber",
     "description": "Ihre grüne Oase wird bald erblühen"
+  },
+  "orders": {
+    "ordersTitle": "Bestellungen",
+    "noOrders": "Keine Bestellungen gefunden",
+    "orderId": "Bestellnummer",
+    "total": "Gesamt"
   }
 }

@@ -521,7 +521,18 @@
     "back": "رجوع"
   },
   "payment": {
+    "processingPayment": "يتم معالجة الدفع...",
+    "paymentTitle": "الدفع",
     "paymentMethods": "طرق الدفع",
+    "orderSummary": "ملخص الطلب",
+    "customerInfo": "معلومات العميل",
+    "paymentMethod": "طريقة الدفع",
+    "creditCardProcessing": "يتم معالجة دفع بطاقة الائتمان...",
+    "downloadBoleto": "تحميل البوليتو",
+    "proceedToPayPal": "الانتقال إلى PayPal",
+    "orderId": "رقم الطلب",
+    "total": "المجموع",
+    "scanQRCode": "مسح الباركود",
     "methods": {
       "creditCard": "بطاقة ائتمان",
       "debitCard": "بطاقة ديبيت",
@@ -613,6 +624,12 @@
     "title": "قريباً",
     "subtitle": "نحن نزرع شيئاً مميزاً لمحبي النباتات",
     "description": "واحتك الخضراء على وشك الازدهار"
+  },
+  "orders": {
+    "ordersTitle": "الطلبات",
+    "noOrders": "لا يوجد طلبات",
+    "orderId": "رقم الطلب",
+    "total": "المجموع"
   }
 }
 

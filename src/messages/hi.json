@@ -520,7 +520,20 @@
     "back": "वापस"
   },
   "payment": {
+    "processingPayment": "भुगतान संसाधन है...",
+    "paymentTitle": "भुगतान",
     "paymentMethods": "भुगतान कार्ड",
+    "orderSummary": "आदेश सारांश",
+    "customerInfo": "ग्राहक जानकारी",
+    "paymentMethod": "भुगतान कार्ड",
+    "continueButton": "जारी रखें",
+    "confirmPayment": "भुगतान सुनिश्चित करें",
+    "creditCardProcessing": "क्रेडिट कार्ड भुगतान संसाधन है...",
+    "downloadBoleto": "बोलेतो डाउनलोड करें",
+    "proceedToPayPal": "पेपाल पर जारी रखें",
+    "orderId": "आदेश ID",
+    "total": "कुल",
+    "scanQRCode": "QR कोड स्कैन करें",
     "methods": {
       "creditCard": "क्रेडिट कार्ड",
       "debitCard": "डेबिट कार्ड",
@@ -612,6 +625,12 @@
     "title": "बढ़ते हुए हैं",
     "subtitle": "हम पौधों के प्रेमियों के लिए एक विशेष चीज उगाते हैं",
     "description": "आपका हरा अवसान बोम हो रहा है"
+  },
+  "orders": {
+    "ordersTitle": "आदेश",
+    "noOrders": "कोई आदेश नहीं मिला",
+    "orderId": "आदेश ID",
+    "total": "कुल"
   }
 }
 

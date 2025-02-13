@@ -520,7 +520,20 @@
     "back": "戻る"
   },
   "payment": {
+    "processingPayment": "支払いを処理中...",
+    "paymentTitle": "支払い",
     "paymentMethods": "支払い方法",
+    "orderSummary": "注文サマリー",
+    "customerInfo": "顧客情報",
+    "paymentMethod": "支払い方法",
+    "continueButton": "続ける",
+    "confirmPayment": "支払い確認",
+    "creditCardProcessing": "クレジットカード支払いを処理中...",
+    "downloadBoleto": "ボレートをダウンロード",
+    "proceedToPayPal": "PayPalに移行",
+    "orderId": "注文ID",
+    "total": "合計",
+    "scanQRCode": "QRコードをスキャン",
     "methods": {
       "creditCard": "クレジットカード",
       "debitCard": "デビットカード",
@@ -612,6 +625,12 @@
     "title": "まもなく成長します",
     "subtitle": "植物愛好家のために特別なものを育てています",
     "description": "あなたの緑のオアシスがまもなく開花します"
+  },
+  "orders": {
+    "ordersTitle": "注文",
+    "noOrders": "注文が見つかりません",
+    "orderId": "注文ID",
+    "total": "合計"
   }
 }
 

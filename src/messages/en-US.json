@@ -522,7 +522,18 @@
     "back": "Back"
   },
   "payment": {
+    "processingPayment": "Processing payment...",
+    "paymentTitle": "Payment",
     "paymentMethods": "Payment Methods",
+    "orderSummary": "Order Summary",
+    "customerInfo": "Customer Information",
+    "paymentMethod": "Payment Method",
+    "creditCardProcessing": "Processing credit card payment...",
+    "downloadBoleto": "Download Boleto",
+    "proceedToPayPal": "Proceed to PayPal",
+    "orderId": "Order ID",
+    "total": "Total",
+    "scanQRCode": "Scan QR Code",
     "methods": {
       "creditCard": "Credit Card",
       "debitCard": "Debit Card",
@@ -614,5 +625,11 @@
     "title": "Growing Soon",
     "subtitle": "We're cultivating something special for plant lovers",
     "description": "Your green oasis is about to bloom"
+  },
+  "orders": {
+    "ordersTitle": "Orders",
+    "noOrders": "No orders found",
+    "orderId": "Order ID",
+    "total": "Total"
   }
 }

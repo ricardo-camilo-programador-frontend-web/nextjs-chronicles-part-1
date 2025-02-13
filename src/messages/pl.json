@@ -520,7 +520,20 @@
     "back": "Wstecz"
   },
   "payment": {
+    "processingPayment": "Przetwarzanie płatności...",
+    "paymentTitle": "Płatność",
     "paymentMethods": "Metody płatnosci",
+    "orderSummary": "Podsumowanie zamówienia",
+    "customerInfo": "Informacje o kliencie",
+    "paymentMethod": "Metoda płatności",
+    "continueButton": "Kontynuuj",
+    "confirmPayment": "Potwierdź płatność",
+    "creditCardProcessing": "Przetwarzanie płatności kartą kredytową...",
+    "downloadBoleto": "Pobierz Boleto",
+    "proceedToPayPal": "Przejdź do PayPal",
+    "orderId": "ID zamówienia",
+    "total": "Razem",
+    "scanQRCode": "Skanuj kod QR",
     "methods": {
       "creditCard": "Karta kredytowa",
       "debitCard": "Karta debetowa",
@@ -612,6 +625,12 @@
     "title": "Wkrótce zakwitnie",
     "subtitle": "Hodujemy coś specjalnego dla miłośników roślin",
     "description": "Twoja zielona oaza wkrótce rozkwitnie"
+  },
+  "orders": {
+    "ordersTitle": "Zamówienia",
+    "noOrders": "Brak zamówień",
+    "orderId": "ID zamówienia",
+    "total": "Razem"
   }
 }
 

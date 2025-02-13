@@ -521,7 +521,20 @@
     "back": "Voltar"
   },
   "payment": {
+    "processingPayment": "Processando pagamento...",
+    "paymentTitle": "Pagamento",
     "paymentMethods": "Formas de Pagamento",
+    "orderSummary": "Resumo do Pedido",
+    "customerInfo": "Informações do Cliente",
+    "paymentMethod": "Forma de Pagamento",
+    "continueButton": "Continuar",
+    "confirmPayment": "Confirmar Pagamento",
+    "creditCardProcessing": "Processando pagamento com cartão de crédito...",
+    "downloadBoleto": "Baixar Boleto",
+    "proceedToPayPal": "Ir para o PayPal",
+    "orderId": "ID do Pedido",
+    "total": "Total",
+    "scanQRCode": "Escaneie o QR Code",
     "methods": {
       "creditCard": "Cartão de Crédito",
       "debitCard": "Cartão de Débito",
@@ -613,6 +626,12 @@
     "title": "Crescendo em breve",
     "subtitle": "Estamos cultivando algo especial para amantes de plantas",
     "description": "Seu oásis verde está prestes a florescer"
+  },
+  "orders": {
+    "ordersTitle": "Pedidos",
+    "noOrders": "Nenhum pedido encontrado",
+    "orderId": "ID do Pedido",
+    "total": "Total"
   }
 }
 
