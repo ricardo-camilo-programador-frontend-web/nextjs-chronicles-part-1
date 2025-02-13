@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import br from '../../src/messages/pt-BR.json'
-import en from '../../src/messages/en-US.json'
+import br from '../../src/messages/br.json'
+import en from '../../src/messages/en.json'
 import hi from '../../src/messages/hi.json'
 import jp from '../../src/messages/jp.json'
 import pl from '../../src/messages/pl.json'

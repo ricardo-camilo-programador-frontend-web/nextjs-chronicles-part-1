@@ -1,5 +1,5 @@
-export const locales = ['en-US', 'pt-BR', 'hi', 'jp', 'de', 'ar', 'pl'] as const;
-export const defaultLocale = 'en-US' as const;
+export const locales = ['en', 'br', 'hi', 'jp', 'de', 'ar', 'pl'] as const;
+export const defaultLocale = 'en' as const;
 
 export type Locale = (typeof locales)[number];
 
