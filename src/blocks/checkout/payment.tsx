@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 
 const PaymentStep = () => {
   const t = useTranslations('payment');
+  const tCheckout = useTranslations('checkout');
   const [selectedMethod, setSelectedMethod] = useState<string>("creditCard");
   const { paymentInfo, setPaymentInfo } = usePaymentStore();
   const router = useRouter();
@@ -159,7 +160,7 @@ const PaymentStep = () => {
           <Button
             type="button"
             loading={isSubmitting}
-            label={t('back.label')}
+            label={tCheckout('back')}
             className="w-auto"
           />
         </Link>
@@ -168,8 +169,8 @@ const PaymentStep = () => {
           <Button
             type="submit"
             loading={isSubmitting}
-            label={t('next.label')}
-            className="w-auto ml-auto"
+            label={tCheckout('next')}
+            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
           />
         }
 
@@ -178,7 +179,7 @@ const PaymentStep = () => {
             <Button
               type="button"
               loading={isSubmitting}
-              label={t('next.label')}
+              label={tCheckout('next')}
               className="w-auto ml-auto bg-green-500 hover:bg-green-600"
               onClick={() => {
                 setPaymentInfo({

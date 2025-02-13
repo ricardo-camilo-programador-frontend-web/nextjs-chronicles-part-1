@@ -260,8 +260,8 @@ const CustomerStep: FC<CustomerStepProps> = ({
         <Button
           type="submit"
           loading={isSubmitting}
-          label={t('customer.continueToPayment.label')}
-          className="w-auto ml-auto"
+          label={t('next')}
+          className="w-auto ml-auto bg-green-500 hover:bg-green-600"
         />
       </div>
     </form>
