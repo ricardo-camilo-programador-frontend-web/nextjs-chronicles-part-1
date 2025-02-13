@@ -19,6 +19,7 @@ import { Country } from "@/types/country";
 import { useTranslations } from "next-intl";
 import Link from "@/components/Link";
 import { useRouter } from "next/navigation";
+import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 
 interface ShippingStepProps {
   countries: Country[];
@@ -53,7 +54,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
     isDelivery,
     setIsDelivery,
   } = useCheckoutStore();
-
+  const formatCurrency = useFormatCurrency();
   const [selectedCountry, setSelectedCountry] = useState(
     shippingFormData.country || countries[0]?.cca2 || ""
   );
@@ -329,7 +330,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
                       </p>
                     </div>
                   </div>
-                  <span className="font-medium">U${method.price}</span>
+                  <span className="font-medium">{formatCurrency(method.price)}</span>
                 </label>
               ))}
             </div>
