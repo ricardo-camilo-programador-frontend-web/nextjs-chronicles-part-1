@@ -155,7 +155,7 @@ const PaymentStep = () => {
       </section>
 
       <div className="grid grid-cols-2 gap-4 items-center justify-between">
-        <Link href="/checkout?step=customer">
+        <Link href="/checkout?step=customer" className="w-max">
           <Button
             type="button"
             loading={isSubmitting}
@@ -174,12 +174,12 @@ const PaymentStep = () => {
         }
 
         {selectedMethod !== "creditCard" &&
-          <Link href="/checkout?step=confirmation">
+          <Link href="/checkout?step=confirmation" className="w-max ml-auto">
             <Button
               type="button"
               loading={isSubmitting}
               label={t('next.label')}
-              className="w-auto ml-auto"
+              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
             />
           </Link>
         }
