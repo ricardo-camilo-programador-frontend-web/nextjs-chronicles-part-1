@@ -35,6 +35,10 @@ export function formatCurrency(
     maximumFractionDigits = 2,
   } = options;
 
+  const adjustedValue = currency === 'BRL'
+    ? convertedToNumber * 1.90
+    : convertedToNumber;
+
   const formatter = new Intl.NumberFormat(locale, {
     style: 'currency',
     notation,
@@ -44,5 +48,5 @@ export function formatCurrency(
     maximumFractionDigits,
   });
 
-  return formatter.format(convertedToNumber);
+  return formatter.format(adjustedValue);
 }
