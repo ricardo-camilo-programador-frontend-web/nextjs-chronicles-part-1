@@ -3,7 +3,7 @@
 import { Plant } from "@/types/plant.types";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
-import { useShoppingCartStore } from "@/store/shoppingCartStore";
+import { useCartStore } from "@/store/cartStore";
 import { QuantityShortcut } from "./quantityShortcut";
 import Button from "@/components/Button";
 
@@ -24,10 +24,10 @@ export const BuyShortcut = ({
   quantityClassName,
   loading,
 }: BuyShortcutProps) => {
-  const { addItem } = useShoppingCartStore();
+  const { addItem } = useCartStore();
 
   const itemExistsOnCart = () => {
-    const cartItems = useShoppingCartStore.getState().items;
+    const cartItems = useCartStore.getState().items;
     return cartItems.some((item) => item.item.id === plant.id);
   };
 
