@@ -11,6 +11,10 @@ import { FaBox, FaCreditCard, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { CartItem } from "@/types/cartItem";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 import { usePaymentStore } from "@/store/paymentStore";
+import { useOrderStore } from "@/store/orderStore";
+import { ShippingMethod } from "@/types/shippingMethod";
+import { Address } from "@/types/shippingMethod";
+import { CustomerInformation } from "@/types/customer";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
@@ -21,6 +25,7 @@ const ConfirmationStep: FC = () => {
   const formatCurrency = useFormatCurrency();
   const { paymentInfo } = usePaymentStore();
   const subtotal = items.reduce((acc, item) => acc + item.item.genus_id * item.quantity, 0);
+  const addOrder = useOrderStore((state) => state.addOrder);
 
   const renderOrderSummary = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
@@ -113,6 +118,21 @@ const ConfirmationStep: FC = () => {
     </div>
   );
 
+  const handleConfirmOrder = () => {
+    const orderId = addOrder({
+      items,
+      shippingAddress: shippingAddress as Address,
+      shippingMethod: selectedShippingMethod as ShippingMethod,
+      customerInfo: customerInfo as CustomerInformation,
+      paymentInfo,
+      total: subtotal + (selectedShippingMethod?.price || 0),
+      status: 'pending',
+      updatedAt: new Date()
+    });
+
+    window.location.href = `/order/${orderId}`;
+  };
+
   return (
     <div className="w-full min-h-[400px] space-y-6 transition-all duration-300 ease-in-out">
       <h2 className="text-2xl font-bold mb-6">{t("title")}</h2>
@@ -135,13 +155,12 @@ const ConfirmationStep: FC = () => {
           />
         </Link>
 
-        <Link href="/orders" className="w-max ml-auto">
-          <Button
-            type="button"
-            label={t("confirmOrder")}
-            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
-          />
-        </Link>
+        <Button
+          type="button"
+          label={t("confirmOrder")}
+          className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+          onClick={handleConfirmOrder}
+        />
       </div>
     </div>
   );
