@@ -75,10 +75,13 @@ const OrdersPage: FC = () => {
                     <FaBox className="text-green-500 w-auto h-auto" />
                     <Link
                       href={`/order/${order.orderId}`}
-                      className="text-xl flex gap-2 items-center font-semibold hover:text-green-400 transition-all duration-300 ease-in-out"
+                      className="group text-xl flex gap-2 items-center font-semibold transition-all duration-300 ease-in-out"
                     >
-                      <span>
-                        {t("orderId")}: {order.orderId}
+                      <span className="flex items-center gap-2">
+                        {t("orderId")}:{" "}
+                        <span className="text-green-400 underline decoration-dotted underline-offset-4 group-hover:text-green-300 group-hover:decoration-solid">
+                          {order.orderId}
+                        </span>
                       </span>
                     </Link>
                   </div>
