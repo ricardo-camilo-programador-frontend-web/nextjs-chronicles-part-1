@@ -5,7 +5,6 @@ import { CartItem } from "@/types/cartItem";
 
 interface CartState {
   items: CartItem[];
-  subtotal: number;
   addItem: (item: Plant, quantity?: number) => void;
   removeItem: (item: Plant) => void;
   clearCart: () => void;
@@ -28,10 +27,8 @@ export const useCartStore = create<CartState>()(
   persist(
     (set) => ({
       items: [],
-      subtotal: 0,
       addItem: (item: Plant) => set((state) => ({
         items: ifItemExistsOnlyIncreaseQuantity(state.items, item),
-        subtotal: state.subtotal + item.genus_id
       })),
       decrementItemQuantity: (item: Plant) => set((state) => ({
         items: state.items.map((cartItem) =>
