@@ -369,6 +369,8 @@
     "process": "",
     "complete": "أكمل عملية الشراء باتباع الخطوات أدناه",
     "shipping": {
+      "delivery": "الشحن",
+      "pickup": "الاستلام",
       "street": {
         "label": "الشارع",
         "required": "الشارع مطلوب"

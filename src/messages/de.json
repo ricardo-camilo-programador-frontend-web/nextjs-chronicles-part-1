@@ -369,6 +369,8 @@
     "process": "",
     "complete": "Schließen Sie Ihren Einkauf ab, indem Sie den untenstehenden Schritten folgen",
     "shipping": {
+      "delivery": "Versand",
+      "pickup": "Abholung",
       "street": {
         "label": "Straße",
         "required": "Straße ist erforderlich"

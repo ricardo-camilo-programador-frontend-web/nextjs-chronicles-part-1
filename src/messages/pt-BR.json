@@ -369,6 +369,8 @@
     "process": "🛍️",
     "complete": "Complete sua compra seguindo os passos abaixo",
     "shipping": {
+      "delivery": "Entrega",
+      "pickup": "Retirada na loja",
       "street": {
         "label": "Rua",
         "required": "Rua é obrigatória"

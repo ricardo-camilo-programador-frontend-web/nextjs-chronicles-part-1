@@ -369,6 +369,8 @@
     "process": "",
     "complete": "Dokończ zakup, wykonując poniższe kroki",
     "shipping": {
+      "delivery": "Dostawa",
+      "pickup": "Odbiór",
       "street": {
         "label": "Ulica",
         "required": "Ulica jest wymagana"

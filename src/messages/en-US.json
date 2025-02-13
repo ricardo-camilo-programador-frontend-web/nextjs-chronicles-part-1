@@ -369,6 +369,8 @@
     "process": "Process",
     "complete": "Complete your purchase by following the steps below",
     "shipping": {
+      "delivery": "Delivery",
+      "pickup": "Pickup",
       "street": {
         "label": "Street",
         "required": "Street is required"

@@ -369,6 +369,8 @@
     "process": "",
     "complete": "以下の手順に従って購入を完了してください",
     "shipping": {
+      "delivery": "配送",
+      "pickup": "自宅で受け取る",
       "street": {
         "label": "住所",
         "required": "住所は必須です"
