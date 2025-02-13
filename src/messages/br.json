@@ -633,7 +633,16 @@
     "ordersTitle": "Pedidos",
     "noOrders": "Nenhum pedido encontrado",
     "orderId": "ID do Pedido",
-    "total": "Total"
+    "total": "Total",
+    "payment": "Pagamento",
+    "status": "Status",
+    "delivery": "Entrega",
+    "customer": "Cliente",
+    "products": "Produtos",
+    "quantity": "Quantidade",
+    "price": "Preço",
+    "actions": "Ações",
+    "shipping": "Frete"
   }
 }
 

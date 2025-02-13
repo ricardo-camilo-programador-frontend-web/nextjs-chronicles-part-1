@@ -630,6 +630,15 @@
     "ordersTitle": "Bestellungen",
     "noOrders": "Keine Bestellungen gefunden",
     "orderId": "Bestellnummer",
-    "total": "Gesamt"
+    "total": "Gesamt",
+    "payment": "Zahlung",
+    "status": "Status",
+    "delivery": "Lieferung",
+    "customer": "Kunde",
+    "products": "Produkte",
+    "quantity": "Menge",
+    "price": "Preis",
+    "actions": "Aktionen",
+    "shipping": "Versand"
   }
 }

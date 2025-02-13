@@ -632,7 +632,16 @@
     "ordersTitle": "Zamówienia",
     "noOrders": "Brak zamówień",
     "orderId": "ID zamówienia",
-    "total": "Razem"
+    "total": "Razem",
+    "payment": "Płatność",
+    "status": "Status",
+    "delivery": "Dostawa",
+    "customer": "Klient",
+    "products": "Produkty",
+    "quantity": "Ilość",
+    "price": "Cena",
+    "actions": "Akcje",
+    "shipping": "Dostawa"
   }
 }
 

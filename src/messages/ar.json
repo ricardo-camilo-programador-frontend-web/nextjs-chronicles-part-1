@@ -631,7 +631,16 @@
     "ordersTitle": "الطلبات",
     "noOrders": "لا يوجد طلبات",
     "orderId": "رقم الطلب",
-    "total": "المجموع"
+    "total": "المجموع",
+    "payment": "الدفع",
+    "status": "الحالة",
+    "delivery": "التوصيل",
+    "customer": "العميل",
+    "products": "المنتجات",
+    "quantity": "الكمية",
+    "price": "السعر",
+    "actions": "الإجراءات",
+    "shipping": "الشحن"
   }
 }
 

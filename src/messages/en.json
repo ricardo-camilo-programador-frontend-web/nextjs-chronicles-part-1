@@ -632,6 +632,15 @@
     "ordersTitle": "Orders",
     "noOrders": "No orders found",
     "orderId": "Order ID",
-    "total": "Total"
+    "total": "Total",
+    "payment": "Payment",
+    "status": "Status",
+    "delivery": "Delivery",
+    "customer": "Customer",
+    "products": "Products",
+    "quantity": "Quantity",
+    "price": "Price",
+    "actions": "Actions",
+    "shipping": "Shipping"
   }
 }

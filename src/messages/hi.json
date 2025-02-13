@@ -632,7 +632,16 @@
     "ordersTitle": "आदेश",
     "noOrders": "कोई आदेश नहीं मिला",
     "orderId": "आदेश ID",
-    "total": "कुल"
+    "total": "कुल",
+    "payment": "भुगतान",
+    "status": "स्थिति",
+    "delivery": "शिपिंग",
+    "customer": "ग्राहक",
+    "products": "उत्पाद",
+    "quantity": "मात्रा",
+    "price": "कीमत",
+    "actions": "कार्रवाई",
+    "shipping": "शिपिंग"
   }
 }
 

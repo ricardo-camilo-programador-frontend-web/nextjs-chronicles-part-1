@@ -632,7 +632,16 @@
     "ordersTitle": "注文",
     "noOrders": "注文が見つかりません",
     "orderId": "注文ID",
-    "total": "合計"
+    "total": "合計",
+    "payment": "支払い",
+    "status": "ステータス",
+    "delivery": "配送",
+    "customer": "顧客",
+    "products": "商品",
+    "quantity": "数量",
+    "price": "価格",
+    "actions": "アクション",
+    "shipping": "配送"
   }
 }
 
