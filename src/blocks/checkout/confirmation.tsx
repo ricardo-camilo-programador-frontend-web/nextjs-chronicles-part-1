@@ -26,6 +26,7 @@ const ConfirmationStep: FC = () => {
   const { paymentInfo } = usePaymentStore();
   const subtotal = items.reduce((acc, item) => acc + item.item.genus_id * item.quantity, 0);
   const addOrder = useOrderStore((state) => state.addOrder);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   const renderOrderSummary = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
@@ -129,6 +130,8 @@ const ConfirmationStep: FC = () => {
       status: 'pending',
       updatedAt: new Date()
     });
+
+    clearCart();
 
     window.location.href = `/order/${orderId}`;
   };
