@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useShoppingCartStore } from "@/store/shoppingCartStore";
+import { useCartStore } from "@/store/cartStore";
 import { CartItem } from "@/types/cartItem";
 import { Modal } from "@/components/Modal";
 
@@ -15,11 +15,11 @@ export function QuantityShortcut({
   cartItem,
 }: ShoppingCartProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const cartItemQuantity = useShoppingCartStore.getState().items.find(item => item.item.id === cartItem.item.id)?.quantity;
-  const removeItem = useShoppingCartStore((state) => state.removeItem);
-  const incrementItemQuantity = useShoppingCartStore((state) => state.addItem);
+  const cartItemQuantity = useCartStore.getState().items.find(item => item.item.id === cartItem.item.id)?.quantity;
+  const removeItem = useCartStore((state) => state.removeItem);
+  const incrementItemQuantity = useCartStore((state) => state.addItem);
 
-  const decrementItemQuantity = useShoppingCartStore(
+  const decrementItemQuantity = useCartStore(
     (state) => state.decrementItemQuantity
   );
 
