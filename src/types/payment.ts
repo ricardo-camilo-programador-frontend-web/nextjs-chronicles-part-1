@@ -9,8 +9,10 @@ export interface BoletoInfo {
   number: string;
 }
 
+export type PaymentMethod = 'creditCard' | 'boleto' | 'pix' | 'bitcoin' | 'paypal';
+
 export interface PaymentInformation {
-  paymentMethod: 'creditCard' | 'boleto' | 'pix' | 'bitcoin' | 'paypal';
+  paymentMethod: PaymentMethod;
   creditCard?: CreditCardInfo;
   boleto?: BoletoInfo;
 }
