@@ -10,12 +10,16 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { useTranslations } from "next-intl";
 import { FaBox, FaCreditCard, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { CartItem } from "@/types/cartItem";
+import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
-  const { items, subtotal } = useCartStore();
+  const { items } = useCartStore();
   const { shippingAddress, selectedShippingMethod } = useCheckoutStore();
   const { customerInfo } = useCustomerStore();
+  const formatCurrency = useFormatCurrency();
+
+  const subtotal = items.reduce((acc, item) => acc + item.item.genus_id * item.quantity, 0);
 
   const renderOrderSummary = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
