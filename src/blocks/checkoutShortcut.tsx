@@ -1,4 +1,4 @@
-import { useShoppingCartStore } from "@/store/shoppingCartStore";
+import { useCartStore } from "@/store/cartStore";
 import { useTranslations } from "next-intl";
 import Link from "@/components/Link";
 
@@ -7,7 +7,7 @@ interface CheckoutShortcutProps {
 }
 
 export default function CheckoutShortcut({ className }: CheckoutShortcutProps) {
-  const { items: cartItems } = useShoppingCartStore();
+  const { items: cartItems } = useCartStore();
   const totalOnStore = cartItems.reduce((acc, cartItem) => acc + cartItem.item.genus_id * cartItem.quantity, 0);
   const translateCart = useTranslations('cart');
 
