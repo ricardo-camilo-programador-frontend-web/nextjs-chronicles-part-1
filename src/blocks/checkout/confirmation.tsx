@@ -14,6 +14,7 @@ import { usePaymentStore } from "@/store/paymentStore";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
+  const tShipping = useTranslations("checkout.shipping");
   const { items } = useCartStore();
   const { shippingAddress, selectedShippingMethod } = useCheckoutStore();
   const { customerInfo } = useCustomerStore();
@@ -68,15 +69,20 @@ const ConfirmationStep: FC = () => {
         <FaMapMarkerAlt className="text-green-500" />
         <h3 className="text-xl font-semibold">{t("deliveryInformation")}</h3>
       </div>
-      <div className="space-y-2">
-        <p>{shippingAddress?.street}, {shippingAddress?.number}</p>
-        <p>{shippingAddress?.complement}</p>
+      {shippingAddress?.number && (
+        <div className="space-y-2">
+          <p>{shippingAddress?.street}, {shippingAddress?.number}</p>
+          <p>{shippingAddress?.complement}</p>
         <p>{shippingAddress?.city}, {shippingAddress?.state}</p>
         <p>{shippingAddress?.zipCode}</p>
         <p className="text-green-500 font-medium mt-4">
           {t("estimatedDelivery")}: {selectedShippingMethod?.time}
-        </p>
-      </div>
+          </p>
+        </div>
+      )}
+      {!shippingAddress?.number && (
+        <p>{tShipping("pickup")}</p>
+      )}
     </div>
   );
 
