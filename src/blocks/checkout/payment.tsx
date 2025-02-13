@@ -9,7 +9,7 @@ import Link from "@/components/Link";
 import { TextInput } from "@/components/forms/TextInput";
 import { RadioGroup } from "@/components/forms/RadioGroup";
 import { usePaymentStore } from "@/store/paymentStore";
-import { PaymentInformation } from "@/types/payment";
+import { PaymentInformation, PaymentMethod } from "@/types/payment";
 import { getPaymentSchema } from "@/schemas/checkout/payment";
 import MaskedInput from "@/components/forms/MaskedInput";
 import CreditCard from "@/components/CreditCard";
@@ -180,6 +180,11 @@ const PaymentStep = () => {
               loading={isSubmitting}
               label={t('next.label')}
               className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              onClick={() => {
+                setPaymentInfo({
+                  paymentMethod: selectedMethod as PaymentMethod,
+                });
+              }}
             />
           </Link>
         }
