@@ -18,6 +18,7 @@ import DropdownSelect from "@/components/forms/DropdownSelect";
 import { Country } from "@/types/country";
 import { useTranslations } from "next-intl";
 import Link from "@/components/Link";
+import { useRouter } from "next/navigation";
 
 interface ShippingStepProps {
   countries: Country[];
@@ -40,6 +41,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
   countries,
 }) => {
   const t = useTranslations("checkout");
+  const router = useRouter();
   const {
     setShippingAddress,
     setCurrentStep,
@@ -74,21 +76,72 @@ const ShippingStep: FC<ShippingStepProps> = ({
 
   const { isLoadingCep, fetchAddressByCep } = useAddressByCep(setValue);
 
+  const renderFooterButtons = () => {
+    return (
+      <div className="grid grid-cols-2 gap-4 items-center justify-between mt-8 min-w-full">
+        <Link href="/" className="w-max">
+          <Button type="button" label={t("back")} className="w-auto" />
+        </Link>
+
+        {isDelivery && (
+          <Button
+            type="submit"
+            label={t("continue")}
+            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+          />
+        )}
+
+        {!isDelivery && (
+          <Link href="/checkout?step=customer" className="w-auto ml-auto">
+            <Button
+              type="button"
+              label={t("back")}
+              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              disabled={selectedCountry === ""}
+            />
+          </Link>
+        )}
+      </div>
+    );
+  };
+
   const onSubmit = async (data: ShippingFormData) => {
-    if (!selectedShippingMethod) {
-      return;
-    }
+    console.log(data);
 
     try {
       setShippingAddress(data);
       setShippingFormData(data);
       setCurrentStep("customer");
+      router.push("/checkout?step=customer");
     } catch (error) {
       console.error("Failed to process shipping information:", error);
     }
   };
 
   useEffect(() => {
+    if (!isDelivery) {
+      setShippingAddress({
+        country: selectedCountry,
+        neighborhood: "",
+        street: "",
+        number: "",
+        complement: "",
+        city: "",
+        state: "",
+        zipCode: "",
+      });
+
+      setValue("neighborhood", "");
+      setValue("street", "");
+      setValue("number", "");
+      setValue("complement", "");
+      setValue("city", "");
+      setValue("state", "");
+      setValue("zipCode", "");
+
+      return;
+    }
+
     setShippingAddress({
       ...shippingFormData,
       country: selectedCountry,
@@ -100,7 +153,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
       state: shippingFormData.state || "",
       zipCode: shippingFormData.zipCode || "",
     });
-  }, [selectedCountry]);
+  }, [selectedCountry, isDelivery]);
 
   useEffect(() => {
     setShippingMethods(shippingMethods);
@@ -120,15 +173,17 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label="Delivery"
           icon={<FaTruck />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-green-500" : "bg-gray-500"
-            }`}
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
+            isDelivery ? "bg-green-500" : "bg-gray-500"
+          }`}
           onClick={() => setIsDelivery(true)}
         >
           <input
             checked={isDelivery}
             onChange={(e) => setIsDelivery(e.target.checked)}
-            className={`w-6 h-6 transition-all duration-300 ease-in-out ${isDelivery ? "scale-100" : "scale-0"
-              }`}
+            className={`w-6 h-6 transition-all duration-300 ease-in-out ${
+              isDelivery ? "scale-100" : "scale-0"
+            }`}
             type="radio"
             name="shippingType"
             value="delivery"
@@ -138,15 +193,17 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label="Pickup"
           icon={<FaStore />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-gray-500" : "bg-green-500"
-            }`}
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
+            isDelivery ? "bg-gray-500" : "bg-green-500"
+          }`}
           onClick={() => setIsDelivery(false)}
         >
           <input
             checked={!isDelivery}
             onChange={(e) => setIsDelivery(!e.target.checked)}
-            className={`w-6 h-6 transition-all duration-300 ease-in-out ${isDelivery ? "scale-0" : "scale-100"
-              }`}
+            className={`w-6 h-6 transition-all duration-300 ease-in-out ${
+              isDelivery ? "scale-0" : "scale-100"
+            }`}
             type="radio"
             name="shippingType"
             value="pickup"
@@ -243,10 +300,11 @@ const ShippingStep: FC<ShippingStepProps> = ({
               {shippingMethods.map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
+                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${
+                    selectedShippingMethod?.id === method.id
                       ? "border-green-500 bg-green-50 !text-black"
                       : "border-gray-200"
-                    }`}
+                  }`}
                 >
                   <div className="flex items-center">
                     <input
@@ -261,10 +319,11 @@ const ShippingStep: FC<ShippingStepProps> = ({
                     <div>
                       <p className="font-medium">{method.name}</p>
                       <p
-                        className={`text-sm text-gray-100 ${selectedShippingMethod?.id === method.id
+                        className={`text-sm text-gray-100 ${
+                          selectedShippingMethod?.id === method.id
                             ? "text-green-500"
                             : ""
-                          }`}
+                        }`}
                       >
                         {method.time}
                       </p>
@@ -276,12 +335,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
             </div>
           </div>
 
-          <Button
-            type="submit"
-            className="w-full mt-6 md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 text-center disabled:cursor-not-allowed"
-          >
-            Continue to Customer Information
-          </Button>
+          {renderFooterButtons()}
         </form>
       ) : (
         <div className="flex flex-col items-center justify-center gap-4">
@@ -299,12 +353,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
             }
           />
 
-          <Link
-            href="/checkout?step=customer"
-            className="w-full mt-6 md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 ease-in-out text-center disabled:cursor-not-allowed"
-          >
-            Continue to Customer Information
-          </Link>
+          {renderFooterButtons()}
         </div>
       )}
     </div>
