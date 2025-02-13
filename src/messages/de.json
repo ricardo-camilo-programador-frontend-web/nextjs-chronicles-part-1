@@ -1,5 +1,9 @@
 {
-  "currency": "EUR",
+  "currency": {
+    "type": "EUR",
+    "symbol": "€",
+    "locale": "de-DE"
+  },
   "BuyMeCoffee": {
     "message": "Kaffee kaufen"
   },

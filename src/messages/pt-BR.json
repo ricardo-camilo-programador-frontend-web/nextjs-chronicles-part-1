@@ -1,5 +1,9 @@
 {
-  "currency": "BRL",
+  "currency": {
+    "type": "BRL",
+    "symbol": "R$",
+    "locale": "pt-BR"
+  },
   "BuyMeCoffee": {
     "message": "Compre-me um café"
   },

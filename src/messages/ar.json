@@ -1,5 +1,9 @@
 {
-  "currency": "EGP",
+  "currency": {
+    "type": "EGP",
+    "symbol": "ج.م",
+    "locale": "ar-EG"
+  },
   "BuyMeCoffee": {
     "message": "شراء نباتاتي"
   },

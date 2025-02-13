@@ -1,5 +1,9 @@
 {
-  "currency": "USD",
+  "currency": {
+    "type": "USD",
+    "symbol": "$",
+    "locale": "en-US"
+  },
   "BuyMeCoffee": {
     "message": "Buy me a coffee"
   },

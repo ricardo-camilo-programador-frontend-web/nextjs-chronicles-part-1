@@ -1,5 +1,9 @@
 {
-  "currency": "INR",
+  "currency": {
+    "type": "INR",
+    "symbol": "₹",
+    "locale": "hi-IN"
+  },
   "BuyMeCoffee": {
     "message": "मुझे एक कॉफी खरीदो"
   },

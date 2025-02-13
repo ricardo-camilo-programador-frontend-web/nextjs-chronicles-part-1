@@ -1,5 +1,9 @@
 {
-  "currency": "PLN",
+  "currency": {
+    "type": "PLN",
+    "symbol": "zł",
+    "locale": "pl-PL"
+  },
   "BuyMeCoffee": {
     "message": "Kup mi kawę"
   },

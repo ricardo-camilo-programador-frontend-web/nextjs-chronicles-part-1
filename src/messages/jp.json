@@ -1,5 +1,9 @@
 {
-  "currency": "JPY",
+  "currency": {
+    "type": "JPY",
+    "symbol": "¥",
+    "locale": "ja-JP"
+  },
   "BuyMeCoffee": {
     "message": "ブレス・ナチュラルをサポートしてください"
   },
