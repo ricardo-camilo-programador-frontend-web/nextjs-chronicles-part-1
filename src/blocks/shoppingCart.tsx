@@ -10,6 +10,7 @@ import { Modal } from "@/components/Modal";
 import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from 'next-intl';
+import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 
 interface ShoppingCartProps {
   className?: string;
@@ -23,6 +24,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const formatCurrency = useFormatCurrency();
 
   const totalItems = useMemo(() => {
     const totalOnStore = cartItems.reduce(
@@ -69,7 +71,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           Quantity: {cartItem.quantity}
         </span>
         <span className="font-semibold">
-          ${cartItem.item.genus_id * cartItem.quantity}
+          {formatCurrency(cartItem.item.genus_id * cartItem.quantity)}
         </span>
       </div>
 
