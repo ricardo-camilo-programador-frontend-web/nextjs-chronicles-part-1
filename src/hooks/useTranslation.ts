@@ -1,12 +1,19 @@
 import { useRouter } from 'next/router'
-import pt from '../../src/messages/pt.json'
+import br from '../../src/messages/br.json'
 import en from '../../src/messages/en.json'
 import hi from '../../src/messages/hi.json'
+import jp from '../../src/messages/jp.json'
+import pl from '../../src/messages/pl.json'
+import ar from '../../src/messages/ar.json'
+
 
 const translations = {
-  'pt': pt,
+  'br': br,
   'en': en,
   'hi': hi,
+  'jp': jp,
+  'pl': pl,
+  'ar': ar,
 }
 
 export function useTranslation() {
