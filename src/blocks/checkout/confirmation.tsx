@@ -6,11 +6,11 @@ import Link from "@/components/Link";
 import { useCartStore } from "@/store/cartStore";
 import { useCustomerStore } from "@/store/customerStore";
 import { useCheckoutStore } from "@/store/checkoutStore";
-import { formatCurrency } from "@/utils/formatCurrency";
 import { useTranslations } from "next-intl";
 import { FaBox, FaCreditCard, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import { CartItem } from "@/types/cartItem";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
+import { usePaymentStore } from "@/store/paymentStore";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
@@ -18,7 +18,7 @@ const ConfirmationStep: FC = () => {
   const { shippingAddress, selectedShippingMethod } = useCheckoutStore();
   const { customerInfo } = useCustomerStore();
   const formatCurrency = useFormatCurrency();
-
+  const { paymentInfo } = usePaymentStore();
   const subtotal = items.reduce((acc, item) => acc + item.item.genus_id * item.quantity, 0);
 
   const renderOrderSummary = () => (
@@ -102,7 +102,7 @@ const ConfirmationStep: FC = () => {
       </div>
       <div className="flex items-center gap-2">
         <FaBox className="text-green-500" />
-        <p>{selectedShippingMethod?.name}</p>
+        <p>{paymentInfo.paymentMethod}</p>
       </div>
     </div>
   );
