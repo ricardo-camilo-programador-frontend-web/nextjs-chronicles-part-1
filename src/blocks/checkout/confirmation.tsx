@@ -15,6 +15,7 @@ import { useOrderStore } from "@/store/orderStore";
 import { ShippingMethod } from "@/types/shippingMethod";
 import { Address } from "@/types/shippingMethod";
 import { CustomerInformation } from "@/types/customer";
+import { useRouter } from "next/navigation";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
@@ -27,6 +28,7 @@ const ConfirmationStep: FC = () => {
   const subtotal = items.reduce((acc, item) => acc + item.item.genus_id * item.quantity, 0);
   const addOrder = useOrderStore((state) => state.addOrder);
   const clearCart = useCartStore((state) => state.clearCart);
+  const router = useRouter();
 
   const renderOrderSummary = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
@@ -133,7 +135,7 @@ const ConfirmationStep: FC = () => {
 
     clearCart();
 
-    window.location.href = `/order/${orderId}`;
+    router.push(`/order/${orderId}`);
   };
 
   return (
