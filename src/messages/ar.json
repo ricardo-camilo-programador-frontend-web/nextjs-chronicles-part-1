@@ -517,6 +517,7 @@
     },
     "confirmation": {
       "title": "تأكيد الطلب",
+      "orderConfirmed": "تم تأكيد الطلب بنجاح",
       "orderSummary": "ملخص الطلب",
       "quantity": "الكمية",
       "subtotal": "المجموع الفرعي",

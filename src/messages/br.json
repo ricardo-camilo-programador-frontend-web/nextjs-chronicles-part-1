@@ -517,6 +517,7 @@
     },
     "confirmation": {
       "title": "Confirmação de Pedido",
+      "orderConfirmed": "Pedido confirmado com sucesso",
       "orderSummary": "Resumo do Pedido",
       "quantity": "Quantidade",
       "subtotal": "Subtotal",

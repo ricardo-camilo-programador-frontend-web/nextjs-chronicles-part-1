@@ -520,6 +520,7 @@
     },
     "confirmation": {
       "title": "Order Confirmation",
+      "orderConfirmed": "Order confirmed successfully",
       "orderSummary": "Order Summary",
       "quantity": "Quantity",
       "subtotal": "Subtotal",

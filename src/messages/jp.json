@@ -516,6 +516,7 @@
     },
     "confirmation": {
       "title": "注文確認",
+      "orderConfirmed": "注文が確認されました",
       "orderSummary": "注文サマリー",
       "quantity": "数量",
       "subtotal": "小計",

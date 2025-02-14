@@ -516,6 +516,7 @@
     },
     "confirmation": {
       "title": "आदेश सुनिश्चित करें",
+      "orderConfirmed": "आदेश सफलतापूर्वक सुनिश्चित किया गया है",
       "orderSummary": "आदेश सारांश",
       "quantity": "मात्रा",
       "subtotal": "उप-कुल",

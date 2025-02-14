@@ -516,6 +516,7 @@
     },
     "confirmation": {
       "title": "Bestellbestätigung",
+      "orderConfirmed": "Bestellung bestätigt",
       "orderSummary": "Bestellübersicht",
       "quantity": "Menge",
       "subtotal": "Zwischensumme",

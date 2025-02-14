@@ -16,6 +16,7 @@ import { ShippingMethod } from "@/types/shippingMethod";
 import { Address } from "@/types/shippingMethod";
 import { CustomerInformation } from "@/types/customer";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/useToast";
 
 const ConfirmationStep: FC = () => {
   const t = useTranslations("checkout.confirmation");
@@ -29,6 +30,7 @@ const ConfirmationStep: FC = () => {
   const addOrder = useOrderStore((state) => state.addOrder);
   const clearCart = useCartStore((state) => state.clearCart);
   const router = useRouter();
+  const toast = useToast();
 
   const renderOrderSummary = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
@@ -134,6 +136,8 @@ const ConfirmationStep: FC = () => {
     });
 
     clearCart();
+
+    toast.success(t("orderConfirmed"));
 
     router.push(`/order/${orderId}`);
   };
