@@ -4,8 +4,10 @@ import { Plant } from "@/types/plant.types";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
 import { useCartStore } from "@/store/cartStore";
-import { QuantityShortcut } from "./quantityShortcut";
+import QuantityShortcut from "@/blocks/quantityShortcut";
 import Button from "@/components/Button";
+import { useToast } from "@/hooks/useToast";
+import { useTranslations } from "next-intl";
 
 interface BuyShortcutProps {
   plant: Plant;
@@ -26,6 +28,8 @@ export const BuyShortcut = ({
 }: BuyShortcutProps) => {
   const { addItem } = useCartStore();
   const cartItems = useCartStore.getState().items;
+  const toast = useToast();
+  const t = useTranslations('buyShortcut');
 
   const itemExistsOnCart = () => {
     return cartItems.some((item) => item.item.id === plant.id);
@@ -38,7 +42,10 @@ export const BuyShortcut = ({
     />
   ) : (
     <Button
-      onClick={() => addItem(plant)}
+      onClick={() => {
+        addItem(plant);
+        toast.success(`${plant.common_name || plant.scientific_name} ${t('success')}`);
+      }}
       type="button"
       loading={loading}
       className={`${className}`}
