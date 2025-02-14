@@ -20,6 +20,7 @@ import { useTranslations } from "next-intl";
 import Link from "@/components/Link";
 import { useRouter } from "next/navigation";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
+import { useToast } from "@/hooks/useToast";
 
 interface ShippingStepProps {
   countries: Country[];
@@ -59,6 +60,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
     shippingFormData.country || countries[0]?.cca2 || ""
   );
   const [disabledFields, setDisabledFields] = useState<boolean>(false);
+  const toast = useToast();
 
   const shippingValidationMessages = getShippingValidationMessages(t);
 
@@ -89,6 +91,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
             type="submit"
             label={t("continue")}
             className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+            disabled={!selectedShippingMethod}
           />
         )}
 
@@ -107,7 +110,10 @@ const ShippingStep: FC<ShippingStepProps> = ({
   };
 
   const onSubmit = async (data: ShippingFormData) => {
-    console.log(data);
+    if (!selectedShippingMethod) {
+      toast.error(t('shipping.error.submission'));
+      return;
+    }
 
     try {
       setShippingAddress(data);
@@ -115,7 +121,11 @@ const ShippingStep: FC<ShippingStepProps> = ({
       setCurrentStep("customer");
       router.push("/checkout?step=customer");
     } catch (error) {
-      console.error("Failed to process shipping information:", error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+
+      toast.error(t('shipping.error.submission'), {
+        description: errorMessage,
+      });
     }
   };
 
@@ -174,17 +184,15 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label={t("shipping.delivery")}
           icon={<FaTruck />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
-            isDelivery ? "bg-green-500" : "bg-gray-500"
-          }`}
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-green-500" : "bg-gray-500"
+            }`}
           onClick={() => setIsDelivery(true)}
         >
           <input
             checked={isDelivery}
             onChange={(e) => setIsDelivery(e.target.checked)}
-            className={`w-6 h-6 transition-all duration-300 ease-in-out ${
-              isDelivery ? "scale-100" : "scale-0"
-            }`}
+            className={`w-6 h-6 transition-all duration-300 ease-in-out ${isDelivery ? "scale-100" : "scale-0"
+              }`}
             type="radio"
             name="shippingType"
             value="delivery"
@@ -194,17 +202,15 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label={t("shipping.pickup")}
           icon={<FaStore />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${
-            isDelivery ? "bg-gray-500" : "bg-green-500"
-          }`}
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-gray-500" : "bg-green-500"
+            }`}
           onClick={() => setIsDelivery(false)}
         >
           <input
             checked={!isDelivery}
             onChange={(e) => setIsDelivery(!e.target.checked)}
-            className={`w-6 h-6 transition-all duration-300 ease-in-out ${
-              isDelivery ? "scale-0" : "scale-100"
-            }`}
+            className={`w-6 h-6 transition-all duration-300 ease-in-out ${isDelivery ? "scale-0" : "scale-100"
+              }`}
             type="radio"
             name="shippingType"
             value="pickup"
@@ -301,11 +307,10 @@ const ShippingStep: FC<ShippingStepProps> = ({
               {shippingMethods.map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${
-                    selectedShippingMethod?.id === method.id
+                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
                       ? "border-green-500 bg-green-50 !text-black"
                       : "border-gray-200"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center">
                     <input
@@ -320,11 +325,10 @@ const ShippingStep: FC<ShippingStepProps> = ({
                     <div>
                       <p className="font-medium">{method.name}</p>
                       <p
-                        className={`text-sm text-gray-100 ${
-                          selectedShippingMethod?.id === method.id
+                        className={`text-sm text-gray-100 ${selectedShippingMethod?.id === method.id
                             ? "text-green-500"
                             : ""
-                        }`}
+                          }`}
                       >
                         {method.time}
                       </p>
