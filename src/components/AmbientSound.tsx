@@ -224,10 +224,8 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
               <button
                 onClick={() => setLoopEnabled(!loopEnabled)}
-                className={`p-2 rounded-full transition-colors ${
-                  loopEnabled 
-                    ? 'text-emerald-400 bg-white/20' 
-                    : 'text-emerald-50 hover:bg-white/10'
+                className={`p-2 rounded-full hover:bg-white/10 transition-colors ${
+                  loopEnabled ? 'text-emerald-400' : 'text-emerald-50'
                 }`}
                 aria-label={loopEnabled ? "Disable loop" : "Enable loop"}
               >
