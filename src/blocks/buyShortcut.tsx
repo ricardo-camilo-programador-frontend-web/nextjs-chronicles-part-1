@@ -25,9 +25,9 @@ export const BuyShortcut = ({
   loading,
 }: BuyShortcutProps) => {
   const { addItem } = useCartStore();
+  const cartItems = useCartStore.getState().items;
 
   const itemExistsOnCart = () => {
-    const cartItems = useCartStore.getState().items;
     return cartItems.some((item) => item.item.id === plant.id);
   };
 
