@@ -17,13 +17,13 @@ export function formatCurrency(
   options: Partial<FormatCurrencyOptions> = {}
 ) {
   if (value === undefined || value === null) {
-    return;
+    return '0,00';
   }
 
   const convertedToNumber = Number(value);
 
   if (isNaN(convertedToNumber)) {
-    return;
+    return '0,00';
   }
 
   const {
