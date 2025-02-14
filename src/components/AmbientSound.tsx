@@ -156,7 +156,7 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
                 {ambientSounds.map((sound, index) => (
                   <li
                     key={`${sound.altText}-${index}`}
-                    className={`p-2 cursor-pointer rounded-lg transition-colors hover:bg-white/10 text-emerald-50
+                    className={`text-center p-2 cursor-pointer rounded-lg transition-colors hover:bg-white/10 text-emerald-50
                       ${currentTrackIndex === index
                         ? "bg-white/20 border border-emerald-400/20"
                         : ""
