@@ -534,7 +534,8 @@
       "confirmOrder": "Confirm Order"
     },
     "continue": "Continue",
-    "back": "Back"
+    "back": "Back",
+    "next": "Next"
   },
   "payment": {
     "processingPayment": "Processing payment...",
