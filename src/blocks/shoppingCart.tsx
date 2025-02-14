@@ -5,7 +5,7 @@ import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
 import CheckoutShortcut from "./checkoutShortcut";
 import { useCartStore } from "@/store/cartStore";
-import { QuantityShortcut } from "./quantityShortcut";
+import QuantityShortcut  from "./quantityShortcut";
 import { Modal } from "@/components/Modal";
 import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
