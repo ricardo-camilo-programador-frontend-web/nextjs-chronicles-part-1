@@ -1,5 +1,6 @@
 "use client";
 
+import { FC } from "react";
 import { useState, useRef, useEffect } from "react";
 import {
   FaVolumeUp,
@@ -13,14 +14,17 @@ import { ambientSounds } from "@/static/ambientSounds";
 
 interface AmbientSoundProps {
   initialVolume?: number;
+  showVolumeControl?: boolean;
 }
 
-export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
+export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVolumeControl = false }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(initialVolume);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const currentTrack = ambientSounds[currentTrackIndex];
@@ -61,6 +65,32 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
     setCurrentTrackIndex((prev) =>
       prev === 0 ? ambientSounds.length - 1 : prev - 1
     );
+  };
+
+  const formatTime = (time: number): string => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  };
+
+  const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const time = parseFloat(e.target.value);
+    setCurrentTime(time);
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+    }
   };
 
   useEffect(() => {
@@ -136,9 +166,24 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
               </button>
             </div>
 
-            <div className="flex items-center gap-2 text-emerald-50">
-              <FaVolumeMute size={16} />
+            <div className="flex items-center gap-2 text-emerald-50 text-xs">
+              <span>{formatTime(currentTime)}</span>
               <input
+                type="range"
+                min="0"
+                max={duration || 0}
+                value={currentTime}
+                onChange={handleProgressChange}
+                className="w-full accent-emerald-400"
+                aria-label="Progress bar"
+              />
+              <span>{formatTime(duration)}</span>
+            </div>
+
+            {showVolumeControl && (
+              <div className="flex items-center gap-2 text-emerald-50">
+                <FaVolumeMute size={16} />
+                <input
                 type="range"
                 min="0"
                 max="1"
@@ -148,8 +193,9 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
                 className="w-full accent-emerald-400"
                 aria-label="Volume control"
               />
-              <FaVolumeUp size={16} />
-            </div>
+                <FaVolumeUp size={16} />
+              </div>
+            )}
 
             <div className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400/20 scrollbar-track-transparent">
               <ul className="text-sm space-y-1">
@@ -173,6 +219,8 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
               ref={audioRef}
               preload="metadata"
               onError={(e) => console.error("Erro no áudio:", e)}
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
             >
               <source src={currentTrack.url} type="audio/mpeg" />
               <source
