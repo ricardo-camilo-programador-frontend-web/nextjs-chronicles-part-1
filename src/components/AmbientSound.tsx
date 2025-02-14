@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { FaVolumeUp, FaVolumeMute, FaStepForward, FaStepBackward, FaPlay, FaPause } from "react-icons/fa";
+import {
+  FaVolumeUp,
+  FaVolumeMute,
+  FaStepForward,
+  FaStepBackward,
+  FaPlay,
+  FaPause,
+} from "react-icons/fa";
 import { ambientSounds } from "@/static/ambientSounds";
 
 interface AmbientSoundProps {
@@ -13,6 +20,7 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
   const [volume, setVolume] = useState(initialVolume);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const currentTrack = ambientSounds[currentTrackIndex];
@@ -65,90 +73,121 @@ export function AmbientSound({ initialVolume = 0.3 }: AmbientSoundProps) {
   }, [currentTrackIndex]);
 
   return (
-    <div className="bg-white/10 backdrop-blur-lg p-4 rounded-lg shadow-lg z-50 min-w-[300px]">
-      <div className="flex flex-col gap-3">
-        <div className="text-center">
-          <p className="text-sm opacity-80">
-            {isPlaying ? "Now Playing" : "Paused"}
-          </p>
-          <p className="font-medium">{currentTrack.altText}</p>
-        </div>
-
-        <div className="flex items-center justify-center gap-4">
-          <button
-            onClick={playPrevious}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors"
-            aria-label="Previous track"
-          >
-            <FaStepBackward size={16} />
-          </button>
-
-          <button
-            onClick={togglePlay}
-            className="p-3 hover:bg-white/20 rounded-full transition-colors"
-            aria-label={isPlaying ? "Pause" : "Play"}
-            disabled={isLoading}
-          >
-            {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
-          </button>
-
-          <button
-            onClick={playNext}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors"
-            aria-label="Next track"
-          >
-            <FaStepForward size={16} />
-          </button>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <FaVolumeMute size={16} />
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-            className="w-full"
-            aria-label="Volume control"
-          />
-          <FaVolumeUp size={16} />
-        </div>
-
-        <div className="max-h-32 overflow-y-auto">
-          <ul className="text-sm">
-            {ambientSounds.map((sound, index) => (
-              <li
-                key={`${sound.altText}-${index}`}
-                className={`p-2 cursor-pointer hover:bg-white/20 rounded transition-colors ${
-                  currentTrackIndex === index ? "bg-white/20" : ""
-                }`}
-                onClick={() => setCurrentTrackIndex(index)}
-              >
-                {sound.altText}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <audio
-          ref={audioRef}
-          preload="metadata"
-          onError={(e) => console.error("Erro no áudio:", e)}
+    <>
+      {!isVisible ? (
+        <button
+          onClick={() => setIsVisible(true)}
+          className="bg-white/10 backdrop-blur-lg p-3 rounded-full shadow-lg transition-colors hover:bg-white/20 border border-emerald-400/20"
+          aria-label="Show ambient sound player"
         >
-          <source src={currentTrack.url} type="audio/mpeg" />
-          <source
-            src={currentTrack.url.replace(".mp3", ".ogg")}
-            type="audio/ogg"
-          />
-          <source
-            src={currentTrack.url.replace(".mp3", ".wav")}
-            type="audio/wav"
-          />
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-    </div>
+          <FaVolumeUp size={20} className="text-emerald-50" />
+        </button>
+      ) : (
+        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-emerald-400/20 z-50 min-w-[320px] relative">
+          <div className="absolute -top-8 -left-8 text-4xl opacity-20 rotate-45">
+            🌿
+          </div>
+          <div className="absolute -bottom-8 -right-8 text-4xl opacity-20 -rotate-45">
+            🌱
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="flex justify-between items-center">
+              <p className="text-emerald-100/80 text-sm">
+                {isPlaying ? "Now Playing" : "Paused"}
+              </p>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="p-2 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
+                aria-label="Close player"
+              >
+                <span className="text-xl">&times;</span>
+              </button>
+            </div>
+
+            <p className="font-medium text-center text-emerald-50">
+              {currentTrack.altText}
+            </p>
+
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={playPrevious}
+                className="p-2 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
+                aria-label="Previous track"
+              >
+                <FaStepBackward size={16} />
+              </button>
+
+              <button
+                onClick={togglePlay}
+                className="p-4 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
+                aria-label={isPlaying ? "Pause" : "Play"}
+                disabled={isLoading}
+              >
+                {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+              </button>
+
+              <button
+                onClick={playNext}
+                className="p-2 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
+                aria-label="Next track"
+              >
+                <FaStepForward size={16} />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2 text-emerald-50">
+              <FaVolumeMute size={16} />
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className="w-full accent-emerald-400"
+                aria-label="Volume control"
+              />
+              <FaVolumeUp size={16} />
+            </div>
+
+            <div className="max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-emerald-400/20 scrollbar-track-transparent">
+              <ul className="text-sm space-y-1">
+                {ambientSounds.map((sound, index) => (
+                  <li
+                    key={`${sound.altText}-${index}`}
+                    className={`p-2 cursor-pointer rounded-lg transition-colors hover:bg-white/10 text-emerald-50
+                      ${currentTrackIndex === index
+                        ? "bg-white/20 border border-emerald-400/20"
+                        : ""
+                      }`}
+                    onClick={() => setCurrentTrackIndex(index)}
+                  >
+                    {sound.altText}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <audio
+              ref={audioRef}
+              preload="metadata"
+              onError={(e) => console.error("Erro no áudio:", e)}
+            >
+              <source src={currentTrack.url} type="audio/mpeg" />
+              <source
+                src={currentTrack.url.replace(".mp3", ".ogg")}
+                type="audio/ogg"
+              />
+              <source
+                src={currentTrack.url.replace(".mp3", ".wav")}
+                type="audio/wav"
+              />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

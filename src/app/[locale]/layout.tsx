@@ -115,7 +115,7 @@ export default async function RootLayout({
           showText={false}
         />
 
-        <div className="fixed bottom-[5rem] left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999]">
+        <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999]">
           <AmbientSound />
         </div>
       </body>
