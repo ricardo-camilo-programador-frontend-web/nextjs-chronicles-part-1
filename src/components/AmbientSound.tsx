@@ -130,6 +130,25 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
   return (
     <>
+      <audio
+        ref={audioRef}
+        preload="metadata"
+        onError={(e) => console.error("Erro no áudio:", e)}
+        onTimeUpdate={handleTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+      >
+        <source src={currentTrack.url} type="audio/mpeg" />
+        <source
+          src={currentTrack.url.replace(".mp3", ".ogg")}
+          type="audio/ogg"
+        />
+        <source
+          src={currentTrack.url.replace(".mp3", ".wav")}
+          type="audio/wav"
+        />
+        Your browser does not support the audio element.
+      </audio>
+
       {!isVisible ? (
         <button
           onClick={() => setIsVisible(true)}
@@ -243,25 +262,6 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 ))}
               </ul>
             </div>
-
-            <audio
-              ref={audioRef}
-              preload="metadata"
-              onError={(e) => console.error("Erro no áudio:", e)}
-              onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleLoadedMetadata}
-            >
-              <source src={currentTrack.url} type="audio/mpeg" />
-              <source
-                src={currentTrack.url.replace(".mp3", ".ogg")}
-                type="audio/ogg"
-              />
-              <source
-                src={currentTrack.url.replace(".mp3", ".wav")}
-                type="audio/wav"
-              />
-              Your browser does not support the audio element.
-            </audio>
           </div>
         </div>
       )}
