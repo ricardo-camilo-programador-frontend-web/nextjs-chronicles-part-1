@@ -26,16 +26,23 @@ interface OrderStore {
   getAllOrders: () => Order[];
 }
 
+const BITCOIN_PAYMENT_ADDRESS = 'bc1qdgqe3a4nruxwlp5wmuajyz0d9tv4hnf26qyta6';
+const PIX_PAYMENT_ADDRESS = '5cc626c0-7e07-4c76-a20d-5559c58bd50b';
+
 export const useOrderStore = create<OrderStore>()(
   persist(
     (set, get) => ({
       orders: [],
       addOrder: (orderData) => {
-        const orderId = `${getUniqueId()}-${Date.now()}-${Math.random().toString(36).slice(2, 11)}-bc1qdgqe3a4nruxwlp5wmuajyz0d9tv4hnf26qyta6`;
+        const orderId = `${getUniqueId()}-${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
         const newOrder = {
           ...orderData,
           orderId,
           createdAt: new Date(),
+          paymentInfo: {
+            ...orderData.paymentInfo,
+            url: orderData.paymentInfo.paymentMethod === 'bitcoin' ? BITCOIN_PAYMENT_ADDRESS : PIX_PAYMENT_ADDRESS
+          }
         };
 
         set((state) => ({
