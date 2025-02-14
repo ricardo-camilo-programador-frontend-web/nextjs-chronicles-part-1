@@ -45,7 +45,24 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
       }
       setIsPlaying(!isPlaying);
     } catch (error) {
-      console.error("Erro ao controlar áudio:", error);
+      if (error instanceof DOMException) {
+        switch (error.name) {
+          case 'NotAllowedError':
+            console.error('Audio playback was not allowed by the user');
+            break;
+          case 'NotSupportedError':
+            console.error('Audio format is not supported');
+            break;
+          case 'AbortError':
+            console.error('Audio playback was aborted');
+            break;
+          default:
+            console.error('Audio playback error:', error.message);
+        }
+      } else {
+        console.error('Unexpected error during audio playback:', error);
+      }
+      setIsPlaying(false);
     } finally {
       setIsLoading(false);
     }
@@ -114,6 +131,12 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
         });
       }
     }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
   }, [currentTrackIndex, volume, isPlaying]);
 
   useEffect(() => {
