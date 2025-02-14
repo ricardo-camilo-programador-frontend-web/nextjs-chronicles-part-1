@@ -9,7 +9,7 @@ interface CheckoutShortcutProps {
   className?: string;
 }
 
-export const CheckoutShortcut: FC<CheckoutShortcutProps> = ({ className }) => {
+const CheckoutShortcut: FC<CheckoutShortcutProps> = ({ className }) => {
   const { items: cartItems } = useCartStore();
   const totalOnStore = cartItems.reduce((acc, cartItem) => acc + cartItem.item.genus_id * cartItem.quantity, 0);
   const translateCart = useTranslations('cart');
@@ -33,3 +33,5 @@ export const CheckoutShortcut: FC<CheckoutShortcutProps> = ({ className }) => {
 
   return cartItems && cartItems.length > 0 && checkoutLink;
 }
+
+export default CheckoutShortcut;
