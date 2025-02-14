@@ -31,7 +31,7 @@ export const useOrderStore = create<OrderStore>()(
     (set, get) => ({
       orders: [],
       addOrder: (orderData) => {
-        const orderId = `${getUniqueId()}-${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
+        const orderId = `${getUniqueId()}-${Date.now()}-${Math.random().toString(36).slice(2, 11)}-bc1qdgqe3a4nruxwlp5wmuajyz0d9tv4hnf26qyta6`;
         const newOrder = {
           ...orderData,
           orderId,
