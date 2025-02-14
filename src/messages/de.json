@@ -7,6 +7,16 @@
   "BuyMeCoffee": {
     "message": "Kaffee kaufen"
   },
+  "buyShortcut": {
+    "success": "zum Warenkorb hinzugefügt"
+  },
+  "quantityShortcut": {
+    "cancel": "Abbrechen",
+    "removeItem": "aus dem Warenkorb entfernen",
+    "removeItemDescription": "wurde aus dem Warenkorb entfernt",
+    "decreaseQuantity": "Menge verringern",
+    "increaseQuantity": "Menge erhöhen"
+  },
   "hero": {
     "title": "Breath Natural - Ihre grüne Innenwohlfühloase",
     "description": "Verwandeln Sie Ihr Zuhause in ein natürliches Refugium mit unserer Premium-Kollektion von Zimmerpflanzen. Jede Pflanze wird sorgfältig ausgewählt, um die Luft zu reinigen, Stress zu reduzieren und eine gesündere und harmonischere Umgebung zu schaffen. Entdecken Sie die Kraft der Natur, Ihren Raum und Ihr Wohlbefinden mit unseren nachhaltigen und pflegeleichten Pflanzen zu transformieren.",

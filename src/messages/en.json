@@ -7,6 +7,16 @@
   "BuyMeCoffee": {
     "message": "Buy me a coffee"
   },
+  "buyShortcut": {
+    "success": "added to cart"
+  },
+  "quantityShortcut": {
+    "cancel": "Cancel",
+    "removeItem": "Remove from cart",
+    "removeItemDescription": "has been removed from your cart",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity"
+  },
   "hero": {
     "title": "Breath Natural",
     "description": "Discover your perfect green companion! Like Home Depot and Lowe's, we offer carefully selected indoor plants, but with personalized care guidance. Our plants don't just beautify your space - they create a living, breathing sanctuary that purifies your air and lifts your spirits, rivaling collections you'd find at Walmart or Target. Join thousands of plant lovers who've transformed their homes into natural havens.",

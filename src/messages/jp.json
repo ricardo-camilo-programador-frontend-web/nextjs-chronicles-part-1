@@ -7,6 +7,16 @@
   "BuyMeCoffee": {
     "message": "ブレス・ナチュラルをサポートしてください"
   },
+  "buyShortcut": {
+    "success": "カートに追加されました"
+  },
+  "quantityShortcut": {
+    "cancel": "キャンセル",
+    "removeItem": "カートから削除",
+    "removeItemDescription": "あなたのカートから削除されました",
+    "decreaseQuantity": "数量を減らす",
+    "increaseQuantity": "数量を増やす"
+  },
   "hero": {
     "title": "ブレス・ナチュラル - あなたの室内緑のオアシス",
     "description": "プレミアムな室内植物コレクションで、あなたの家を自然の聖域に変えましょう。各植物は空気を浄化し、ストレスを軽減し、より健康的で調和のとれた環境を作るために慎重に選ばれています。持続可能で手入れが簡単な植物で、あなたの空間とウェルビーイングを変える自然の力を発見してください。",

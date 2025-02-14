@@ -7,6 +7,16 @@
   "BuyMeCoffee": {
     "message": "Kup mi kawę"
   },
+  "buyShortcut": {
+    "success": "dodane do koszyka"
+  },
+  "quantityShortcut": {
+    "cancel": "Anuluj",
+    "removeItem": "usunięte z koszyka",
+    "removeItemDescription": "zostało usunięte z koszyka",
+    "decreaseQuantity": "Zmniejsz ilość",
+    "increaseQuantity": "Zwiększ ilość"
+  },
   "hero": {
     "title": "Breath Natural - Twoja Wewnętrzna Zielona Oaza",
     "description": "Przekształć swój dom w naturalną oazę dzięki naszej kolekcji premium roślin domowych. Każda roślina jest starannie dobrana, aby oczyszczać powietrze, redukować stres i tworzyć zdrowsze i bardziej harmonijne środowisko. Odkryj moc natury w przekształcaniu Twojej przestrzeni i samopoczucia dzięki naszym zrównoważonym i łatwym w utrzymaniu roślinom.",
