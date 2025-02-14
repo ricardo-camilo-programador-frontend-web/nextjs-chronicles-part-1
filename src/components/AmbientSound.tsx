@@ -56,12 +56,18 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
   };
 
   const playNext = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     setCurrentTrackIndex((prev) =>
       prev === ambientSounds.length - 1 ? 0 : prev + 1
     );
   };
 
   const playPrevious = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     setCurrentTrackIndex((prev) =>
       prev === 0 ? ambientSounds.length - 1 : prev - 1
     );
@@ -96,11 +102,15 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
+      audioRef.current.load();
       if (isPlaying) {
-        audioRef.current.play();
+        audioRef.current.play().catch(error => {
+          console.error("Error playing audio:", error);
+          setIsPlaying(false);
+        });
       }
     }
-  }, [currentTrackIndex]);
+  }, [currentTrackIndex, volume, isPlaying]);
 
   return (
     <>
