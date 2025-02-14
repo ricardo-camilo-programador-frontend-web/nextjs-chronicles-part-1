@@ -1,23 +1,27 @@
 "use client";
-
+import type { FC } from "react";
 import { useState } from "react";
 import { useCartStore } from "@/store/cartStore";
 import { CartItem } from "@/types/cartItem";
 import { Modal } from "@/components/Modal";
+import { useTranslations } from "next-intl";
+import { useToast } from "@/hooks/useToast";
 
 interface ShoppingCartProps {
   cartItem: CartItem;
   className?: string;
 }
 
-export function QuantityShortcut({
+const QuantityShortcut: FC<ShoppingCartProps> = ({
   className,
   cartItem,
-}: ShoppingCartProps) {
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const cartItemQuantity = useCartStore.getState().items.find(item => item.item.id === cartItem.item.id)?.quantity;
   const removeItem = useCartStore((state) => state.removeItem);
   const incrementItemQuantity = useCartStore((state) => state.addItem);
+  const t = useTranslations('quantityShortcut');
+  const toast = useToast();
 
   const decrementItemQuantity = useCartStore(
     (state) => state.decrementItemQuantity
@@ -52,13 +56,16 @@ export function QuantityShortcut({
               onClick={() => setIsOpen(false)}
               className="bg-gray-500 text-white px-4 py-2 rounded-md w-full order-2 md:order-1"
             >
-              Cancel
+              {t('cancel')}
             </button>
             <button
-              onClick={() => removeItem(cartItem.item)}
+              onClick={() => {
+                removeItem(cartItem.item);
+                toast.warning(`${cartItem.item.common_name} ${t('removeItemDescription')}`);
+              }}
               className="bg-red-500 text-white px-4 py-2 rounded-md w-full order-1 md:order-2"
             >
-              Remove
+              {t('removeItem')}
             </button>
           </div>
         </div>
@@ -70,8 +77,8 @@ export function QuantityShortcut({
         <button
           type="button"
           className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-white/10 transition-all duration-300"
-          aria-label="Decrease quantity"
-          title="Decrease quantity"
+          aria-label={t('decreaseQuantity')}
+          title={t('decreaseQuantity')}
           onClick={() => handleWithdrawItem()}
         >
           <span className="text-xl font-medium">-</span>
@@ -105,8 +112,8 @@ export function QuantityShortcut({
         <button
           type="button"
           className="flex items-center justify-center w-full min-h-[3.5rem] text-white hover:text-green-500 hover:bg-white/10 active:text-green-500 active:bg-white/20 active:scale-95 touch-none transition-all duration-300"
-          aria-label="Increase quantity"
-          title="Increase quantity"
+          aria-label={t('increaseQuantity')}
+          title={t('increaseQuantity')}
           onClick={() => incrementItemQuantity(cartItem.item)}
         >
           <span className="text-xl font-medium">+</span>
@@ -115,3 +122,5 @@ export function QuantityShortcut({
     </>
   );
 }
+
+export default QuantityShortcut;
