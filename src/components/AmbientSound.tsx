@@ -116,7 +116,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isVisible && playerRef.current && isClickOutsideElement(playerRef.current, event)) {
+      if (isVisible && isClickOutsideElement(playerRef.current, event)) {
         setIsVisible(false);
       }
     };
@@ -136,10 +136,10 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
           className="bg-white/10 backdrop-blur-lg p-3 rounded-full shadow-lg transition-colors hover:bg-white/20 border border-emerald-400/20"
           aria-label="Show ambient sound player"
         >
-          <FaVolumeUp size={20} className="text-emerald-50" />
+          {isPlaying ? <FaVolumeUp size={20} className="text-emerald-50" /> : <FaVolumeMute size={20} className="text-emerald-50" />}
         </button>
       ) : (
-        <div 
+        <div
           ref={playerRef}
           className="bg-white/10 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-emerald-400/20 z-50 min-w-[320px] relative"
         >
