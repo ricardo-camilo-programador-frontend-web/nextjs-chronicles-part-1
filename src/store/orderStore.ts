@@ -4,6 +4,7 @@ import { CartItem } from '@/types/cartItem';
 import { ShippingMethod, Address } from "@/types/shippingMethod";
 import { CustomerInformation } from "@/types/customer";
 import { OrderPaymentInfo } from "@/types/payment";
+import { getUniqueId } from "@/utils/getUniqueId";
 
 interface Order {
   orderId: string;
@@ -30,7 +31,7 @@ export const useOrderStore = create<OrderStore>()(
     (set, get) => ({
       orders: [],
       addOrder: (orderData) => {
-        const orderId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        const orderId = `${getUniqueId()}-${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
         const newOrder = {
           ...orderData,
           orderId,
