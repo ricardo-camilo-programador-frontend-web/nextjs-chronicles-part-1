@@ -11,6 +11,7 @@ import {
   FaPause,
 } from "react-icons/fa";
 import { ambientSounds } from "@/static/ambientSounds";
+import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
 
 interface AmbientSoundProps {
   initialVolume?: number;
@@ -26,6 +27,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const playerRef = useRef<HTMLDivElement>(null);
 
   const currentTrack = ambientSounds[currentTrackIndex];
 
@@ -112,6 +114,20 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
     }
   }, [currentTrackIndex, volume, isPlaying]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isVisible && playerRef.current && isClickOutsideElement(playerRef.current, event)) {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isVisible]);
+
   return (
     <>
       {!isVisible ? (
@@ -123,7 +139,10 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
           <FaVolumeUp size={20} className="text-emerald-50" />
         </button>
       ) : (
-        <div className="bg-white/10 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-emerald-400/20 z-50 min-w-[320px] relative">
+        <div 
+          ref={playerRef}
+          className="bg-white/10 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-emerald-400/20 z-50 min-w-[320px] relative"
+        >
           <div className="absolute -top-8 -left-8 text-4xl opacity-20 rotate-45">
             🌿
           </div>
