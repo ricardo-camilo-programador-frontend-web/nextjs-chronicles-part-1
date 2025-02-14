@@ -1,0 +1,660 @@
+{
+  "currency": {
+    "type": "BRL",
+    "symbol": "R$",
+    "locale": "pt-BR"
+  },
+  "BuyMeCoffee": {
+    "message": "Compre-me um café"
+  },
+  "buyShortcut": {
+    "success": "adicionado ao carrinho"
+  },
+  "quantityShortcut": {
+    "cancel": "Cancelar",
+    "removeItem": "Remover do carrinho",
+    "removeItemDescription": "foi removido do seu carrinho",
+    "decreaseQuantity": "Diminuir quantidade",
+    "increaseQuantity": "Aumentar quantidade"
+  },
+  "hero": {
+    "title": "Breath Natural - Seu Oásis Online",
+    "description": "Transforme sua casa em um santuário natural com nossa coleção premium de plantas para interiores. Cada planta é cuidadosamente selecionada para purificar o ar, reduzir o estresse e criar um ambiente mais saudável e harmonioso. Descubra o poder da natureza em transformar seu espaço e bem-estar com nossas plantas sustentáveis e de fácil manutenção.",
+    "trendyPlantsTitle": "Plantas Tendência 2024: As Mais Desejadas do Momento"
+  },
+  "explore": {
+    "text": "Explorar",
+    "title": "Explorar plantas {name}"
+  },
+  "liveDemo": {
+    "buttonLabel": "Ver Apresentação",
+    "buttonTitle": "Ver Apresentação",
+    "text": "Apresentação",
+    "modalTitle": "Apresentação"
+  },
+  "testimonials": {
+    "title": "Avaliações dos Clientes",
+    "testimonial1": {
+      "id": 1,
+      "name": "John Smith",
+      "rating": 5,
+      "testimonial": "A atenção aos detalhes e a qualidade do trabalho superaram minhas expectativas. Altamente recomendado! A dedicação da equipe em entregar um produto de primeira linha foi evidente durante todo o projeto. Sua capacidade de entender nossa visão e trazê-la à vida foi impressionante. Não hesitaria em recomendá-los a quem busca um serviço excepcional."
+    },
+    "testimonial2": {
+      "id": 2,
+      "name": "Sarah Chen",
+      "rating": 3,
+      "testimonial": "Serviço incrível e comunicação durante todo o projeto. Com certeza trabalharia com eles novamente. A capacidade de resposta da equipe e a disposição para se adaptar às nossas necessidades em mudança foram cruciais para o sucesso do projeto. Embora tenha havido alguns problemas menores, a experiência geral foi positiva, e eu consideraria colaborar com eles novamente no futuro."
+    },
+    "testimonial3": {
+      "id": 3,
+      "name": "Michael Rodriguez",
+      "rating": 4,
+      "testimonial": "Muito profissional e entregou exatamente o que foi prometido. Pequenos atrasos, mas ótimo no geral. O profissionalismo da equipe e o compromisso em entregar um trabalho de alta qualidade foram evidentes durante todo o projeto. Embora tenha havido alguns atrasos menores, o produto final superou nossas expectativas, e ficamos satisfeitos com o resultado."
+    },
+    "testimonial4": {
+      "id": 4,
+      "name": "Emma Thompson",
+      "rating": 5,
+      "testimonial": "Resultados excepcionais! Eles transformaram nossa visão em realidade perfeitamente. A capacidade da equipe de entender nossa visão e trazê-la à vida foi excepcional. O produto final superou nossas expectativas em todos os aspectos, e não poderíamos estar mais felizes com o resultado. Sua dedicação em entregar resultados excepcionais é verdadeiramente louvável."
+    },
+    "testimonial5": {
+      "id": 5,
+      "name": "David Kim",
+      "rating": 4,
+      "testimonial": "Ótimo custo-benefício. A equipe foi receptiva e acomodou nossas necessidades. O valor do projeto foi excepcional, considerando a qualidade do trabalho entregue. A capacidade de resposta da equipe e a disposição para se adaptar às nossas necessidades garantiram uma execução suave do projeto. Ficamos satisfeitos com o produto final e o recomendaríamos a qualquer pessoa que busque uma solução econômica."
+    },
+    "testimonial6": {
+      "id": 6,
+      "name": "Lisa Anderson",
+      "rating": 5,
+      "testimonial": "Superou as expectativas em todos os aspectos. Sua expertise realmente se mostra no produto final. A expertise da equipe e a atenção aos detalhes foram evidentes durante todo o projeto. Eles superaram nossas expectativas em todos os aspectos, desde a comunicação até a entrega do produto final. Ficamos extremamente impressionados com o trabalho deles e os recomendaríamos altamente a qualquer pessoa que busca um serviço excepcional."
+    },
+    "testimonial7": {
+      "id": 7,
+      "name": "James Wilson",
+      "rating": 5,
+      "testimonial": "Experiência fantástica do início ao fim. Recomendaria altamente a qualquer um! O profissionalismo, a expertise e a dedicação da equipe em entregar resultados excepcionais tornaram nosso projeto um sucesso. Desde a consulta inicial até a entrega do produto final, a experiência foi contínua e superou nossas expectativas em todos os aspectos."
+    },
+    "testimonial8": {
+      "id": 8,
+      "name": "Maria Garcia",
+      "rating": 4,
+      "testimonial": "Muito satisfeito com os resultados. Serviço profissional e eficiente. O profissionalismo e a eficiência da equipe foram evidentes durante todo o projeto. Ficamos satisfeitos com o produto final, que atendeu às nossas expectativas. Sua capacidade de entregar um produto de alta qualidade de maneira eficiente foi impressionante, e consideraríamos trabalhar com eles novamente no futuro."
+    }
+  },
+  "mockupPlants": {
+    "title": "Coleção Exclusiva de Plantas Premium",
+    "plant1": {
+      "id": 1,
+      "common_name": "Dieffenbachia",
+      "slug": "dieffenbachia-amoena",
+      "scientific_name": "Dieffenbachia amoena",
+      "year": 1977,
+      "bibliography": "A Dieffenbachia, carinhosamente conhecida como 'comigo-ninguém-pode', é uma planta tropical premium que transforma ambientes com suas folhas exuberantes e padrões únicos. Ideal para purificação do ar em ambientes internos, esta planta de baixa manutenção é perfeita para decoração moderna e minimalista. Suas folhas grandes e manchadas criam um visual tropical sofisticado, sendo excelente para escritórios e salas bem iluminadas. Observação importante: mantenha fora do alcance de crianças e pets.",
+      "author": "Heinrich Wilhelm Schott",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Araceae",
+      "genus_id": 3275,
+      "image_url": "dieffenbachiaPlantPot.src",
+      "synonyms": [
+        "Dieffenbachia maculata",
+        "Caladium maculatum",
+        "Comigo-ninguém-pode"
+      ],
+      "genus": "Dieffenbachia",
+      "family": "Araceae",
+      "links": {
+        "self": "/api/v1/species/dieffenbachia-amoena",
+        "plant": "/api/v1/plants/dieffenbachia-amoena",
+        "genus": "/api/v1/genus/dieffenbachia"
+      }
+    },
+    "plant2": {
+      "id": 2,
+      "common_name": "Hosta",
+      "slug": "hosta-ventricosa",
+      "scientific_name": "Hosta ventricosa",
+      "year": 1859,
+      "bibliography": "A Hosta é como aquela amiga confiável que sempre está lá por você! Com suas folhas impressionantes em tons de verde e azul, ela é a escolha perfeita para trazer um toque de elegância ao seu jardim. Resistente e versátil, ela prospera em áreas sombreadas, criando um espetáculo visual único com suas folhas texturizadas. É incrível como ela consegue transformar até mesmo os cantos mais esquecidos em verdadeiros pontos focais de beleza!",
+      "author": "Stapf",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Asparagaceae",
+      "genus_id": 3276,
+      "image_url": "hostaPlantWhiteVase.src",
+      "synonyms": [
+        "Hosta caerulea",
+        "Hosta sieboldiana",
+        "Hosta undulata"
+      ],
+      "genus": "Hosta",
+      "family": "Asparagaceae",
+      "links": {
+        "self": "/api/v1/species/hosta-ventricosa",
+        "plant": "/api/v1/plants/hosta-ventricosa",
+        "genus": "/api/v1/genus/hosta"
+      }
+    },
+    "plant3": {
+      "id": 3,
+      "common_name": "Suculenta",
+      "slug": "succulent-mint-pot",
+      "scientific_name": "Suculenta mint pot",
+      "year": 1859,
+      "bibliography": "Nossas suculentas são pequenas joias do mundo vegetal! Perfeitas para quem está começando sua jornada no paisagismo ou para aqueles que buscam plantas de baixa manutenção. Com suas formas geométricas fascinantes e cores suaves, elas são verdadeiras esculturas vivas que trazem um toque moderno e sofisticado para qualquer ambiente. E o melhor? São super resistentes e adaptáveis!",
+      "author": "Stapf",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Asparagaceae",
+      "genus_id": 3276,
+      "image_url": "succulentMintPot.src",
+      "synonyms": [
+        "Hosta caerulea",
+        "Hosta sieboldiana",
+        "Hosta undulata"
+      ],
+      "genus": "Hosta",
+      "family": "Asparagaceae",
+      "links": {
+        "self": "/api/v1/species/hosta-ventricosa",
+        "plant": "/api/v1/plants/hosta-ventricosa",
+        "genus": "/api/v1/genus/hosta"
+      }
+    },
+    "plant4": {
+      "id": 4,
+      "common_name": "Aloe Vera",
+      "slug": "aloe-vera-modern",
+      "scientific_name": "Aloe barbadensis miller",
+      "year": 1768,
+      "bibliography": "A lendária Aloe Vera é muito mais que uma planta medicinal - é uma verdadeira companheira de vida! Suas folhas suculentas não só trazem um visual contemporâneo ao seu espaço, mas também guardam um gel precioso cheio de propriedades curativas. Fácil de cuidar e linda de se ver, ela é aquele tipo de planta que combina beleza com utilidade. Um verdadeiro tesouro verde para ter em casa!",
+      "author": "Philip Miller",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Asphodelaceae",
+      "genus_id": 3277,
+      "image_url": "aloeModernDecor.src",
+      "synonyms": [
+        "Aloe vera var. chinensis",
+        "Aloe vera var. littoralis",
+        "Aloe perfoliata var. vera"
+      ],
+      "genus": "Aloe",
+      "family": "Asphodelaceae",
+      "links": {
+        "self": "/api/v1/species/aloe-vera",
+        "plant": "/api/v1/plants/aloe-vera",
+        "genus": "/api/v1/genus/aloe"
+      }
+    },
+    "plant5": {
+      "id": 5,
+      "common_name": "Ave do Paraíso",
+      "slug": "strelitzia-reginae",
+      "scientific_name": "Strelitzia reginae",
+      "year": 1789,
+      "bibliography": "A majestosa Ave do Paraíso é pura exuberância tropical! Com suas flores espetaculares que parecem pássaros em pleno voo, ela é garantia de um show de cores e formas em seu jardim. Cada flor é uma obra de arte da natureza, combinando tons vibrantes de laranja e azul em uma estrutura única. Uma escolha ousada para quem quer fazer uma verdadeira declaração de estilo!",
+      "author": "William Aiton",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Strelitziaceae",
+      "genus_id": 3278,
+      "image_url": "birdParadiseWhitePot.src",
+      "synonyms": [
+        "Strelitzia parvifolia",
+        "Strelitzia glauca",
+        "Heliconia reginae"
+      ],
+      "genus": "Strelitzia",
+      "family": "Strelitziaceae",
+      "links": {
+        "self": "/api/v1/species/strelitzia-reginae",
+        "plant": "/api/v1/plants/strelitzia-reginae",
+        "genus": "/api/v1/genus/strelitzia"
+      }
+    },
+    "plant6": {
+      "id": 6,
+      "common_name": "Cacto Barril Dourado",
+      "slug": "echinocactus-grusonii",
+      "scientific_name": "Echinocactus grusonii",
+      "year": 1886,
+      "bibliography": "O Cacto Barril Dourado é como uma escultura viva que conta histórias do deserto! Sua forma robusta e espinhos dourados criam um visual impressionante que captura a atenção de todos. Perfeito para ambientes modernos e minimalistas, ele é aquele tipo de planta que exige pouca água mas oferece muito charme. Uma verdadeira peça de conversação para sua coleção!",
+      "author": "Heinrich Hildmann",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Cactaceae",
+      "genus_id": 3279,
+      "image_url": "cactusTerracottaPot.src",
+      "synonyms": [
+        "Kroenleinia grusonii",
+        "Almofada da sogra",
+        "Bola dourada"
+      ],
+      "genus": "Echinocactus",
+      "family": "Cactaceae",
+      "links": {
+        "self": "/api/v1/species/echinocactus-grusonii",
+        "plant": "/api/v1/plants/echinocactus-grusonii",
+        "genus": "/api/v1/genus/echinocactus"
+      }
+    },
+    "plant7": {
+      "id": 7,
+      "common_name": "Costela de Adão",
+      "slug": "monstera-deliciosa",
+      "scientific_name": "Monstera deliciosa",
+      "year": 1849,
+      "bibliography": "A Costela de Adão é a queridinha dos amantes de plantas! Suas folhas gigantes e recortadas são verdadeiras obras de arte natural que trazem um toque de drama tropical a qualquer ambiente. Versátil e charmosa, ela cresce com personalidade, criando um visual único à medida que suas folhas se desenvolvem. É aquela planta que todo mundo reconhece e deseja ter em casa!",
+      "author": "Karl Heinrich Leopold Liebmann",
+      "status": "aceito",
+      "rank": "espécie",
+      "family_common_name": "Araceae",
+      "genus_id": 3280,
+      "image_url": "monsteraDarkPedestal.src",
+      "synonyms": [
+        "Philodendron pertusum",
+        "Tornelia fragrans",
+        "Fruta-pão mexicana"
+      ],
+      "genus": "Monstera",
+      "family": "Araceae",
+      "links": {
+        "self": "/api/v1/species/monstera-deliciosa",
+        "plant": "/api/v1/plants/monstera-deliciosa",
+        "genus": "/api/v1/genus/monstera"
+      }
+    }
+  },
+  "loading": {
+    "ariaLabel": "Carregando",
+    "status": "Carregando"
+  },
+  "contact": {
+    "title": "Cultive Seu",
+    "titleHighlight": "Jardim dos Sonhos",
+    "subtitle": "Transforme seu espaço com nossa expertise em plantas e design de interiores sustentável",
+    "formTitle": "Consultoria Personalizada de Plantas",
+    "formSubtitle": "Receba orientação especializada para criar seu próprio oásis verde. Nossa equipe de especialistas está pronta para ajudar na escolha das plantas ideais para seu espaço.",
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "email": "E-mail",
+    "phoneNumber": "Telefone",
+    "message": "Mensagem",
+    "sending": "Enviando...",
+    "send": "Enviar para o jardim",
+    "validation": {
+      "firstName": {
+        "min": "O nome deve ter pelo menos 2 caracteres",
+        "max": "O nome não pode exceder 50 caracteres"
+      },
+      "lastName": {
+        "min": "O sobrenome deve ter pelo menos 2 caracteres",
+        "max": "O sobrenome não pode exceder 50 caracteres"
+      },
+      "email": {
+        "invalid": "Endereço de e-mail inválido"
+      },
+      "phoneNumber": {
+        "invalid": "Número de telefone inválido"
+      },
+      "message": {
+        "min": "A mensagem deve ter pelo menos 10 caracteres",
+        "max": "A mensagem não pode exceder 500 caracteres"
+      }
+    }
+  },
+  "plants": {
+    "invalidDataError": "Dados inválidos recebidos do servidor",
+    "noPlantsMessage": "Nenhuma planta para ser exibida...",
+    "loadError": "Erro ao carregar as plantas: {message}",
+    "genericError": "Erro ao carregar as plantas..."
+  },
+  "footer": {
+    "home": "Home",
+    "typesOfPlants": "Tipos de Plantas",
+    "contactLink": "Contato",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "aboutUs": "Sobre Nós",
+    "faq": "Perguntas Frequentes",
+    "blog": "Blog",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "description": "Descubra as plantas perfeitas para seu espaço na Planto. Oferecemos uma seleção cuidadosamente curada de plantas internas e externas, guias especializados de cuidados e soluções sustentáveis de jardinagem para entusiastas de plantas.",
+    "quickLinks": {
+      "title": "Links Rápidos"
+    },
+    "newsletter": {
+      "title": "Fique Conectado",
+      "description": "Inscreva-se para receber dicas de cuidados, ofertas especiais e atualizações sobre novas chegadas de plantas.",
+      "emailPlaceholder": "Digite seu Email",
+      "emailAriaLabel": "Email para newsletter",
+      "subscribeButton": "Inscrever-se"
+    },
+    "social": {
+      "followUs": "Siga-nos no {platform}"
+    },
+    "copyright": "© {year} Planto. Todos os direitos reservados. Trazendo a natureza para dentro de casa."
+  },
+  "menuItems": {
+    "portfolio": "Portfólio",
+    "menu": "Menu",
+    "home": "Home",
+    "typesOfPlants": "Tipos de Plantas",
+    "more": "Mais",
+    "contactLink": "Contato",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "aboutUs": "Sobre Nós",
+    "faq": "Perguntas Frequentes",
+    "blog": "Blog",
+    "orders": "Pedidos",
+    "plants": "Plantas"
+  },
+  "bestProducts": {
+    "title": "Nosso Melhor o2"
+  },
+  "topSelling": {
+    "title": "Nossas Estrelas Verdes"
+  },
+  "cart": {
+    "closeShoppingCart": "Fechar carrinho de compras",
+    "shoppingCart": "Carrinho de compras",
+    "clearCart": "Limpar carrinho",
+    "cancel": "Cancelar",
+    "clear": "Limpar",
+    "clearCartConfirmation": "Tem certeza de que deseja limpar o carrinho?",
+    "noItemsInCart": "Nenhum item no carrinho",
+    "checkout": "Finalizar compra"
+  },
+  "checkout": {
+    "title": "Finalizar Compra",
+    "subtitle": "Complete sua compra seguindo os passos abaixo",
+    "formTitle": "Informações de Entrega",
+    "formSubtitle": "Por favor, preencha seus dados para completar sua compra",
+    "checkout": "Finalizar Compra",
+    "process": "🛍️",
+    "complete": "Complete sua compra seguindo os passos abaixo",
+    "shipping": {
+      "delivery": "Entrega",
+      "pickup": "Retirada na loja",
+      "street": {
+        "label": "Rua",
+        "required": "Rua é obrigatória"
+      },
+      "number": {
+        "label": "Número",
+        "required": "Número é obrigatório"
+      },
+      "complement": {
+        "label": "Complemento",
+        "required": "Complemento é obrigatório"
+      },
+      "neighborhood": {
+        "label": "Bairro",
+        "required": "Bairro é obrigatório"
+      },
+      "city": {
+        "label": "Cidade",
+        "required": "Cidade é obrigatória"
+      },
+      "state": {
+        "label": "Estado",
+        "required": "Estado é obrigatório"
+      },
+      "zipCode": {
+        "label": "CEP",
+        "required": "CEP é obrigatório"
+      },
+      "country": {
+        "label": "País",
+        "required": "País é obrigatório"
+      },
+      "methods": {
+        "title": "Opções de Entrega",
+        "standard": "Entrega Padrão",
+        "express": "Entrega Expressa",
+        "overnight": "Entrega no Dia Seguinte",
+        "days": "dias úteis",
+        "day": "dia útil",
+        "required": "Por favor, selecione uma opção de entrega"
+      },
+      "continue": "Continuar para Informações do Cliente"
+    },
+    "customer": {
+      "cnpj": {
+        "stateRegistration": {
+          "label": "Inscrição Estadual",
+          "name": "Inscrição Estadual",
+          "required": "Inscrição Estadual é obrigatória"
+        }
+      },
+      "taxId": {
+        "label": "CPF/CNPJ",
+        "required": "CPF/CNPJ é obrigatório",
+        "min": "CPF/CNPJ deve ter pelo menos 11 caracteres",
+        "max": "CPF/CNPJ não pode exceder 18 caracteres"
+      },
+      "taxIdType": {
+        "label": "Tipo de Documento",
+        "required": "Tipo de documento é obrigatório"
+      },
+      "taxIdNumber": {
+        "label": "Número do Documento",
+        "required": "Número do documento é obrigatório"
+      },
+      "password": {
+        "label": "Senha",
+        "required": "Senha é obrigatória"
+      },
+      "confirmPassword": {
+        "label": "Confirmar Senha",
+        "required": "Confirmação de senha é obrigatória"
+      },
+      "acceptedTerms": {
+        "label": "Aceito os termos e condições",
+        "required": "Você deve aceitar os termos e condições"
+      },
+      "createAccount": {
+        "label": "Criar uma conta",
+        "required": "Você deve criar uma conta"
+      },
+      "fullName": {
+        "label": "Nome Completo",
+        "required": "Nome completo é obrigatório",
+        "min": "Nome completo deve ter pelo menos 2 caracteres",
+        "max": "Nome completo não pode exceder 50 caracteres"
+      },
+      "email": {
+        "label": "E-mail",
+        "required": "E-mail é obrigatório",
+        "invalid": "Endereço de e-mail inválido"
+      },
+      "phoneNumber": {
+        "label": "Telefone",
+        "required": "Telefone é obrigatório",
+        "min": "Telefone deve ter pelo menos 2 caracteres",
+        "max": "Telefone não pode exceder 50 caracteres"
+      },
+      "dateOfBirth": {
+        "label": "Data de Nascimento",
+        "required": "Data de nascimento é obrigatória"
+      },
+      "gender": {
+        "label": "Gênero",
+        "required": "Gênero é obrigatório"
+      },
+      "preferredLanguage": {
+        "label": "Idioma Preferido",
+        "required": "Idioma preferido é obrigatório"
+      },
+      "back": {
+        "label": "Voltar"
+      },
+      "continueToPayment": {
+        "label": "Continuar para Pagamento"
+      },
+      "newsletter": {
+        "label": "Inscrever-se na Newsletter"
+      },
+      "marketing": {
+        "label": "Receber e-mails de marketing"
+      },
+      "stateRegistration": {
+        "label": "Inscrição Estadual",
+        "required": "Inscrição estadual é obrigatória"
+      },
+      "continue": "Continuar",
+      "createAccountDescription": "Crie uma conta para salvar suas informações e tornar suas compras mais rápidas",
+      "createAccountButton": "Continuar para Pagamento",
+      "createAccountButtonLabel": "Continuar para Pagamento",
+      "createAccountButtonTitle": "Continuar para Pagamento"
+    },
+    "confirmation": {
+      "title": "Confirmação de Pedido",
+      "orderConfirmed": "Pedido confirmado com sucesso",
+      "orderSummary": "Resumo do Pedido",
+      "quantity": "Quantidade",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "total": "Total",
+      "deliveryInformation": "Informações de Entrega",
+      "estimatedDelivery": "Entrega Estimada",
+      "customerInformation": "Informações do Cliente",
+      "paymentInformation": "Informações de Pagamento",
+      "backButton": "Voltar",
+      "confirmOrder": "Confirmar Pedido"
+    },
+    "continue": "Continuar",
+    "back": "Voltar",
+    "next": "Avançar"
+  },
+  "payment": {
+    "processingPayment": "Processando pagamento...",
+    "paymentTitle": "Pagamento",
+    "paymentMethods": "Formas de Pagamento",
+    "orderSummary": "Resumo do Pedido",
+    "customerInfo": "Informações do Cliente",
+    "paymentMethod": "Forma de Pagamento",
+    "continueButton": "Continuar",
+    "confirmPayment": "Confirmar Pagamento",
+    "creditCardProcessing": "Processando pagamento com cartão de crédito...",
+    "downloadBoleto": "Baixar Boleto",
+    "proceedToPayPal": "Ir para o PayPal",
+    "orderId": "ID do Pedido",
+    "total": "Total",
+    "scanQRCode": "Escaneie o QR Code",
+    "methods": {
+      "creditCard": "Cartão de Crédito",
+      "debitCard": "Cartão de Débito",
+      "paypal": "PayPal",
+      "boleto": "Boleto",
+      "pix": "Pix",
+      "bitcoin": "Bitcoin"
+    },
+    "creditCard": {
+      "label":"Cartão de Crédito",
+      "number": {
+        "label": "Número do Cartão",
+        "required": "Número do cartão é obrigatório"
+      },
+      "name": {
+        "label": "Nome no Cartão",
+        "required": "Nome no cartão é obrigatório"
+      },
+      "expirationDate": {
+        "label": "Data de Validade",
+        "required": "Data de validade é obrigatória"
+      },
+      "cvv": {
+        "label": "CVV",
+        "required": "CVV é obrigatório"
+      }
+    },
+    "debitCard": {
+      "number": {
+        "label": "Número do Cartão",
+        "required": "Número do cartão é obrigatório"
+      },
+      "name": {
+        "label": "Nome no Cartão",
+        "required": "Nome no cartão é obrigatório"
+      },
+      "expirationDate": {
+        "label": "Data de Validade",
+        "required": "Data de validade é obrigatória"
+      },
+      "cvv": {
+        "label": "CVV",
+        "required": "CVV é obrigatório"
+      },
+      "installments": {
+        "label": "Parcelas",
+        "required": "Número de parcelas é obrigatório"
+      }
+    },
+    "boleto": {
+      "description": "O boleto sera gerado assim que o pedido for confirmado",
+      "number": {
+        "label": "Número do Boleto",
+        "required": "Número do boleto é obrigatório"
+      }
+    },
+    "paypal": {
+      "description": "Você sera redirecionado para o PayPal assim que o pedido for confirmado",
+      "number": {
+        "label": "Conta PayPal",
+        "required": "Conta PayPal é obrigatória"
+      }
+    },
+    "pix": {
+      "description": "O pix sera gerado assim que o pedido for confirmado",
+      "number": {
+        "label": "Chave PIX",
+        "required": "Chave PIX é obrigatória"
+      }
+    },
+    "bitcoin": {
+      "description": "O qr code e código bitcoin seram gerados assim que o pedido for confirmado",
+      "number": {
+        "label": "Chave Bitcoin",
+        "required": "Chave Bitcoin é obrigatória"
+      }
+    },
+    "back": {
+      "label": "Voltar"
+    },
+    "next": {
+      "label": "Avançar"
+    },
+    "information": {
+      "required": "Este campo é obrigatório"
+    }
+  },
+  "comingSoon": {
+    "title": "Crescendo em breve",
+    "subtitle": "Estamos cultivando algo especial para amantes de plantas",
+    "description": "Seu oásis verde está prestes a florescer"
+  },
+  "orders": {
+    "ordersTitle": "Pedidos",
+    "noOrders": "Nenhum pedido encontrado",
+    "orderId": "ID do Pedido",
+    "total": "Total",
+    "payment": "Pagamento",
+    "status": "Status",
+    "delivery": "Entrega",
+    "customer": "Cliente",
+    "products": "Produtos",
+    "quantity": "Quantidade",
+    "price": "Preço",
+    "actions": "Ações",
+    "shipping": "Frete"
+  }
+}
+

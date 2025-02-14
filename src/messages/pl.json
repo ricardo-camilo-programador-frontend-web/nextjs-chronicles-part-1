@@ -1,7 +1,21 @@
 {
-  "currency": "PLN",
+  "currency": {
+    "type": "PLN",
+    "symbol": "zł",
+    "locale": "pl-PL"
+  },
   "BuyMeCoffee": {
     "message": "Kup mi kawę"
+  },
+  "buyShortcut": {
+    "success": "dodane do koszyka"
+  },
+  "quantityShortcut": {
+    "cancel": "Anuluj",
+    "removeItem": "usunięte z koszyka",
+    "removeItemDescription": "zostało usunięte z koszyka",
+    "decreaseQuantity": "Zmniejsz ilość",
+    "increaseQuantity": "Zwiększ ilość"
   },
   "hero": {
     "title": "Breath Natural - Twoja Wewnętrzna Zielona Oaza",
@@ -338,7 +352,9 @@
     "termsOfService": "Warunki Użytkowania",
     "aboutUs": "O Nas",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "orders": "Zamówienia",
+    "plants": "Rośliny"
   },
   "bestProducts": {
     "title": "Nasze Najlepsze o2"
@@ -365,6 +381,8 @@
     "process": "",
     "complete": "Dokończ zakup, wykonując poniższe kroki",
     "shipping": {
+      "delivery": "Dostawa",
+      "pickup": "Odbiór",
       "street": {
         "label": "Ulica",
         "required": "Ulica jest wymagana"
@@ -403,8 +421,10 @@
         "express": "Dostawa Ekspresowa",
         "overnight": "Dostawa Nocna",
         "days": "dni roboczych",
-        "day": "dzień roboczy"
-      }
+        "day": "dzień roboczy",
+        "required": "Proszę wybrać metodę dostawy"
+      },
+      "continue": "Przejdź do informacji o kliencie"
     },
     "customer": {
       "cnpj": {
@@ -493,10 +513,41 @@
       "createAccountButton": "Do kasy",
       "createAccountButtonLabel": "Do kasy",
       "createAccountButtonTitle": "Do kasy"
-    }
+    },
+    "confirmation": {
+      "title": "Potwierdzenie zamówienia",
+      "orderConfirmed": "Zamówienie zostało potwierdzone",
+      "orderSummary": "Podsumowanie zamówienia",
+      "quantity": "Ilość",
+      "subtotal": "Podsumowanie",
+      "shipping": "Dostawa",
+      "total": "Razem",
+      "deliveryInformation": "Informacje o dostawie",
+      "estimatedDelivery": "Oszacowana dostawa",
+      "customerInformation": "Informacje o kliencie",
+      "paymentInformation": "Informacje o płatności",
+      "backButton": "Wstecz",
+      "confirmOrder": "Potwierdź zamówienie"
+    },
+    "continue": "Przejdź",
+    "back": "Wstecz",
+    "next": "Dalej"
   },
   "payment": {
+    "processingPayment": "Przetwarzanie płatności...",
+    "paymentTitle": "Płatność",
     "paymentMethods": "Metody płatnosci",
+    "orderSummary": "Podsumowanie zamówienia",
+    "customerInfo": "Informacje o kliencie",
+    "paymentMethod": "Metoda płatności",
+    "continueButton": "Kontynuuj",
+    "confirmPayment": "Potwierdź płatność",
+    "creditCardProcessing": "Przetwarzanie płatności kartą kredytową...",
+    "downloadBoleto": "Pobierz Boleto",
+    "proceedToPayPal": "Przejdź do PayPal",
+    "orderId": "ID zamówienia",
+    "total": "Razem",
+    "scanQRCode": "Skanuj kod QR",
     "methods": {
       "creditCard": "Karta kredytowa",
       "debitCard": "Karta debetowa",
@@ -588,6 +639,21 @@
     "title": "Wkrótce zakwitnie",
     "subtitle": "Hodujemy coś specjalnego dla miłośników roślin",
     "description": "Twoja zielona oaza wkrótce rozkwitnie"
+  },
+  "orders": {
+    "ordersTitle": "Zamówienia",
+    "noOrders": "Brak zamówień",
+    "orderId": "ID zamówienia",
+    "total": "Razem",
+    "payment": "Płatność",
+    "status": "Status",
+    "delivery": "Dostawa",
+    "customer": "Klient",
+    "products": "Produkty",
+    "quantity": "Ilość",
+    "price": "Cena",
+    "actions": "Akcje",
+    "shipping": "Dostawa"
   }
 }
 

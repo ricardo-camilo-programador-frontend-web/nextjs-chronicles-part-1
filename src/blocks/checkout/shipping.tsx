@@ -18,6 +18,9 @@ import DropdownSelect from "@/components/forms/DropdownSelect";
 import { Country } from "@/types/country";
 import { useTranslations } from "next-intl";
 import Link from "@/components/Link";
+import { useRouter } from "next/navigation";
+import { useFormatCurrency } from "@/hooks/useFormatCurrency";
+import { useToast } from "@/hooks/useToast";
 
 interface ShippingStepProps {
   countries: Country[];
@@ -40,6 +43,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
   countries,
 }) => {
   const t = useTranslations("checkout");
+  const router = useRouter();
   const {
     setShippingAddress,
     setCurrentStep,
@@ -51,11 +55,12 @@ const ShippingStep: FC<ShippingStepProps> = ({
     isDelivery,
     setIsDelivery,
   } = useCheckoutStore();
-
+  const formatCurrency = useFormatCurrency();
   const [selectedCountry, setSelectedCountry] = useState(
     shippingFormData.country || countries[0]?.cca2 || ""
   );
   const [disabledFields, setDisabledFields] = useState<boolean>(false);
+  const toast = useToast();
 
   const shippingValidationMessages = getShippingValidationMessages(t);
 
@@ -74,8 +79,39 @@ const ShippingStep: FC<ShippingStepProps> = ({
 
   const { isLoadingCep, fetchAddressByCep } = useAddressByCep(setValue);
 
+  const renderFooterButtons = () => {
+    return (
+      <div className="grid grid-cols-2 gap-4 items-center justify-between mt-8 min-w-full">
+        <Link href="/" className="w-max">
+          <Button type="button" label={t("back")} className="w-auto" />
+        </Link>
+
+        {isDelivery && (
+          <Button
+            type="submit"
+            label={t("continue")}
+            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+            disabled={!selectedShippingMethod}
+          />
+        )}
+
+        {!isDelivery && (
+          <Link href="/checkout?step=customer" className="w-auto ml-auto">
+            <Button
+              type="button"
+              label={t("next")}
+              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              disabled={selectedCountry === ""}
+            />
+          </Link>
+        )}
+      </div>
+    );
+  };
+
   const onSubmit = async (data: ShippingFormData) => {
     if (!selectedShippingMethod) {
+      toast.error(t('shipping.error.submission'));
       return;
     }
 
@@ -83,12 +119,40 @@ const ShippingStep: FC<ShippingStepProps> = ({
       setShippingAddress(data);
       setShippingFormData(data);
       setCurrentStep("customer");
+      router.push("/checkout?step=customer");
     } catch (error) {
-      console.error("Failed to process shipping information:", error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+
+      toast.error(t('shipping.error.submission'), {
+        description: errorMessage,
+      });
     }
   };
 
   useEffect(() => {
+    if (!isDelivery) {
+      setShippingAddress({
+        country: selectedCountry,
+        neighborhood: "",
+        street: "",
+        number: "",
+        complement: "",
+        city: "",
+        state: "",
+        zipCode: "",
+      });
+
+      setValue("neighborhood", "");
+      setValue("street", "");
+      setValue("number", "");
+      setValue("complement", "");
+      setValue("city", "");
+      setValue("state", "");
+      setValue("zipCode", "");
+
+      return;
+    }
+
     setShippingAddress({
       ...shippingFormData,
       country: selectedCountry,
@@ -100,7 +164,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
       state: shippingFormData.state || "",
       zipCode: shippingFormData.zipCode || "",
     });
-  }, [selectedCountry]);
+  }, [selectedCountry, isDelivery]);
 
   useEffect(() => {
     setShippingMethods(shippingMethods);
@@ -118,7 +182,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
     <div className="w-full transition-all duration-300 ease-in-out">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <Button
-          label="Delivery"
+          label={t("shipping.delivery")}
           icon={<FaTruck />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-green-500" : "bg-gray-500"
             }`}
@@ -136,7 +200,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
         </Button>
 
         <Button
-          label="Pickup"
+          label={t("shipping.pickup")}
           icon={<FaStore />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-gray-500" : "bg-green-500"
             }`}
@@ -270,18 +334,13 @@ const ShippingStep: FC<ShippingStepProps> = ({
                       </p>
                     </div>
                   </div>
-                  <span className="font-medium">U${method.price}</span>
+                  <span className="font-medium">{formatCurrency(method.price)}</span>
                 </label>
               ))}
             </div>
           </div>
 
-          <Button
-            type="submit"
-            className="w-full mt-6 md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 text-center disabled:cursor-not-allowed"
-          >
-            Continue to Customer Information
-          </Button>
+          {renderFooterButtons()}
         </form>
       ) : (
         <div className="flex flex-col items-center justify-center gap-4">
@@ -299,12 +358,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
             }
           />
 
-          <Link
-            href="/checkout?step=customer"
-            className="w-full mt-6 md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 ease-in-out text-center disabled:cursor-not-allowed"
-          >
-            Continue to Customer Information
-          </Link>
+          {renderFooterButtons()}
         </div>
       )}
     </div>

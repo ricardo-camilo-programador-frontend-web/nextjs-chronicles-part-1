@@ -1,7 +1,21 @@
 {
-  "currency": "EGP",
+  "currency": {
+    "type": "EGP",
+    "symbol": "ج.م",
+    "locale": "ar-EG"
+  },
   "BuyMeCoffee": {
     "message": "شراء نباتاتي"
+  },
+  "buyShortcut": {
+    "success": "تم إضافة المنتج إلى العربة"
+  },
+  "quantityShortcut": {
+    "cancel": "إلغاء",
+    "removeItem": "تم إزالة المنتج من العربة",
+    "removeItemDescription": "تم إزالة المنتج من العربة",
+    "decreaseQuantity": "تقليل الكمية",
+    "increaseQuantity": "زيادة الكمية"
   },
   "hero": {
     "title": "بريث ناتشورال - واحتك الخضراء الداخلية",
@@ -338,7 +352,9 @@
     "termsOfService": "شروط الخدمة",
     "aboutUs": "من نحن",
     "faq": "الأسئلة الشائعة",
-    "blog": "المدونة"
+    "blog": "المدونة",
+    "orders": "الطلبات",
+    "plants": "النباتات"
   },
   "bestProducts": {
     "title": "أفضل منتجاتنا للأكسجين"
@@ -365,6 +381,8 @@
     "process": "",
     "complete": "أكمل عملية الشراء باتباع الخطوات أدناه",
     "shipping": {
+      "delivery": "الشحن",
+      "pickup": "الاستلام",
       "street": {
         "label": "الشارع",
         "required": "الشارع مطلوب"
@@ -403,8 +421,11 @@
         "express": "الشحن السريع",
         "overnight": "الشحن الليلي",
         "days": "أيام عمل",
-        "day": "يوم عمل"
-      }
+        "day": "يوم عمل",
+        "required": "يرجى اختيار طريقة الشحن"
+      },
+      "continue": "متابعة",
+      "back": "رجوع"
     },
     "customer": {
       "cnpj": {
@@ -493,10 +514,39 @@
       "createAccountButton": "متابعة إلى الدفع",
       "createAccountButtonLabel": "متابعة إلى الدفع",
       "createAccountButtonTitle": "متابعة إلى الدفع"
-    }
+    },
+    "confirmation": {
+      "title": "تأكيد الطلب",
+      "orderConfirmed": "تم تأكيد الطلب بنجاح",
+      "orderSummary": "ملخص الطلب",
+      "quantity": "الكمية",
+      "subtotal": "المجموع الفرعي",
+      "shipping": "الشحن",
+      "total": "المجموع",
+      "deliveryInformation": "معلومات التوصيل",
+      "estimatedDelivery": "تقدير التوصيل",
+      "customerInformation": "معلومات العميل",
+      "paymentInformation": "معلومات الدفع",
+      "backButton": "رجوع",
+      "confirmOrder": "تأكيد الطلب"
+    },
+    "continue": "متابعة",
+    "back": "رجوع",
+    "next": "التالي"
   },
   "payment": {
+    "processingPayment": "يتم معالجة الدفع...",
+    "paymentTitle": "الدفع",
     "paymentMethods": "طرق الدفع",
+    "orderSummary": "ملخص الطلب",
+    "customerInfo": "معلومات العميل",
+    "paymentMethod": "طريقة الدفع",
+    "creditCardProcessing": "يتم معالجة دفع بطاقة الائتمان...",
+    "downloadBoleto": "تحميل البوليتو",
+    "proceedToPayPal": "الانتقال إلى PayPal",
+    "orderId": "رقم الطلب",
+    "total": "المجموع",
+    "scanQRCode": "مسح الباركود",
     "methods": {
       "creditCard": "بطاقة ائتمان",
       "debitCard": "بطاقة ديبيت",
@@ -588,6 +638,21 @@
     "title": "قريباً",
     "subtitle": "نحن نزرع شيئاً مميزاً لمحبي النباتات",
     "description": "واحتك الخضراء على وشك الازدهار"
+  },
+  "orders": {
+    "ordersTitle": "الطلبات",
+    "noOrders": "لا يوجد طلبات",
+    "orderId": "رقم الطلب",
+    "total": "المجموع",
+    "payment": "الدفع",
+    "status": "الحالة",
+    "delivery": "التوصيل",
+    "customer": "العميل",
+    "products": "المنتجات",
+    "quantity": "الكمية",
+    "price": "السعر",
+    "actions": "الإجراءات",
+    "shipping": "الشحن"
   }
 }
 

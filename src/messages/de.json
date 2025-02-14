@@ -1,7 +1,21 @@
 {
-  "currency": "EUR",
+  "currency": {
+    "type": "EUR",
+    "symbol": "€",
+    "locale": "de-DE"
+  },
   "BuyMeCoffee": {
     "message": "Kaffee kaufen"
+  },
+  "buyShortcut": {
+    "success": "zum Warenkorb hinzugefügt"
+  },
+  "quantityShortcut": {
+    "cancel": "Abbrechen",
+    "removeItem": "aus dem Warenkorb entfernen",
+    "removeItemDescription": "wurde aus dem Warenkorb entfernt",
+    "decreaseQuantity": "Menge verringern",
+    "increaseQuantity": "Menge erhöhen"
   },
   "hero": {
     "title": "Breath Natural - Ihre grüne Innenwohlfühloase",
@@ -338,7 +352,9 @@
     "termsOfService": "Nutzungsbedingungen",
     "aboutUs": "Über uns",
     "faq": "Häufige Fragen",
-    "blog": "Blog"
+    "blog": "Blog",
+    "orders": "Bestellungen",
+    "plants": "Pflanzen"
   },
   "bestProducts": {
     "title": "Unser bestes O2"
@@ -365,6 +381,8 @@
     "process": "",
     "complete": "Schließen Sie Ihren Einkauf ab, indem Sie den untenstehenden Schritten folgen",
     "shipping": {
+      "delivery": "Versand",
+      "pickup": "Abholung",
       "street": {
         "label": "Straße",
         "required": "Straße ist erforderlich"
@@ -403,8 +421,10 @@
         "express": "Expressversand",
         "overnight": "Übernachtversand",
         "days": "Werktage",
-        "day": "Werktag"
-      }
+        "day": "Werktag",
+        "required": "Bitte wählen Sie eine Versandmethode"
+      },
+      "continue": "Weiter zu Kundeninformationen"
     },
     "customer": {
       "cnpj": {
@@ -493,10 +513,39 @@
       "createAccountButton": "Zur Kasse",
       "createAccountButtonLabel": "Zur Kasse",
       "createAccountButtonTitle": "Zur Kasse"
-    }
+    },
+    "confirmation": {
+      "title": "Bestellbestätigung",
+      "orderConfirmed": "Bestellung bestätigt",
+      "orderSummary": "Bestellübersicht",
+      "quantity": "Menge",
+      "subtotal": "Zwischensumme",
+      "shipping": "Versand",
+      "total": "Gesamt",
+      "deliveryInformation": "Lieferinformationen",
+      "estimatedDelivery": "Geschätzte Lieferung",
+      "customerInformation": "Kundeninformationen",
+      "paymentInformation": "Zahlungsinformationen",
+      "backButton": "Zurück",
+      "confirmOrder": "Bestellung bestätigen"
+    },
+    "continue": "Weiter",
+    "back": "Zurück",
+    "next": "Weiter"
   },
   "payment": {
+    "processingPayment": "Zahlung wird verarbeitet...",
+    "paymentTitle": "Zahlung",
     "paymentMethods": "Zahlungsarten",
+    "orderSummary": "Bestellübersicht",
+    "customerInfo": "Kundeninformationen",
+    "paymentMethod": "Zahlungsmethode",
+    "creditCardProcessing": "Kreditkarte wird verarbeitet...",
+    "downloadBoleto": "Boleto herunterladen",
+    "proceedToPayPal": "Zum PayPal weiterleiten",
+    "orderId": "Bestellnummer",
+    "total": "Gesamt",
+    "scanQRCode": "QR-Code scannen",
     "methods": {
       "creditCard": "Kreditkarte",
       "debitCard": "Debitkarte",
@@ -588,5 +637,20 @@
     "title": "Wächst in Kürze",
     "subtitle": "Wir kultivieren etwas Besonderes für Pflanzenliebhaber",
     "description": "Ihre grüne Oase wird bald erblühen"
+  },
+  "orders": {
+    "ordersTitle": "Bestellungen",
+    "noOrders": "Keine Bestellungen gefunden",
+    "orderId": "Bestellnummer",
+    "total": "Gesamt",
+    "payment": "Zahlung",
+    "status": "Status",
+    "delivery": "Lieferung",
+    "customer": "Kunde",
+    "products": "Produkte",
+    "quantity": "Menge",
+    "price": "Preis",
+    "actions": "Aktionen",
+    "shipping": "Versand"
   }
 }

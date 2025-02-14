@@ -1,7 +1,21 @@
 {
-  "currency": "JPY",
+  "currency": {
+    "type": "JPY",
+    "symbol": "¥",
+    "locale": "ja-JP"
+  },
   "BuyMeCoffee": {
     "message": "ブレス・ナチュラルをサポートしてください"
+  },
+  "buyShortcut": {
+    "success": "カートに追加されました"
+  },
+  "quantityShortcut": {
+    "cancel": "キャンセル",
+    "removeItem": "カートから削除",
+    "removeItemDescription": "あなたのカートから削除されました",
+    "decreaseQuantity": "数量を減らす",
+    "increaseQuantity": "数量を増やす"
   },
   "hero": {
     "title": "ブレス・ナチュラル - あなたの室内緑のオアシス",
@@ -338,7 +352,9 @@
     "termsOfService": "利用規約",
     "aboutUs": "会社概要",
     "faq": "よくある質問",
-    "blog": "ブログ"
+    "blog": "ブログ",
+    "orders": "注文",
+    "plants": "植物"
   },
   "bestProducts": {
     "title": "最高の酸素"
@@ -365,6 +381,8 @@
     "process": "",
     "complete": "以下の手順に従って購入を完了してください",
     "shipping": {
+      "delivery": "配送",
+      "pickup": "自宅で受け取る",
       "street": {
         "label": "住所",
         "required": "住所は必須です"
@@ -403,8 +421,10 @@
         "express": "速達配送",
         "overnight": "翌日配送",
         "days": "営業日",
-        "day": "営業日"
-      }
+        "day": "営業日",
+        "required": "配送方法を選択してください"
+      },
+      "continue": "顧客情報へ"
     },
     "customer": {
       "cnpj": {
@@ -493,10 +513,41 @@
       "createAccountButton": "支払いへ",
       "createAccountButtonLabel": "支払いへ",
       "createAccountButtonTitle": "支払いへ"
-    }
+    },
+    "confirmation": {
+      "title": "注文確認",
+      "orderConfirmed": "注文が確認されました",
+      "orderSummary": "注文サマリー",
+      "quantity": "数量",
+      "subtotal": "小計",
+      "shipping": "配送",
+      "total": "合計",
+      "deliveryInformation": "配送情報",
+      "estimatedDelivery": "推定配送",
+      "customerInformation": "顧客情報",
+      "paymentInformation": "支払い情報",
+      "backButton": "戻る",
+      "confirmOrder": "注文確認"
+    },
+    "continue": "続ける",
+    "back": "戻る",
+    "next": "次へ"
   },
   "payment": {
+    "processingPayment": "支払いを処理中...",
+    "paymentTitle": "支払い",
     "paymentMethods": "支払い方法",
+    "orderSummary": "注文サマリー",
+    "customerInfo": "顧客情報",
+    "paymentMethod": "支払い方法",
+    "continueButton": "続ける",
+    "confirmPayment": "支払い確認",
+    "creditCardProcessing": "クレジットカード支払いを処理中...",
+    "downloadBoleto": "ボレートをダウンロード",
+    "proceedToPayPal": "PayPalに移行",
+    "orderId": "注文ID",
+    "total": "合計",
+    "scanQRCode": "QRコードをスキャン",
     "methods": {
       "creditCard": "クレジットカード",
       "debitCard": "デビットカード",
@@ -588,6 +639,21 @@
     "title": "まもなく成長します",
     "subtitle": "植物愛好家のために特別なものを育てています",
     "description": "あなたの緑のオアシスがまもなく開花します"
+  },
+  "orders": {
+    "ordersTitle": "注文",
+    "noOrders": "注文が見つかりません",
+    "orderId": "注文ID",
+    "total": "合計",
+    "payment": "支払い",
+    "status": "ステータス",
+    "delivery": "配送",
+    "customer": "顧客",
+    "products": "商品",
+    "quantity": "数量",
+    "price": "価格",
+    "actions": "アクション",
+    "shipping": "配送"
   }
 }
 

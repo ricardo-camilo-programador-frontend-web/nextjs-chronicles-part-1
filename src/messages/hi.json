@@ -1,7 +1,21 @@
 {
-  "currency": "INR",
+  "currency": {
+    "type": "INR",
+    "symbol": "₹",
+    "locale": "hi-IN"
+  },
   "BuyMeCoffee": {
     "message": "मुझे एक कॉफी खरीदो"
+  },
+  "buyShortcut": {
+    "success": "शामिल करें गार्डन"
+  },
+  "quantityShortcut": {
+    "cancel": "बंद करें",
+    "removeItem": "गार्डन से हटाएं",
+    "removeItemDescription": "आपकी कार्ट से हटा दिया गया था",
+    "decreaseQuantity": "कम करें",
+    "increaseQuantity": "बढ़ाएं"
   },
   "hero": {
     "title": "प्रकृति को अंदर लाएं",
@@ -338,7 +352,9 @@
     "termsOfService": "टर्म्स ऑफ सेवा",
     "aboutUs": "हमारे बारे में",
     "faq": "अक्सर पूछे जाने वाले प्रश्न",
-    "blog": "ब्लॉग"
+    "blog": "ब्लॉग",
+    "orders": "आदेश",
+    "plants": "पौधे"
   },
   "topSelling": {
     "title": "हमारे सर्वाधिक बिकने वाले"
@@ -365,6 +381,8 @@
     "process": "",
     "complete": "नीचे दिए गए चरणों का पालन करके अपनी खरीदारी समाप्त करें",
     "shipping": {
+      "delivery": "शिपिंग",
+      "pickup": "अपने घर में प्राप्त करें",
       "street": {
         "label": "स्ट्रीट",
         "required": "स्ट्रीट आवश्यक है"
@@ -403,8 +421,10 @@
         "express": "एक्सप्रेस शिपिंग",
         "overnight": "ओवरनाइट शिपिंग",
         "days": "व्यावसायिक दिन",
-        "day": "व्यावसायिक दिन"
-      }
+        "day": "व्यावसायिक दिन",
+        "required": "कृपया एक शिपिंग विधि चुनें"
+      },
+      "continue": "ग्राहक जानकारी के लिए जारी रखें"
     },
     "customer": {
       "cnpj": {
@@ -493,10 +513,41 @@
       "createAccountButton": "भुगतान करने के लिए जारी रखें",
       "createAccountButtonLabel": "भुगतान करने के लिए जारी रखें",
       "createAccountButtonTitle": "भुगतान करने के लिए जारी रखें"
-    }
+    },
+    "confirmation": {
+      "title": "आदेश सुनिश्चित करें",
+      "orderConfirmed": "आदेश सफलतापूर्वक सुनिश्चित किया गया है",
+      "orderSummary": "आदेश सारांश",
+      "quantity": "मात्रा",
+      "subtotal": "उप-कुल",
+      "shipping": "शिपिंग",
+      "total": "कुल",
+      "deliveryInformation": "शिपिंग जानकारी",
+      "estimatedDelivery": "अनुमानित शिपिंग",
+      "customerInformation": "ग्राहक जानकारी",
+      "paymentInformation": "भुगतान जानकारी",
+      "backButton": "वापस",
+      "confirmOrder": "आदेश सुनिश्चित करें"
+    },
+    "continue": "जारी रखें",
+    "back": "वापस",
+    "next": "अगला"
   },
   "payment": {
+    "processingPayment": "भुगतान संसाधन है...",
+    "paymentTitle": "भुगतान",
     "paymentMethods": "भुगतान कार्ड",
+    "orderSummary": "आदेश सारांश",
+    "customerInfo": "ग्राहक जानकारी",
+    "paymentMethod": "भुगतान कार्ड",
+    "continueButton": "जारी रखें",
+    "confirmPayment": "भुगतान सुनिश्चित करें",
+    "creditCardProcessing": "क्रेडिट कार्ड भुगतान संसाधन है...",
+    "downloadBoleto": "बोलेतो डाउनलोड करें",
+    "proceedToPayPal": "पेपाल पर जारी रखें",
+    "orderId": "आदेश ID",
+    "total": "कुल",
+    "scanQRCode": "QR कोड स्कैन करें",
     "methods": {
       "creditCard": "क्रेडिट कार्ड",
       "debitCard": "डेबिट कार्ड",
@@ -588,6 +639,21 @@
     "title": "बढ़ते हुए हैं",
     "subtitle": "हम पौधों के प्रेमियों के लिए एक विशेष चीज उगाते हैं",
     "description": "आपका हरा अवसान बोम हो रहा है"
+  },
+  "orders": {
+    "ordersTitle": "आदेश",
+    "noOrders": "कोई आदेश नहीं मिला",
+    "orderId": "आदेश ID",
+    "total": "कुल",
+    "payment": "भुगतान",
+    "status": "स्थिति",
+    "delivery": "शिपिंग",
+    "customer": "ग्राहक",
+    "products": "उत्पाद",
+    "quantity": "मात्रा",
+    "price": "कीमत",
+    "actions": "कार्रवाई",
+    "shipping": "शिपिंग"
   }
 }
 

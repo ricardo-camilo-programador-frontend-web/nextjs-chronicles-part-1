@@ -9,7 +9,7 @@ import Link from "@/components/Link";
 import { TextInput } from "@/components/forms/TextInput";
 import { RadioGroup } from "@/components/forms/RadioGroup";
 import { usePaymentStore } from "@/store/paymentStore";
-import { PaymentInformation } from "@/types/payment";
+import { PaymentInformation, PaymentMethod } from "@/types/payment";
 import { getPaymentSchema } from "@/schemas/checkout/payment";
 import MaskedInput from "@/components/forms/MaskedInput";
 import CreditCard from "@/components/CreditCard";
@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 
 const PaymentStep = () => {
   const t = useTranslations('payment');
+  const tCheckout = useTranslations('checkout');
   const [selectedMethod, setSelectedMethod] = useState<string>("creditCard");
   const { paymentInfo, setPaymentInfo } = usePaymentStore();
   const router = useRouter();
@@ -155,11 +156,11 @@ const PaymentStep = () => {
       </section>
 
       <div className="grid grid-cols-2 gap-4 items-center justify-between">
-        <Link href="/checkout?step=customer">
+        <Link href="/checkout?step=customer" className="w-max">
           <Button
             type="button"
             loading={isSubmitting}
-            label={t('back.label')}
+            label={tCheckout('back')}
             className="w-auto"
           />
         </Link>
@@ -168,18 +169,23 @@ const PaymentStep = () => {
           <Button
             type="submit"
             loading={isSubmitting}
-            label={t('next.label')}
-            className="w-auto ml-auto"
+            label={tCheckout('next')}
+            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
           />
         }
 
         {selectedMethod !== "creditCard" &&
-          <Link href="/checkout?step=confirmation">
+          <Link href="/checkout?step=confirmation" className="w-max ml-auto">
             <Button
               type="button"
               loading={isSubmitting}
-              label={t('next.label')}
-              className="w-auto ml-auto"
+              label={tCheckout('next')}
+              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              onClick={() => {
+                setPaymentInfo({
+                  paymentMethod: selectedMethod as PaymentMethod,
+                });
+              }}
             />
           </Link>
         }

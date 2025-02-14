@@ -1,7 +1,21 @@
 {
-  "currency": "USD",
+  "currency": {
+    "type": "USD",
+    "symbol": "$",
+    "locale": "en-US"
+  },
   "BuyMeCoffee": {
     "message": "Buy me a coffee"
+  },
+  "buyShortcut": {
+    "success": "added to cart"
+  },
+  "quantityShortcut": {
+    "cancel": "Cancel",
+    "removeItem": "Remove from cart",
+    "removeItemDescription": "has been removed from your cart",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity"
   },
   "hero": {
     "title": "Breath Natural",
@@ -309,7 +323,9 @@
     "termsOfService": "Terms of Service",
     "aboutUs": "About Us",
     "faq": "FAQ",
-    "blog": "Blog"
+    "blog": "Blog",
+    "orders": "Orders",
+    "plants": "Plants"
   },
   "footer": {
     "home": "Home",
@@ -354,7 +370,8 @@
     "clear": "Clear",
     "clearCartConfirmation": "Are you sure you want to clear the cart?",
     "noItemsInCart": "No items in cart",
-    "checkout": "Checkout"
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping"
   },
   "checkout": {
     "title": "Checkout",
@@ -365,6 +382,8 @@
     "process": "Process",
     "complete": "Complete your purchase by following the steps below",
     "shipping": {
+      "delivery": "Delivery",
+      "pickup": "Pickup",
       "street": {
         "label": "Street",
         "required": "Street is required"
@@ -403,8 +422,12 @@
         "express": "Express Shipping",
         "overnight": "Overnight Shipping",
         "days": "business days",
-        "day": "business day"
-      }
+        "day": "business day",
+        "required": "Please select a shipping method"
+      },
+      "continue": "Continue",
+      "back": "Back",
+      "next": "Next"
     },
     "customer": {
       "cnpj": {
@@ -494,10 +517,38 @@
       "createAccountButton": "Continue to Payment",
       "createAccountButtonLabel": "Continue to Payment",
       "createAccountButtonTitle": "Continue to Payment"
-    }
+    },
+    "confirmation": {
+      "title": "Order Confirmation",
+      "orderConfirmed": "Order confirmed successfully",
+      "orderSummary": "Order Summary",
+      "quantity": "Quantity",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "deliveryInformation": "Delivery Information",
+      "estimatedDelivery": "Estimated Delivery",
+      "customerInformation": "Customer Information",
+      "paymentInformation": "Payment Information",
+      "backButton": "Back",
+      "confirmOrder": "Confirm Order"
+    },
+    "continue": "Continue",
+    "back": "Back"
   },
   "payment": {
+    "processingPayment": "Processing payment...",
+    "paymentTitle": "Payment",
     "paymentMethods": "Payment Methods",
+    "orderSummary": "Order Summary",
+    "customerInfo": "Customer Information",
+    "paymentMethod": "Payment Method",
+    "creditCardProcessing": "Processing credit card payment...",
+    "downloadBoleto": "Download Boleto",
+    "proceedToPayPal": "Proceed to PayPal",
+    "orderId": "Order ID",
+    "total": "Total",
+    "scanQRCode": "Scan QR Code",
     "methods": {
       "creditCard": "Credit Card",
       "debitCard": "Debit Card",
@@ -589,5 +640,20 @@
     "title": "Growing Soon",
     "subtitle": "We're cultivating something special for plant lovers",
     "description": "Your green oasis is about to bloom"
+  },
+  "orders": {
+    "ordersTitle": "Orders",
+    "noOrders": "No orders found",
+    "orderId": "Order ID",
+    "total": "Total",
+    "payment": "Payment",
+    "status": "Status",
+    "delivery": "Delivery",
+    "customer": "Customer",
+    "products": "Products",
+    "quantity": "Quantity",
+    "price": "Price",
+    "actions": "Actions",
+    "shipping": "Shipping"
   }
 }

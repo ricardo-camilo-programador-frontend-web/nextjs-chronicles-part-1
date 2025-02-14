@@ -4,12 +4,13 @@ import { useEffect, useState, useMemo, useCallback } from "react";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
 import CheckoutShortcut from "./checkoutShortcut";
-import { useShoppingCartStore } from "@/store/shoppingCartStore";
-import { QuantityShortcut } from "./quantityShortcut";
+import { useCartStore } from "@/store/cartStore";
+import QuantityShortcut  from "./quantityShortcut";
 import { Modal } from "@/components/Modal";
 import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from 'next-intl';
+import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 
 interface ShoppingCartProps {
   className?: string;
@@ -18,11 +19,12 @@ interface ShoppingCartProps {
 export function ShoppingCart({ className }: ShoppingCartProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClearCartOpen, setIsClearCartOpen] = useState(false);
-  const { items: cartItems } = useShoppingCartStore();
-  const clearCart = useShoppingCartStore((state) => state.clearCart);
+  const { items: cartItems } = useCartStore();
+  const clearCart = useCartStore((state) => state.clearCart);
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const formatCurrency = useFormatCurrency();
 
   const totalItems = useMemo(() => {
     const totalOnStore = cartItems.reduce(
@@ -69,7 +71,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           Quantity: {cartItem.quantity}
         </span>
         <span className="font-semibold">
-          ${cartItem.item.genus_id * cartItem.quantity}
+          {formatCurrency(cartItem.item.genus_id * cartItem.quantity)}
         </span>
       </div>
 

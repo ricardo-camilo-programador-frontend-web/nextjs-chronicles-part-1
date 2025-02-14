@@ -248,7 +248,7 @@ const CustomerStep: FC<CustomerStepProps> = ({
       </section>
 
       <div className="grid grid-cols-2 gap-4 items-center justify-between">
-        <Link href="/checkout?step=shipping">
+        <Link href="/checkout?step=shipping" className="w-max">
           <Button
             type="button"
             loading={isSubmitting}
@@ -260,8 +260,8 @@ const CustomerStep: FC<CustomerStepProps> = ({
         <Button
           type="submit"
           loading={isSubmitting}
-          label={t('customer.continueToPayment.label')}
-          className="w-auto ml-auto"
+          label={t('next')}
+          className="w-auto ml-auto bg-green-500 hover:bg-green-600"
         />
       </div>
     </form>
