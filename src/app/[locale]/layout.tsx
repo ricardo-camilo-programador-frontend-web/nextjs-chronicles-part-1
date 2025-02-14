@@ -9,7 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { NextIntlClientProvider } from "next-intl";
 import { PortfolioShortcut } from "@/blocks/portfolioShortcut";
 import { getDirection, Locale } from "@/config/i18n-config";
-
+import { Toaster } from 'sonner';
 import "@/assets/styles/globals.css";
 import "@/assets/styles/pageTransition.css";
 import "@/assets/styles/animatedUnderline.css";
@@ -118,6 +118,13 @@ export default async function RootLayout({
         <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999]">
           <AmbientSound />
         </div>
+
+        <Toaster
+          position="bottom-right"
+          expand={true}
+          richColors
+          theme="dark"
+        />
       </body>
 
       <Script
