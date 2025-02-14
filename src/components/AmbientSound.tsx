@@ -164,7 +164,6 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
       <audio
         ref={audioRef}
         preload="metadata"
-        onError={(e) => console.error("Erro no áudio:", e)}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         loop={loopEnabled}
