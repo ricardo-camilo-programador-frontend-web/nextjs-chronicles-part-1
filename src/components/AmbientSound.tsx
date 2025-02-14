@@ -9,6 +9,7 @@ import {
   FaStepBackward,
   FaPlay,
   FaPause,
+  FaRedo,
 } from "react-icons/fa";
 import { ambientSounds } from "@/static/ambientSounds";
 import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
@@ -26,6 +27,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
   const [isVisible, setIsVisible] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [loopEnabled, setLoopEnabled] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const playerRef = useRef<HTMLDivElement>(null);
 
@@ -128,6 +130,12 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
     };
   }, [isVisible]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.loop = loopEnabled;
+    }
+  }, [loopEnabled, currentTrackIndex]);
+
   return (
     <>
       <audio
@@ -136,6 +144,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
         onError={(e) => console.error("Erro no áudio:", e)}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
+        loop={loopEnabled}
       >
         <source src={currentTrack.url} type="audio/mpeg" />
         <source
@@ -211,6 +220,18 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 aria-label="Next track"
               >
                 <FaStepForward size={16} />
+              </button>
+
+              <button
+                onClick={() => setLoopEnabled(!loopEnabled)}
+                className={`p-2 rounded-full transition-colors ${
+                  loopEnabled 
+                    ? 'text-emerald-400 bg-white/20' 
+                    : 'text-emerald-50 hover:bg-white/10'
+                }`}
+                aria-label={loopEnabled ? "Disable loop" : "Enable loop"}
+              >
+                <FaRedo size={16} />
               </button>
             </div>
 
