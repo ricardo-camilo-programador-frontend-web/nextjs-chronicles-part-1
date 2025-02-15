@@ -28,22 +28,35 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
-  title: "Breath Natural - NextJS Chronicles Part 1",
+  title: "Breath Natural | Premium Indoor Plants & Decorative Greenery",
   description:
-    "Discover premium indoor plants at Breath Natural. Shop exotic houseplants, succulents & cacti with expert care guides. Free shipping on orders over $50. Same-day delivery available.",
+    "Transform your space with our curated collection of air-purifying indoor plants, exotic succulents, and stylish decorative greenery. Expert care guides, free shipping, and sustainable packaging included.",
   keywords: [
     "indoor plants",
-    "exotic houseplants",
-    "succulents",
-    "cacti",
-    "expert care guides",
-    "free shipping",
-    "same-day delivery",
+    "decorative plants",
+    "air-purifying plants",
+    "low maintenance indoor plants",
+    "office plants",
+    "modern houseplants",
+    "succulents delivery",
+    "rare indoor plants",
+    "plant decor",
+    "urban gardening",
+    "pet-safe plants",
+    "vertical garden kits",
+    "plant accessories",
+    "botanical home decor",
+    "plant care essentials",
+    "indoor gardening supplies",
+    "luxury plant pots",
+    "biophilic design plants",
+    "plant subscription box",
+    "indoor plant consultation"
   ],
   openGraph: {
-    title: "Breath Natural - NextJS Chronicles Part 1",
+    title: "Breath Natural | Premium Indoor Plants & Modern Plant Decor",
     description:
-      "Discover premium indoor plants at Breath Natural. Shop exotic houseplants, succulents & cacti with expert care guides. Free shipping on orders over $50. Same-day delivery available.",
+      "Create your urban jungle with our designer-curated plant collection. Shop rare species, air-purifying greens, and complete plant care solutions for homes and offices.",
     url: "https://breath-natural-nextjs-chronicles.netlify.app/",
     siteName: "Breath Natural",
     images: [
@@ -51,6 +64,7 @@ export const metadata: Metadata = {
         url: ogImage.src,
         width: 1200,
         height: 630,
+        alt: "Breath Natural's curated indoor plant collection in modern home setting"
       },
     ],
   },
