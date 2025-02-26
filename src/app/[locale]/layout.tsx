@@ -14,6 +14,7 @@ import "@/assets/styles/globals.css";
 import "@/assets/styles/pageTransition.css";
 import "@/assets/styles/animatedUnderline.css";
 import "@/assets/styles/scrollDriven.css";
+import "@/assets/styles/checkbox.css";
 import { AmbientSound } from "@/components/AmbientSound";
 
 const geistSans = Geist({

@@ -1,12 +1,16 @@
 "use client";
 
 import type { FC } from "react";
-import { ReactElement, useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { locales } from "@/config/i18n-config";
 import { Globe } from "lucide-react";
 
-export const LanguageSwitcher: FC = (): ReactElement => {
+interface Props {
+  className?: string;
+}
+
+export const LanguageSwitcher: FC<Props> = ({ className }) => {
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -33,13 +37,13 @@ export const LanguageSwitcher: FC = (): ReactElement => {
 
   return (
     <div
-      className="relative text-left inline-block"
+      className={`relative text-left inline-block border shadow-sm rounded-lg ${className}`}
       ref={menuRef}
     >
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center justify-center gap-2 rounded-md bg-transparent px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className="inline-flex items-center justify-center gap-2 rounded-md bg-transparent px-4 py-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >

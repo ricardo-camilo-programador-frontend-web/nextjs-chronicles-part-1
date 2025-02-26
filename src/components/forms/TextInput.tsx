@@ -19,6 +19,7 @@ interface TextInputProps<T extends FieldValues> {
   children?: ReactNode;
   register: UseFormRegister<T>;
   rules?: RegisterOptions<T, Path<T>>;
+  autocomplete?: string;
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
 }
 
@@ -34,6 +35,7 @@ export const TextInput: FC<TextInputProps<FieldValues>> = ({
   register,
   rules,
   onBlur,
+  autocomplete,
 }: TextInputProps<FieldValues>) => {
   return (
     <div className={`flex flex-col relative ${className}`}>
@@ -53,6 +55,7 @@ export const TextInput: FC<TextInputProps<FieldValues>> = ({
         disabled={disabled}
         className="z-[2] w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition disabled:bg-gray-600 disabled:border-gray-400 disabled:text-gray-300 disabled:placeholder-gray-200 disabled:cursor-not-allowed"
         onBlur={onBlur}
+        autoComplete={autocomplete}
       />
 
       {children && (
