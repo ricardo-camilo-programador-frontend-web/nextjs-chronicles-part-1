@@ -1,21 +1,17 @@
 import { ReactNode } from "react";
-import { NextIntlClientProvider } from "next-intl";
 import PublicLayout from "@/layouts/PublicLayout";
+
+type Props = {
+  children: ReactNode;
+};
 
 export default async function UserLayout({
   children,
-  params: { locale },
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
-  const messages = (await import(`@/messages/${locale}.json`)).default;
+}: Props) {
 
   return (
     <PublicLayout>
-      <NextIntlClientProvider locale={locale} messages={messages}>
         {children}
-      </NextIntlClientProvider>
     </PublicLayout>
   );
 }

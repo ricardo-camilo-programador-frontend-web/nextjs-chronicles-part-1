@@ -43,7 +43,7 @@ export const LanguageSwitcher: FC<Props> = ({ className }) => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center justify-center gap-2 rounded-md bg-transparent px-4 py-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+        className="inline-flex items-center justify-center gap-2 rounded-md bg-transparent px-4 py-2 text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 h-auto"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
