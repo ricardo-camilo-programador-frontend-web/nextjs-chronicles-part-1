@@ -1,7 +1,6 @@
 import type { FC } from "react"
 import { PlantBannerCard } from "@/components/PlantBannerCard";
 import { LiveDemoShortcut } from "../liveDemoShortcut";
-import background from "@/assets/images/topiary-green-pot.webp";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { ExploreShortcut } from "@/blocks/exploreShortcut";
 import { PlantCardContent } from "@/components/plantCardContent";
@@ -11,6 +10,8 @@ import { getUniqueId } from "@/utils/getUniqueId";
 import { useTranslations } from 'next-intl';
 import { useTestimonials } from "@/hooks/testimonials";
 import { useMockupPlants } from "@/hooks/mockupPlants";
+import Image from "next/image";
+import background from "@/assets/images/topiary-green-pot.webp";
 
 interface IntroSectionProps {
   className?: string;
@@ -41,13 +42,16 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
   return (
     <section
       className={`relative overflow-hidden w-screen pb-24 px-4 ${className}`}
-      style={{
-        backgroundImage: `url(${background.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
     >
+      <Image
+        src={background}
+        alt="Background decorative plants"
+        fill
+        priority={false}
+        placeholder="blur"
+        className="object-cover"
+        sizes="100vw"
+      />
       <div className="max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col justify-between items-start mb-16  pt-4 lg:pt-32 gap-4">
           <h1 className="text-7xl xl:text-6xl text-white font-semibold max-w-[40rem]">
