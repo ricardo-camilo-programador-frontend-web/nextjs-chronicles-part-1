@@ -71,4 +71,24 @@ const ContactPage = () => {
 }
 
 export default ContactPage;
+export const metadata: Metadata = {
+  title: "Contact Us | Breath Natural - Get in Touch",
+  description: "Have questions about our plants? Reach out to our team. We are here to help with plant care, orders, and general inquiries.",
+  keywords: ["contact us", "plant support", "customer service", "plant care questions", "plant inquiries"],
+  openGraph: {
+    title: "Contact Us | Breath Natural - Premium Indoor Plants",
+    description: "Get in touch with Breath Natural for plant care questions, order support, and customer service.",
+    url: "https://breath-natural-nextjs-chronicles.netlify.app/contact",
+    siteName: "Breath Natural",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Breath Natural",
+    description: "Reach out to our team for plant care questions and customer support.",
+  },
+  alternates: {
+    canonical: 'https://breath-natural-nextjs-chronicles.netlify.app/contact',
+  },
+};
 
