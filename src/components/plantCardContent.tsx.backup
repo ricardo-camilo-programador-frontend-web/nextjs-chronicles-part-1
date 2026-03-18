@@ -46,9 +46,6 @@ export function PlantCardContent({
             src={plant.image_url}
             alt={plant.common_name || plant.scientific_name}
             width={240}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            quality={85}
-            placeholder="blur"
             height={240}
             loading="lazy"
             className={`absolute md:relative -mt-[9rem] -ml-[6rem] md:ml-0 md:-mt-32 object-cover w-[20rem] h-[17rem] md:h-[20rem] rounded-2xl animate-scale-in md:scale-125 ${imageClassName}`}
