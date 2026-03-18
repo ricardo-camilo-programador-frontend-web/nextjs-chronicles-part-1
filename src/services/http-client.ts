@@ -12,6 +12,8 @@ export class HttpClient {
       const response = await fetch(url.toString(), {
         method: "GET",
         headers: {
+      "Cache-Control": "max-age=3600",
+
           "Content-Type": "application/json",
         },
       });
