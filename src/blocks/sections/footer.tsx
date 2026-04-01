@@ -90,7 +90,7 @@ const Footer: FC = () => {
                 aria-label={t('social.followUs', { platform: t(social.translationKey) })}
                 rel="noopener noreferrer"
               >
-                {social.icon}
+                <span aria-hidden="true">{social.icon}</span>
               </a>
             ))}
           </div>

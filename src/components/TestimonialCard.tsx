@@ -27,9 +27,9 @@ export const TestimonialCard = ({
           height={56}
         />
         <div>
-          <h3 className="text-xl font-semibold text-foreground">
+          <p className="text-xl font-semibold text-foreground">
             {testimonial.name}
-          </h3>
+          </p>
           <StarRating rating={testimonial.rating} />
         </div>
       </div>
