@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://breath-natural-nextjs-chronicles.netlify.app"),
   title: "Breath Natural - NextJS Chronicles Part 1",
   description:
     "Discover premium indoor plants at Breath Natural. Shop exotic houseplants, succulents & cacti with expert care guides. Free shipping on orders over $50. Same-day delivery available.",
@@ -69,9 +69,13 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={getDirection(locale as Locale) ? "rtl" : "ltr"} suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://cdn.counter.dev" />
+        <link rel="dns-prefetch" href="https://d2seqvvyy3b8p2.cloudfront.net" />
+        <link rel="dns-prefetch" href="https://bs.plantnet.org" />
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -136,6 +140,7 @@ export default async function RootLayout({
 
       <Script
         src="https://cdn.counter.dev/script.js"
+        strategy="lazyOnload"
         data-id={process.env.COUNTER_API_KEY}
         data-utcoffset="-3"
       ></Script>

@@ -1,7 +1,7 @@
 "use client"
 
 import type { FC, ReactNode } from 'react'
-import { Children, useEffect, useCallback } from 'react'
+import { Children, useEffect, useCallback, useRef } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import {
   PrevButton,
@@ -33,6 +33,7 @@ export const EmblaCarousel: FC<PropType> = (props) => {
     hideInactiveSlides = true
   } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
+  const rafIdRef = useRef<number>(0)
 
   const {
     prevBtnDisabled,
@@ -67,6 +68,11 @@ export const EmblaCarousel: FC<PropType> = (props) => {
     })
   }, [emblaApi, hideInactiveSlides, carouselId])
 
+  const scheduleVisibilityUpdate = useCallback(() => {
+    cancelAnimationFrame(rafIdRef.current)
+    rafIdRef.current = requestAnimationFrame(updateSlidesVisibility)
+  }, [updateSlidesVisibility])
+
   const onDotButtonClick = (index: number) => {
     if (!emblaApi) return
     emblaApi.scrollTo(index)
@@ -79,19 +85,20 @@ export const EmblaCarousel: FC<PropType> = (props) => {
       updateSlidesVisibility()
     }, 50)
 
-    emblaApi.on('scroll', updateSlidesVisibility)
+    emblaApi.on('scroll', scheduleVisibilityUpdate)
     emblaApi.on('reInit', updateSlidesVisibility)
     emblaApi.on('select', updateSlidesVisibility)
     emblaApi.on('settle', updateSlidesVisibility)
 
     return () => {
       clearTimeout(timer)
-      emblaApi.off('scroll', updateSlidesVisibility)
+      cancelAnimationFrame(rafIdRef.current)
+      emblaApi.off('scroll', scheduleVisibilityUpdate)
       emblaApi.off('reInit', updateSlidesVisibility)
       emblaApi.off('select', updateSlidesVisibility)
       emblaApi.off('settle', updateSlidesVisibility)
     }
-  }, [emblaApi, updateSlidesVisibility])
+  }, [emblaApi, updateSlidesVisibility, scheduleVisibilityUpdate])
 
   return (
     <section

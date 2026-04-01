@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import RandomBackground from "@/blocks/randomBackground";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ''),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://breath-natural-nextjs-chronicles.netlify.app'),
   title: "Breath Natural - Contact Us",
   description: "Get in touch with Breath Natural for any inquiries or questions about our indoor plants, care guides, and services.",
   keywords: [

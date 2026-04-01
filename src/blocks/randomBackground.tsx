@@ -39,9 +39,11 @@ const RandomBackground: FC<RandomBackgroundProps> = ({ className }) => {
 
       <Image
         src={randomBackground.image}
-        alt="Background"
+        alt={`${randomBackground.title} plant background decoration`}
         className="absolute right-0 ml-auto bottom-0 min-h-full w-full object-cover max-w-[20rem] max-h-screen overflow-visible"
         fill
+        sizes="20rem"
+        aria-hidden="true"
       />
     </div>
   )
