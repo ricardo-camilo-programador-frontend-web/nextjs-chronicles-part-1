@@ -6,6 +6,7 @@ import { SearchShortcut } from "@/blocks/searchShortcut";
 import { MobileMenu } from "@/components/mobileMenu";
 import { ShoppingCart } from "@/blocks/shoppingCart";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface HeaderProps {
   menuItems: MenuItem[];
@@ -22,7 +23,9 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
 
           <DesktopMenu />
 
-          <div className="grid grid-cols-4 md:grid-cols-3 place-items-center gap-4">
+          <div className="grid grid-cols-5 md:grid-cols-4 place-items-center gap-4">
+            <ThemeToggle />
+
             <LanguageSwitcher />
 
             <SearchShortcut />

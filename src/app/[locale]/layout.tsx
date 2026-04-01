@@ -10,6 +10,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { PortfolioShortcut } from "@/blocks/portfolioShortcut";
 import { getDirection, Locale } from "@/config/i18n-config";
 import { Toaster } from 'sonner';
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "@/assets/styles/globals.css";
 import "@/assets/styles/pageTransition.css";
 import "@/assets/styles/animatedUnderline.css";
@@ -66,7 +67,7 @@ export default async function RootLayout({
   const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} dir={getDirection(locale as Locale) ? "rtl" : "ltr"}>
+    <html lang={locale} dir={getDirection(locale as Locale) ? "rtl" : "ltr"} suppressHydrationWarning>
       <head>
         <Script
           id="gtm-script"
@@ -94,11 +95,18 @@ export default async function RootLayout({
           />
         </noscript>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <IntroWarningModal
-            linkedinUsername={process.env.LINKEDIN_USERNAME || ""}
-            portfolioUrl={process.env.PORTFOLIO_URL || ""}
-          />
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <IntroWarningModal
+              linkedinUsername={process.env.LINKEDIN_USERNAME || ""}
+              portfolioUrl={process.env.PORTFOLIO_URL || ""}
+            />
+            {children}
+          </ThemeProvider>
         </NextIntlClientProvider>
         <Analytics />
         <ScrollToTop />

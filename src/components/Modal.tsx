@@ -57,18 +57,18 @@ export const Modal: FC<ModalProps> = ({
     <dialog
       ref={modalRef}
       id={id}
-      className={`bg-white text-black p-2 md:p-6 rounded-lg border border-white/20 backdrop:bg-black/50 open:animate-fade-in ${className}`}
+      className={`bg-white dark:bg-gray-800 text-black dark:text-gray-100 p-2 md:p-6 rounded-lg border border-white/20 backdrop:bg-black/50 open:animate-fade-in ${className}`}
       onClose={onClose}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="flex flex-col gap-4 min-w-[300px]">
-        <header className="flex items-center justify-between border-b border-white/20 pb-2">
+        <header className="flex items-center justify-between border-b border-white/20 dark:border-gray-700 pb-2">
           <h2 className="text-xl font-bold">{title}</h2>
           <button
             onClick={onClose}
-            className="text-black/80 hover:text-red-500"
+            className="text-black/80 dark:text-gray-300 hover:text-red-500"
             aria-label="Close modal"
           >
             <svg

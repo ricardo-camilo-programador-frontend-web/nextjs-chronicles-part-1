@@ -22,7 +22,6 @@ const LinkComponent: FC<LinkProps> = ({
   externalLink,
   rel,
   title,
-  animate = true,
   ...props
 }: LinkProps) => {
   return (
