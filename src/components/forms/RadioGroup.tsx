@@ -47,7 +47,7 @@ export const RadioGroup: FC<RadioGroupProps<FieldValues>> = ({
     <div className={`flex flex-col space-y-2 ${className}`}>
       {label && (
         <Label
-          className="ml-1 text-white w-max p-2 text-xs font-normal bg-gradient-to-r from-white/10 via-transparent rounded-full"
+          className="ml-1 text-foreground w-max p-2 text-xs font-normal bg-gradient-to-r from-glass via-transparent rounded-full"
           value={label}
           htmlFor={name.toString()}
         />
@@ -81,8 +81,8 @@ export const RadioGroup: FC<RadioGroupProps<FieldValues>> = ({
                 flex items-center p-4 rounded-lg cursor-pointer
                 transition-all duration-200 w-full
                 ${value === option.value
-                ? "bg-gray-700 border-2 border-green-500"
-                : "bg-gray-800 border border-gray-600 hover:border-gray-500"
+                ? "bg-field border-2 border-green-500"
+                : "bg-surface border border-field-border hover:border-muted"
               }
                 ${disabled ? "opacity-50 cursor-not-allowed" : ""}
               `}

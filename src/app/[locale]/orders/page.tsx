@@ -19,11 +19,11 @@ const OrdersPage: FC = () => {
       <RandomBackground />
 
       <div className="min-h-screen flex justify-center">
-        <div className="w-full flex flex-col mx-auto px-4 py-8 max-w-4xl z-10 text-white">
+        <div className="w-full flex flex-col mx-auto px-4 py-8 max-w-4xl z-10 text-foreground">
           <h2 className="text-2xl font-bold mb-6">{t("ordersTitle")}</h2>
 
           {allOrders.length === 0 ? (
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 text-center border border-white/20">
+            <div className="bg-glass backdrop-blur-md rounded-lg p-8 text-center border border-glass-border">
               <p>{t("noOrders")}</p>
             </div>
           ) : (
@@ -31,7 +31,7 @@ const OrdersPage: FC = () => {
               {allOrders.map((order) => (
                 <div
                   key={order.orderId}
-                  className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 space-y-4 min-w-[17rem]"
+                  className="bg-glass backdrop-blur-md rounded-lg p-6 border border-glass-border space-y-4 min-w-[17rem]"
                 >
                   <div className="flex justify-between items-center gap-4">
                     {order.shippingMethod?.name && (
@@ -40,8 +40,8 @@ const OrdersPage: FC = () => {
                           <FaMapMarkerAlt className="text-green-500" />
                         <span className="font-semibold">{t("shipping")}</span>
                       </div>
-                      <p className="text-sm text-white/70">{order.shippingMethod?.name}</p>
-                        <p className="text-sm text-white/70">{order.shippingAddress.city}, {order.shippingAddress.state}</p>
+                       <p className="text-sm text-foreground/70">{order.shippingMethod?.name}</p>
+                        <p className="text-sm text-foreground/70">{order.shippingAddress.city}, {order.shippingAddress.state}</p>
                       </div>
                     )}
 
@@ -59,7 +59,7 @@ const OrdersPage: FC = () => {
                         <FaCreditCard className="text-green-500" />
                         <span className="font-semibold">{t("payment")}</span>
                       </div>
-                      <p className="text-sm text-white/70">{order.paymentInfo.paymentMethod}</p>
+                      <p className="text-sm text-foreground/70">{order.paymentInfo.paymentMethod}</p>
                       <p className="text-sm text-green-500">{order.status}</p>
                     </div>
 
@@ -71,7 +71,7 @@ const OrdersPage: FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 border-b border-white/10 pt-8">
+                  <div className="flex items-center gap-2 border-b border-glass-border pt-8">
                     <FaBox className="text-green-500 w-auto h-auto" />
                     <Link
                       href={`/order/${order.orderId}`}

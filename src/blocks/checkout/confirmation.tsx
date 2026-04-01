@@ -37,7 +37,7 @@ const ConfirmationStep: FC = () => {
       <h3 className="text-xl font-semibold">{t("orderSummary")}</h3>
       <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2">
         {items.map((item: CartItem) => (
-          <div key={item.item.id} className="flex justify-between items-center py-2 border-b border-white/10">
+          <div key={item.item.id} className="flex justify-between items-center py-2 border-b border-glass-border">
             <div className="flex items-center gap-4">
               <img
                 src={item.item.image_url}
@@ -46,7 +46,7 @@ const ConfirmationStep: FC = () => {
               />
               <div>
                 <p className="font-medium">{item.item.common_name}</p>
-                <p className="text-sm text-white/70">
+                <p className="text-sm text-foreground/70">
                   {t("quantity")}: {item.quantity}
                 </p>
               </div>
@@ -65,7 +65,7 @@ const ConfirmationStep: FC = () => {
           <p>{t("shipping")}</p>
           <p>{formatCurrency(selectedShippingMethod?.price || 0)}</p>
         </div>
-        <div className="flex justify-between text-lg font-bold pt-2 border-t border-white/10">
+        <div className="flex justify-between text-lg font-bold pt-2 border-t border-glass-border">
           <p>{t("total")}</p>
           <p>{formatCurrency(subtotal + (selectedShippingMethod?.price || 0))}</p>
         </div>

@@ -39,7 +39,7 @@ export function MobileMenu({ menuItems, className }: MobileMenuProps) {
       </Button>
 
       <div
-        className={`flex-w-full absolute inset-y-0 left-0 w-full bg-primary/90 backdrop-blur-sm min-h-screen border-r border-white/20 shadow-sm z-[6] max-w-xs -top-4 p-2 ${
+        className={`flex-w-full absolute inset-y-0 left-0 w-full bg-primary/90 backdrop-blur-sm min-h-screen border-r border-glass-border shadow-sm z-[6] max-w-xs -top-4 p-2 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >
@@ -85,7 +85,7 @@ export function MobileMenu({ menuItems, className }: MobileMenuProps) {
             {menuItems.map((item, index) => (
               <li
                 key={`${item.menuItemKey}-${index}-mobile-menu-${getUniqueId()}`}
-                className="w-full hover:bg-white/10 transition-all duration-300 hover:border-b-white border-b border-transparent"
+                className="w-full hover:bg-glass transition-all duration-300 hover:border-b-white border-b border-transparent"
               >
                 <Link
                   href={item.to}

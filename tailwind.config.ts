@@ -20,6 +20,22 @@ export default {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         accent: "var(--accent)",
+        surface: {
+          DEFAULT: "var(--surface)",
+          border: "var(--surface-border)",
+        },
+        field: {
+          DEFAULT: "var(--field)",
+          border: "var(--field-border)",
+        },
+        muted: "var(--muted)",
+        subtle: "var(--subtle)",
+        glass: {
+          DEFAULT: "var(--glass)",
+          strong: "var(--glass-strong)",
+          border: "var(--glass-border)",
+        },
+        divider: "var(--divider)",
       },
       keyframes: {
         "fade-in": {

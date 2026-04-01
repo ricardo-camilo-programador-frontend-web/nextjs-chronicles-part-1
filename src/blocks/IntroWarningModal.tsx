@@ -64,8 +64,8 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
           </p>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <p className="text-gray-700 text-center leading-relaxed">
+        <div className="bg-surface p-4 rounded-lg">
+          <p className="text-foreground text-center leading-relaxed">
             This is a demonstration of my frontend development skills, focusing
             on modern web technologies and best practices.
           </p>
@@ -80,7 +80,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
             href={`https://www.linkedin.com/in/${linkedinUsername}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+            className="flex items-center justify-center gap-2 p-3 bg-surface hover:bg-surface/80 rounded-lg transition-colors"
           >
             <svg
               className="w-6 h-6 text-blue-600"
@@ -96,8 +96,8 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
           </a>
         </div>
 
-        <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-          <span className="text-gray-700">
+        <div className="flex items-center justify-between p-4 bg-surface rounded-lg">
+          <span className="text-foreground">
             Allow Analytics Tools
           </span>
           <button
@@ -115,7 +115,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
         </div>
 
         <div className="border-t pt-4 mt-4">
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-sm text-muted text-center">
             Design credits:
             <a
               href="https://www.figma.com/@dsingr"
@@ -126,7 +126,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
               @dsingr
             </a>
           </p>
-          <p className="text-sm text-gray-500 text-center mt-1">
+          <p className="text-sm text-muted text-center mt-1">
             <a
               href="https://www.figma.com/community/file/1341057411255052611"
               target="_blank"

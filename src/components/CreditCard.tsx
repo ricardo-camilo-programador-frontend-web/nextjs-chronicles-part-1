@@ -27,7 +27,7 @@ const CreditCard: FC<Props> = ({
     <div
       role="group"
       aria-label={t("creditCard.label")}
-      className={`relative w-[420px] h-[260px] rounded-2xl shadow-xl overflow-hidden ${className}`}
+      className={`relative w-[420px] h-[260px] rounded-2xl shadow-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${className}`}
     >
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0,#ffffff33,transparent_70%)]" />
@@ -57,7 +57,7 @@ const CreditCard: FC<Props> = ({
 
         <div className="flex flex-col w-full gap-2">
           <div>
-            <div className="text-xs text-gray-300 uppercase tracking-wider">
+            <div className="text-xs text-muted uppercase tracking-wider">
               {t("creditCard.name.label")}
             </div>
             <div className="text-xs text-white font-medium tracking-wide truncate max-w-[20rem]">
@@ -67,7 +67,7 @@ const CreditCard: FC<Props> = ({
 
           <div className="flex justify-between">
             <div className="text-right">
-              <div className="text-xs text-gray-300 uppercase tracking-wider">
+              <div className="text-xs text-muted uppercase tracking-wider">
                 {t("creditCard.expirationDate.label")}
               </div>
               <div className="text-white font-medium">
@@ -76,7 +76,7 @@ const CreditCard: FC<Props> = ({
             </div>
 
             <div className="text-right">
-              <div className="text-xs text-gray-300 uppercase tracking-wider">
+              <div className="text-xs text-muted uppercase tracking-wider">
                 {t("creditCard.cvv.label")}
               </div>
               <div className="text-white font-medium">{securityCode}</div>

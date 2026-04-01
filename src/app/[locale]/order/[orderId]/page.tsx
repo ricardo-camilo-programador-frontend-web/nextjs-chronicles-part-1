@@ -80,26 +80,26 @@ const PaymentPage: FC = () => {
         <>
           <RandomBackground />
 
-          <div className="container mx-auto px-4 py-8 max-w-4xl z-10 text-white">
+          <div className="container mx-auto px-4 py-8 max-w-4xl z-10 text-foreground">
             <h2 className="text-2xl font-bold mb-6">{t("paymentTitle")}</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                <div className="space-y-4 bg-glass backdrop-blur-md rounded-lg p-4 border border-glass-border">
                   <div className="flex items-center gap-2">
                     <FaBox className="text-green-500" />
                     <h3 className="text-xl font-semibold">{t("orderSummary")}</h3>
                   </div>
                   <div className="space-y-2">
                     <p>{t("orderId")}: {order.orderId}</p>
-                    <div className="flex justify-between pt-2 border-t border-white/10">
+                    <div className="flex justify-between pt-2 border-t border-glass-border">
                       <p className="font-bold">{t("total")}</p>
                       <p className="font-bold">{formatCurrency(order.total)}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+                <div className="space-y-4 bg-glass backdrop-blur-md rounded-lg p-4 border border-glass-border">
                   <div className="flex items-center gap-2">
                     <FaUser className="text-green-500" />
                     <h3 className="text-xl font-semibold">{t("customerInfo")}</h3>
@@ -111,12 +111,12 @@ const PaymentPage: FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
+              <div className="space-y-4 bg-glass backdrop-blur-md rounded-lg p-4 border border-glass-border">
                 <div className="flex items-center gap-2 mb-4">
                   <FaCreditCard className="text-green-500" />
                   <h3 className="text-xl font-semibold">{t("paymentMethod")}</h3>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-lg">
+                <div className="bg-glass backdrop-blur-md rounded-lg">
                   {renderPaymentMethod()}
                 </div>
               </div>

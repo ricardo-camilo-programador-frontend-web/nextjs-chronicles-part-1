@@ -50,7 +50,7 @@ export const SearchShortcut = ({ className, label }: SearchShortcutProps) => {
   return (
     <>
       <Button
-        className={`mt-3 md:mt-0 px-6 py-2  text-[1.75rem] hover:bg-white/10 transition-all duration-300 text-center flex items-center gap-2 border-none ${className}`}
+        className={`mt-3 md:mt-0 px-6 py-2  text-[1.75rem] hover:bg-glass transition-all duration-300 text-center flex items-center gap-2 border-none ${className}`}
         title={`Search for plants`}
         onClick={handleToggle}
       >
@@ -66,7 +66,7 @@ export const SearchShortcut = ({ className, label }: SearchShortcutProps) => {
 
       <div
         ref={dropdownListRef}
-        className={`absolute left-0 top-[4rem] pr-2 min-w-[99vw] bg-white/20 backdrop-blur-sm z-[6] text-white border border-white/20 rounded-lg h-10 ${isOpen ? "block" : "hidden"}`}
+        className={`absolute left-0 top-[4rem] pr-2 min-w-[99vw] bg-glass backdrop-blur-sm z-[6] text-foreground border border-glass-border rounded-lg h-10 ${isOpen ? "block" : "hidden"}`}
       >
         <DropdownSelect name="searchShortcut" options={options} />
       </div>

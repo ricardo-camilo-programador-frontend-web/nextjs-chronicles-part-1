@@ -28,17 +28,17 @@ const ChevronButton: FC<Props> = ({ label, className, isOpen, onToggle }) => {
     <div
       role="button"
       tabIndex={0}
-      className={`text-white flex justify-center items-center gap-4 p-2 w-full transition-colors duration-200 hover:bg-white/10 ${buttonStyle} ${className}`}
+      className={`text-foreground flex justify-center items-center gap-4 p-2 w-full transition-colors duration-200 hover:bg-glass ${buttonStyle} ${className}`}
       onClick={handleToggle}
       onKeyDown={handleKeyDown}
     >
       <div
         className={`${chevronStyle} transition-transform duration-200`}
       >
-        <FaChevronDown className="text-white/80" />
+        <FaChevronDown className="text-foreground/80" />
       </div>
       {label && (
-        <span className="text-white/90">
+        <span className="text-foreground/90">
           {label}
         </span>
       )}

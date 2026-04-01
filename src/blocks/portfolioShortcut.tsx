@@ -13,7 +13,7 @@ export function PortfolioShortcut({ portfolioUrl, customClassName, showText = tr
       href={portfolioUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex items-center justify-center gap-2 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors ${customClassName}`}
+      className={`flex items-center justify-center gap-2 p-3 bg-surface hover:bg-surface/80 rounded-lg transition-colors ${customClassName}`}
     >
       <Image
         src={portfolioImage}
@@ -24,7 +24,7 @@ export function PortfolioShortcut({ portfolioUrl, customClassName, showText = tr
       />
 
       {showText && (
-        <span className="text-gray-700 font-medium">
+        <span className="text-foreground font-medium">
           Check out my portfolio
         </span>
       )}

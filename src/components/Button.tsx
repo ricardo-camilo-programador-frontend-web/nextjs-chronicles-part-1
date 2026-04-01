@@ -34,7 +34,7 @@ const Button: FC<Props> = ({
 
   return (
     <button
-      className={`w-full md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 text-center disabled:cursor-not-allowed ease-in-out ${isLoading} ${className}`}
+      className={`w-full md:w-auto place-self-start flex items-center justify-center px-6 py-2 border border-glass-border text-foreground rounded-lg hover:bg-glass transition-all duration-300 text-center disabled:cursor-not-allowed ease-in-out ${isLoading} ${className}`}
       type={type}
       title={title}
       disabled={disabled}

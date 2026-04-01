@@ -50,12 +50,12 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
     >
       <div className="max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col justify-between items-start mb-16  pt-4 lg:pt-32 gap-4">
-          <h1 className="text-7xl xl:text-6xl text-white font-semibold max-w-[40rem]">
+          <h1 className="text-7xl xl:text-6xl text-foreground font-semibold max-w-[40rem]">
             {t('title')}
           </h1>
 
           <div className="mb-8 max-w-prose">
-            <p className="text-white mb-4 text-lg xl:text-lg">
+            <p className="text-foreground mb-4 text-lg xl:text-lg">
               {t('description')}
             </p>
           </div>
@@ -88,7 +88,7 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
 
         <div className="lg:top-[1rem] lg:right-0 mx-auto w-[20rem] sm:w-screen md:w-[30rem] overflow-x-hidden overflow-y-visible min-h-[50rem]">
           <EmblaCarousel
-            className="relative min-w-full w-full max-w-[20rem] sm:max-w-[99vw] lg:max-w-[25rem] bg-gradient-to-r from-white/10 via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-white/20 mt-[7rem] right-0 lg:ml-0"
+            className="relative min-w-full w-full max-w-[20rem] sm:max-w-[99vw] lg:max-w-[25rem] bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-glass-border mt-[7rem] right-0 lg:ml-0"
             options={{ loop: true }}
             snapDisplayClassName="absolute bottom-[4rem] left-0 w-full"
           >
@@ -110,7 +110,7 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
 
       <div className="max-w-7xl mx-auto relative grid grid-cols-1">
         <div className="space-y-6 flex flex-col items-center gap-32 lg:gap-24">
-          <QuotedTitle className="text-center text-white">
+          <QuotedTitle className="text-center text-foreground">
             {t('trendyPlantsTitle')}
           </QuotedTitle>
 

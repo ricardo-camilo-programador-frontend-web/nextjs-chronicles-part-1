@@ -123,7 +123,7 @@ const VideoPlayer: FC<Props> = ({ className, src, params = {}, title, isModalOpe
         role="presentation"
       >
         <div
-          className="flex items-center justify-center h-full text-2xl text-gray-500"
+          className="flex items-center justify-center h-full text-2xl text-muted"
           aria-label="Error message"
         >
           <span>Invalid video link</span>

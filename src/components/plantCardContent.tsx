@@ -57,9 +57,9 @@ export function PlantCardContent({
         className={`flex flex-col w-full animate-slide-up ${contentClassName}`}
       >
         <div className="flex flex-col w-full animate-slide-up">
-          <p className="text-white text-sm mb-2">{getRandomName()}</p>
+          <p className="text-foreground text-sm mb-2">{getRandomName()}</p>
 
-          <p className="text-white text-xs grid grid-cols-1 md:grid-cols-2">
+          <p className="text-foreground text-xs grid grid-cols-1 md:grid-cols-2">
             <span className="truncate max-w-[10rem] text-ellipsis">
               Family: {plant.family}
             </span>
@@ -69,7 +69,7 @@ export function PlantCardContent({
           </p>
 
           <p
-            className={`text-white text-sm md:text-xl font-semibold my-3 h-auto md:h-36 w-full md:line-clamp-3 overflow-ellipsis overflow-y-auto  ${titleClassName}`}
+            className={`text-foreground text-sm md:text-xl font-semibold my-3 h-auto md:h-36 w-full md:line-clamp-3 overflow-ellipsis overflow-y-auto  ${titleClassName}`}
           >
             {plant.bibliography + " " + plant.scientific_name}
           </p>
@@ -79,7 +79,7 @@ export function PlantCardContent({
           {!showPrice && (
             <div className=" min-w-[15rem] max-w-[14rem] lg:max-w-full flex items-center justify-start animate-fade-in-delay">
               <BuyShortcut
-                className="px-6 py-3 bg-transparent backdrop-blur-sm border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300"
+                className="px-6 py-3 bg-transparent backdrop-blur-sm border border-glass-border text-foreground rounded-lg hover:bg-glass transition-all duration-300"
                 showIcon={false}
                 plant={plant}
               />

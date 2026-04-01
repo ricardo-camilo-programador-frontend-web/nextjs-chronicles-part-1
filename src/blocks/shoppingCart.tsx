@@ -47,7 +47,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
   const renderCartItem = useCallback((cartItem: CartItem, index: number) => (
     <div
       key={`${cartItem.item.id}-${index}-cart-item-on-cart-${getUniqueId()}`}
-      className="flex w-full items-center p-4 gap-5 bg-white/5 rounded-lg"
+      className="flex w-full items-center p-4 gap-5 bg-glass rounded-lg"
     >
       <div className="w-1/5">
         <Image
@@ -58,7 +58,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           }
           width={80}
           height={80}
-          className="min-w-[4rem] w-full h-auto object-cover rounded scale-150 overflow-hidden border border-white/20 max-h-[4.7rem] ml-1"
+          className="min-w-[4rem] w-full h-auto object-cover rounded scale-150 overflow-hidden border border-glass-border max-h-[4.7rem] ml-1"
         />
       </div>
 
@@ -67,7 +67,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           {cartItem.item.common_name ||
             cartItem.item.scientific_name}
         </h3>
-        <span className="text-sm text-gray-300">
+        <span className="text-sm text-muted">
           Quantity: {cartItem.quantity}
         </span>
         <span className="font-semibold">
@@ -94,21 +94,21 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           alt="Shop icon"
         />
         {cartItems.length > 0 && (
-          <span className="absolute -top-1 right-0 text-white text-lg font-bold rounded-full bg-primary w-6 h-6 flex items-center justify-center border border-white/20">
+          <span className="absolute -top-1 right-0 text-foreground text-lg font-bold rounded-full bg-primary w-6 h-6 flex items-center justify-center border border-glass-border">
             {totalItems}
           </span>
         )}
       </button>
 
       <div
-        className={`absolute inset-y-0 right-0 flex-grow w-full bg-primary/90 backdrop-blur-sm h-[99vh] md:h-screen border-l border-white/20 shadow-sm max-w-xs md:max-w-sm -top-4 z-[9999] ${
+        className={`absolute inset-y-0 right-0 flex-grow w-full bg-primary/90 backdrop-blur-sm h-[99vh] md:h-screen border-l border-glass-border shadow-sm max-w-xs md:max-w-sm -top-4 z-[9999] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300`}
       >
         <div className="relative  overflow-hidden overflow-y-auto h-[90vh]">
-          <div className="fixed bg-primary flex items-center justify-between w-full text-white border-b border-white/20  py-2  z-[99]">
+          <div className="fixed bg-primary flex items-center justify-between w-full text-white border-b border-glass-border  py-2  z-[99]">
             <button
-              className="flex items-center justify-center mr-4 mt-1 text-white hover:bg-white/10 hover:text-gray-50 rounded-full p-2"
+              className="flex items-center justify-center mr-4 mt-1 text-white hover:bg-glass hover:text-gray-50 rounded-full p-2"
               type="button"
               aria-label="Close shopping cart"
               title={translateCart('closeShoppingCart')}
@@ -192,7 +192,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           </div>
 
           <div
-            className={`flex flex-col items-center space-y-4 min-w-[17rem] px-2 md:h-[80vh] mt-[5rem] pb-[5rem] md:pb-[10rem] text-white max-h-[]`}
+            className={`flex flex-col items-center space-y-4 min-w-[17rem] px-2 md:h-[80vh] mt-[5rem] pb-[5rem] md:pb-[10rem] text-foreground max-h-[]`}
           >
             {cartItems.length > 0 ? (
               cartItems.map((cartItem, index) => renderCartItem(cartItem, index))

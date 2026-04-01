@@ -39,7 +39,7 @@ export function LiveDemoShortcut({ className, videoUrl, buttonLabel, buttonTitle
             <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-white border-b-[6px] border-b-transparent ml-1" />
           </div>
 
-          <span className="text-white font-medium text-lg truncate">
+          <span className="text-foreground font-medium text-lg truncate">
             {text}...
           </span>
         </div>

@@ -42,7 +42,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={cycleTheme}
-      className="p-2 rounded-full hover:bg-white/10 transition-colors duration-200 text-white"
+      className="p-2 rounded-full hover:bg-glass text-foreground transition-colors duration-200"
       aria-label={`Toggle theme: current is ${label}`}
       title={`Theme: ${label}`}
     >

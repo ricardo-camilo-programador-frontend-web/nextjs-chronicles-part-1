@@ -13,7 +13,7 @@ const BestProductsSection: FC = () => {
   return (
     <div className="relative min-h-[35rem] max-w-[95vw] md:max-w-7xl mx-auto pt-32 px-2 h-full pb-6">
       <div className="flex flex-col items-center max-w-[40rem] mx-auto">
-        <QuotedTitle className="text-center text-white">
+        <QuotedTitle className="text-center text-foreground">
           {t('title')}
         </QuotedTitle>
       </div>
@@ -21,7 +21,7 @@ const BestProductsSection: FC = () => {
       <div className="w-full max-w-[95vw] lg:max-w-[64rem] mx-auto mt-32">
         <EmblaCarousel
           carouselId={`embla-carousel-best-products-${getUniqueId()}`}
-          className="w-full bg-gradient-to-r from-white/10 via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-white/10"
+          className="w-full bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-glass-border"
           options={{ loop: true }}
           snapDisplayClassName="absolute -bottom-16 md:bottom-6 ml-auto md:right-[-25rem] flex gap-2"
         >

@@ -126,7 +126,7 @@ const DropdownSelect: FC<Props> = ({
               <button
                 type="button"
                 onClick={handleClear}
-                className="px-2 text-gray-400 hover:text-red-600"
+                className="px-2 text-muted hover:text-red-600"
                 aria-label="Limpar seleção"
               >
                 ✕
@@ -135,7 +135,7 @@ const DropdownSelect: FC<Props> = ({
           </div>
           <div className="inset-y-0 right-0">
             <ChevronButton
-              className="w-8 h-8 flex-row-reverse bg-transparent text-white"
+              className="w-8 h-8 flex-row-reverse bg-transparent text-foreground"
               isOpen={isDropdownOpen}
               onToggle={toggleDropdown}
             />
@@ -152,7 +152,7 @@ const DropdownSelect: FC<Props> = ({
               >
                 <button
                   type="button"
-                  className="min-w-full w-full p-2 text-left hover:bg-white/10 focus:outline-none rounded-lg"
+                  className="min-w-full w-full p-2 text-left hover:bg-glass focus:outline-none rounded-lg"
                   onClick={() => handleSelect(value)}
                 >
                   {label}

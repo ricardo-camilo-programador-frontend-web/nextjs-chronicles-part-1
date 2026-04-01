@@ -307,7 +307,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
               {shippingMethods.map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
+                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-field border-field-border text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
                       ? "border-green-500 bg-green-50 !text-black"
                       : "border-gray-200"
                     }`}
@@ -325,7 +325,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
                     <div>
                       <p className="font-medium">{method.name}</p>
                       <p
-                        className={`text-sm text-gray-100 ${selectedShippingMethod?.id === method.id
+                        className={`text-sm text-muted ${selectedShippingMethod?.id === method.id
                             ? "text-green-500"
                             : ""
                           }`}

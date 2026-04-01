@@ -9,7 +9,7 @@ interface ShopMenuShortcutProps {
 export const ShopMenuShortcut = ({ className }: ShopMenuShortcutProps) => {
   return (
     <Link
-      className={`px-6 py-2 text-[1.75rem] hover:bg-white/10 transition-all duration-300 text-center flex items-center gap-2 ${className}`}
+      className={`px-6 py-2 text-[1.75rem] hover:bg-glass transition-all duration-300 text-center flex items-center gap-2 ${className}`}
       title="Shop"
       href="/plants"
     >

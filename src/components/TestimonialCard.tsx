@@ -15,7 +15,7 @@ export const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div
-      className={`rounded-3xl bg-gradient-to-r from-white/10 via-transparent to-transparent backdrop-blur-md p-8 border border-white/20 lg:max-w-[25rem] ${className}`}
+      className={`rounded-3xl bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md p-8 border border-glass-border lg:max-w-[25rem] ${className}`}
     >
       <div className="flex items-center gap-4 my-auto">
         <Image
@@ -27,13 +27,13 @@ export const TestimonialCard = ({
           height={56}
         />
         <div>
-          <h3 className="text-xl font-semibold text-white">
+          <h3 className="text-xl font-semibold text-foreground">
             {testimonial.name}
           </h3>
           <StarRating rating={testimonial.rating} />
         </div>
       </div>
-      <p className={`mt-4 text-lg text-white ${testimonialClassName}`}>
+      <p className={`mt-4 text-lg text-foreground ${testimonialClassName}`}>
         {testimonial.testimonial}
       </p>
     </div>

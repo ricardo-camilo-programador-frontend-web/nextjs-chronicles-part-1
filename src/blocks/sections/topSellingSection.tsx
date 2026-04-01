@@ -11,7 +11,7 @@ export default function TopSellingSection() {
   return (
     <div className="relative min-h-screen max-w-7xl mx-auto pt-32 px-2 h-full pb-6">
       <div className="flex flex-col items-center max-w-[40rem] mx-auto">
-        <QuotedTitle className="text-center text-white">
+        <QuotedTitle className="text-center text-foreground">
           {t('title')}
         </QuotedTitle>
       </div>

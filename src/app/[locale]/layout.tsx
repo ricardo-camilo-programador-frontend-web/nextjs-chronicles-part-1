@@ -99,7 +99,6 @@ export default async function RootLayout({
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
           >
             <IntroWarningModal
               linkedinUsername={process.env.LINKEDIN_USERNAME || ""}

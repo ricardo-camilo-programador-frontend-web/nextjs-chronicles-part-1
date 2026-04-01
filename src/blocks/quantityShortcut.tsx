@@ -72,11 +72,11 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
       </Modal>
 
       <div
-        className={` flex justify-between items-center min-w-full w-full md:w-auto border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 text-center mr-auto min-h-[3.5rem] mx-auto ${className}`}
+        className={` flex justify-between items-center min-w-full w-full md:w-auto border border-glass-border text-foreground rounded-lg hover:bg-glass transition-all duration-300 text-center mr-auto min-h-[3.5rem] mx-auto ${className}`}
       >
         <button
           type="button"
-          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-white/10 transition-all duration-300"
+          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-glass transition-all duration-300"
           aria-label={t('decreaseQuantity')}
           title={t('decreaseQuantity')}
           onClick={() => handleWithdrawItem()}
@@ -86,7 +86,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
 
         <button
           type="button"
-          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-white/10 transition-all duration-300"
+          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-glass transition-all duration-300"
           aria-label="Remove item"
           title="Remove item"
           onClick={toggleModal}
@@ -111,7 +111,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
 
         <button
           type="button"
-          className="flex items-center justify-center w-full min-h-[3.5rem] text-white hover:text-green-500 hover:bg-white/10 active:text-green-500 active:bg-white/20 active:scale-95 touch-none transition-all duration-300"
+          className="flex items-center justify-center w-full min-h-[3.5rem] text-foreground hover:text-green-500 hover:bg-glass active:text-green-500 active:bg-glass-strong active:scale-95 touch-none transition-all duration-300"
           aria-label={t('increaseQuantity')}
           title={t('increaseQuantity')}
           onClick={() => incrementItemQuantity(cartItem.item)}
