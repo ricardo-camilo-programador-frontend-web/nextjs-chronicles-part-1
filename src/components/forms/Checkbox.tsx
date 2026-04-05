@@ -30,7 +30,7 @@ export const Checkbox: FC<Props> = ({
     <div className={`flex flex-col items-center justify-center cursor-pointer ${className}  ${disabled ? "cursor-not-allowed" : ""}`}>
       {label && (
         <Label
-          className={`ml-1 -mb-2 text-foreground p-2 text-xs font-normal bg-gradient-to-r from-glass via-transparent  rounded-full min-w-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50/10`}
+          className={`ml-1 -mb-2 text-foreground p-2 text-xs font-normal bg-gradient-to-r from-glass via-transparent  rounded-full min-w-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-glass`}
           value={label}
           htmlFor={name}
         >
@@ -44,7 +44,7 @@ export const Checkbox: FC<Props> = ({
         </Label>
       )}
 
-      {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-error">{error}</p>}
     </div>
   );
 };

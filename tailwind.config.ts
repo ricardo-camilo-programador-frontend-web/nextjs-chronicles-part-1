@@ -36,6 +36,7 @@ export default {
           border: "var(--glass-border)",
         },
         divider: "var(--divider)",
+        error: "var(--error)",
         brand: {
           primary: "var(--brand-primary)",
           secondary: "var(--brand-secondary)",

@@ -49,7 +49,7 @@ export const PasswordStrengthMeter: FC<PasswordStrengthMeterProps> = ({ password
   return (
     <div className={`mt-2 space-y-2 ${className}`}>
       <div className="flex items-center gap-2">
-        <div className="flex-1 h-2 bg-gray-300 rounded-full overflow-hidden transition-all duration-300 ease-in-out">
+        <div className="flex-1 h-2 bg-divider rounded-full overflow-hidden transition-all duration-300 ease-in-out">
           <div
             className={`h-full transition-all duration-300 ${getPasswordStrengthColor(strength)}`}
             style={{ width: `${strength}%` }}
@@ -61,20 +61,20 @@ export const PasswordStrengthMeter: FC<PasswordStrengthMeterProps> = ({ password
           {getPasswordStrengthLabel(strength)}
         </span>
       </div>
-      <ul className="text-sm text-white space-y-1">
-        <li className={`${password.length >= 8 ? "text-green-500" : ""}`}>
+      <ul className="text-sm text-foreground space-y-1">
+        <li className={`${password.length >= 8 ? "text-accent" : ""}`}>
           • At least 8 characters
         </li>
-        <li className={`${/[A-Z]/.test(password) ? "text-green-500" : ""}`}>
+        <li className={`${/[A-Z]/.test(password) ? "text-accent" : ""}`}>
           • At least one uppercase letter
         </li>
-        <li className={`${/[a-z]/.test(password) ? "text-green-500" : ""}`}>
+        <li className={`${/[a-z]/.test(password) ? "text-accent" : ""}`}>
           • At least one lowercase letter
         </li>
-        <li className={`${/[0-9]/.test(password) ? "text-green-500" : ""}`}>
+        <li className={`${/[0-9]/.test(password) ? "text-accent" : ""}`}>
           • At least one number
         </li>
-        <li className={`${/[^A-Za-z0-9]/.test(password) ? "text-green-500" : ""}`}>
+        <li className={`${/[^A-Za-z0-9]/.test(password) ? "text-accent" : ""}`}>
           • At least one special character
         </li>
       </ul>

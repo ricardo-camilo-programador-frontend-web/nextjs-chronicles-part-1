@@ -38,6 +38,8 @@
   --card-overlay: rgba(255, 255, 255, 0.2);
   --card-chip-start: #FBBF24;
   --card-chip-end: #D97706;
+
+  --error: #DC2626;
 }
 
 /* ===== DARK THEME (original nature aesthetic) ===== */
@@ -78,6 +80,8 @@
   --card-overlay: rgba(255, 255, 255, 0.2);
   --card-chip-start: #FBBF24;
   --card-chip-end: #D97706;
+
+  --error: #F87171;
 }
 
 body {

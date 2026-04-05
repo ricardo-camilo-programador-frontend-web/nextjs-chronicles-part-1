@@ -81,7 +81,7 @@ export const RadioGroup: FC<RadioGroupProps<FieldValues>> = ({
                 flex items-center p-4 rounded-lg cursor-pointer
                 transition-all duration-200 w-full
                 ${value === option.value
-                ? "bg-field border-2 border-green-500"
+                ? "bg-field border-2 border-accent"
                 : "bg-surface border border-field-border hover:border-muted"
               }
                 ${disabled ? "opacity-50 cursor-not-allowed" : ""}
@@ -103,22 +103,22 @@ export const RadioGroup: FC<RadioGroupProps<FieldValues>> = ({
                     transition-all duration-200 ease-in-out
                     flex items-center justify-center
                     ${value === option.value
-                    ? "border-green-500 scale-100"
-                    : "border-gray-50 scale-0"
+                    ? "border-accent scale-100"
+                    : "border-glass-border scale-0"
                   }
                   `}
               >
                 {value === option.value && (
-                  <div className="w-1 h-1 rounded-full bg-green-500 animate-bounce" />
+                  <div className="w-1 h-1 rounded-full bg-accent animate-bounce" />
                 )}
               </div>
             </div>
-            <span className="text-white">{option.label}</span>
+            <span className="text-foreground">{option.label}</span>
           </label>
         ))}
       </div>
 
-      {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-1 text-sm text-error">{error}</p>}
     </div>
   );
 };
