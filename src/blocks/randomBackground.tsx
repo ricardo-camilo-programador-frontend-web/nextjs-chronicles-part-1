@@ -30,9 +30,9 @@ const RandomBackground: FC<RandomBackgroundProps> = ({ className }) => {
   const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)]
 
   return (
-    <div className={`flex flex-col items-center justify-center h-screen bg-gradient-to-r from-[#225348] to-[#8DB575] absolute inset-0 min-h-full blur-sm ${className}`}>
+    <div className={`flex flex-col items-center justify-center h-screen bg-gradient-to-r from-gradient-start to-gradient-end absolute inset-0 min-h-full blur-sm ${className}`}>
       <p
-        className="text-white text-7xl font-bold absolute top-[7rem] left-6"
+        className="text-foreground text-7xl font-bold absolute top-[7rem] left-6"
       >
         {randomBackground.title}
       </p>

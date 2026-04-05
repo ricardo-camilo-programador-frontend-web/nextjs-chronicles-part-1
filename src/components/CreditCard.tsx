@@ -27,31 +27,31 @@ const CreditCard: FC<Props> = ({
     <div
       role="group"
       aria-label={t("creditCard.label")}
-      className={`relative w-[420px] h-[260px] rounded-2xl shadow-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 ${className}`}
+      className={`relative w-[420px] h-[260px] rounded-2xl shadow-xl overflow-hidden bg-gradient-to-br from-card-bg-start to-card-bg-end ${className}`}
     >
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0,#ffffff33,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0,var(--card-overlay),transparent_70%)]" />
       </div>
 
       <div className="relative h-full p-8 flex flex-col justify-between">
         <div className="flex justify-between items-start">
-          <div className="w-12 h-10 bg-yellow-500/80 rounded-md bg-gradient-to-br from-yellow-400 to-yellow-600 overflow-hidden">
+          <div className="w-12 h-10 bg-brand-primary/80 rounded-md bg-gradient-to-br from-card-chip-start to-card-chip-end overflow-hidden">
             <div className="h-full w-full grid grid-cols-2 gap-1 p-1">
-              <div className="bg-yellow-700/30 rounded-sm" />
-              <div className="bg-yellow-700/30 rounded-sm" />
+              <div className="bg-black/20 rounded-sm" />
+              <div className="bg-black/20 rounded-sm" />
             </div>
           </div>
           <Link
             href="https://cnpj.biz/47798810000107"
             externalLink
             rel="noopener noreferrer"
-            className="text-2xl font-bold italic text-white"
+            className="text-2xl font-bold italic text-foreground"
           >
             {cardName}
           </Link>
         </div>
 
-        <div className="text-2xl tracking-wider text-white font-mono">
+        <div className="text-2xl tracking-wider text-foreground font-mono">
           {formattedCardNumber}
         </div>
 
@@ -60,7 +60,7 @@ const CreditCard: FC<Props> = ({
             <div className="text-xs text-muted uppercase tracking-wider">
               {t("creditCard.name.label")}
             </div>
-            <div className="text-xs text-white font-medium tracking-wide truncate max-w-[20rem]">
+            <div className="text-xs text-foreground font-medium tracking-wide truncate max-w-[20rem]">
               {cardHolderName.toUpperCase()}
             </div>
           </div>
@@ -70,7 +70,7 @@ const CreditCard: FC<Props> = ({
               <div className="text-xs text-muted uppercase tracking-wider">
                 {t("creditCard.expirationDate.label")}
               </div>
-              <div className="text-white font-medium">
+              <div className="text-foreground font-medium">
                 {formatValueWithMask(expirationDate, "expirationDate")}
               </div>
             </div>
@@ -79,7 +79,7 @@ const CreditCard: FC<Props> = ({
               <div className="text-xs text-muted uppercase tracking-wider">
                 {t("creditCard.cvv.label")}
               </div>
-              <div className="text-white font-medium">{securityCode}</div>
+              <div className="text-foreground font-medium">{securityCode}</div>
             </div>
           </div>
         </div>

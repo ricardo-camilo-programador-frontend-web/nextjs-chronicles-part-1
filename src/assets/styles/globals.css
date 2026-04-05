@@ -26,6 +26,18 @@
 
   --scrollbar-track: #E5E7EB;
   --scrollbar-thumb: #4A7C3F;
+
+  --brand-primary: #FFDD00;
+  --brand-secondary: #FFA500;
+
+  --gradient-start: #225348;
+  --gradient-end: #8DB575;
+
+  --card-bg-start: #1F2937;
+  --card-bg-end: #111827;
+  --card-overlay: rgba(255, 255, 255, 0.2);
+  --card-chip-start: #FBBF24;
+  --card-chip-end: #D97706;
 }
 
 /* ===== DARK THEME (original nature aesthetic) ===== */
@@ -54,6 +66,18 @@
 
   --scrollbar-track: #222C1D;
   --scrollbar-thumb: #FFF84E;
+
+  --brand-primary: #FFDD00;
+  --brand-secondary: #FFA500;
+
+  --gradient-start: #1B2316;
+  --gradient-end: #4A7C3F;
+
+  --card-bg-start: #1F2937;
+  --card-bg-end: #111827;
+  --card-overlay: rgba(255, 255, 255, 0.2);
+  --card-chip-start: #FBBF24;
+  --card-chip-end: #D97706;
 }
 
 body {

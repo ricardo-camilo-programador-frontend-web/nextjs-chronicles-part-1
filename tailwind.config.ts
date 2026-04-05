@@ -36,6 +36,21 @@ export default {
           border: "var(--glass-border)",
         },
         divider: "var(--divider)",
+        brand: {
+          primary: "var(--brand-primary)",
+          secondary: "var(--brand-secondary)",
+        },
+        gradient: {
+          start: "var(--gradient-start)",
+          end: "var(--gradient-end)",
+        },
+        card: {
+          "bg-start": "var(--card-bg-start)",
+          "bg-end": "var(--card-bg-end)",
+          overlay: "var(--card-overlay)",
+          "chip-start": "var(--card-chip-start)",
+          "chip-end": "var(--card-chip-end)",
+        },
       },
       keyframes: {
         "fade-in": {
