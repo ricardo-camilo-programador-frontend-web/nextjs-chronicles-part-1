@@ -161,15 +161,15 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
       {!isVisible ? (
         <button
           onClick={() => setIsVisible(true)}
-          className="bg-glass backdrop-blur-lg p-3 rounded-full shadow-lg transition-colors hover:bg-glass-strong border border-emerald-400/20"
+          className="bg-glass backdrop-blur-lg p-3 rounded-full shadow-lg transition-colors hover:bg-glass-strong border border-glass-border"
           aria-label="Show ambient sound player"
         >
-          {isPlaying ? <FaVolumeUp size={20} className="text-emerald-50" /> : <FaVolumeMute size={20} className="text-emerald-50" />}
+          {isPlaying ? <FaVolumeUp size={20} className="text-foreground" /> : <FaVolumeMute size={20} className="text-foreground" />}
         </button>
       ) : (
         <div
           ref={playerRef}
-          className="bg-glass backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-emerald-400/20 z-50 min-w-[320px] relative"
+          className="bg-glass backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-glass-border z-50 min-w-[320px] relative"
         >
           <div className="absolute -top-8 -left-8 text-4xl opacity-20 rotate-45">
             🌿
@@ -180,26 +180,26 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center">
-              <p className="text-emerald-100/80 text-sm">
+              <p className="text-muted text-sm">
                 {isPlaying ? "Now Playing" : "Paused"}
               </p>
               <button
                 onClick={() => setIsVisible(false)}
-                className="p-2 rounded-full hover:bg-glass transition-colors text-emerald-50"
+                className="p-2 rounded-full hover:bg-glass transition-colors text-foreground"
                 aria-label="Close player"
               >
                 <span className="text-xl">&times;</span>
               </button>
             </div>
 
-            <p className="font-medium text-center text-emerald-50">
+            <p className="font-medium text-center text-foreground">
               {currentTrack.altText}
             </p>
 
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={playPrevious}
-                className="p-2 rounded-full hover:bg-glass transition-colors text-emerald-50"
+                className="p-2 rounded-full hover:bg-glass transition-colors text-foreground"
                 aria-label="Previous track"
               >
                 <FaStepBackward size={16} />
@@ -207,7 +207,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
               <button
                 onClick={togglePlay}
-                className="p-4 rounded-full hover:bg-glass transition-colors text-emerald-50"
+                className="p-4 rounded-full hover:bg-glass transition-colors text-foreground"
                 aria-label={isPlaying ? "Pause" : "Play"}
                 disabled={isLoading}
               >
@@ -216,7 +216,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
               <button
                 onClick={playNext}
-                className="p-2 rounded-full hover:bg-glass transition-colors text-emerald-50"
+                className="p-2 rounded-full hover:bg-glass transition-colors text-foreground"
                 aria-label="Next track"
               >
                 <FaStepForward size={16} />
@@ -225,7 +225,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
               <button
                 onClick={() => setLoopEnabled(!loopEnabled)}
                 className={`p-2 rounded-full hover:bg-glass transition-colors ${
-                  loopEnabled ? 'text-emerald-400' : 'text-emerald-50'
+                  loopEnabled ? 'text-accent' : 'text-foreground'
                 }`}
                 aria-label={loopEnabled ? "Disable loop" : "Enable loop"}
               >
@@ -233,7 +233,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
               </button>
             </div>
 
-            <div className="flex items-center gap-2 text-emerald-50 text-xs">
+            <div className="flex items-center gap-2 text-foreground text-xs">
               <span>{formatTime(currentTime)}</span>
               <input
                 type="range"
@@ -241,14 +241,14 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 max={duration || 0}
                 value={currentTime}
                 onChange={handleProgressChange}
-                className="w-full accent-emerald-400"
+                className="w-full accent-accent"
                 aria-label="Progress bar"
               />
               <span>{formatTime(duration)}</span>
             </div>
 
             {showVolumeControl && (
-              <div className="flex items-center gap-2 text-emerald-50">
+              <div className="flex items-center gap-2 text-foreground">
                 <FaVolumeMute size={16} />
                 <input
                 type="range"
@@ -257,7 +257,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 step="0.01"
                 value={volume}
                 onChange={handleVolumeChange}
-                className="w-full accent-emerald-400"
+                className="w-full accent-accent"
                 aria-label="Volume control"
               />
                 <FaVolumeUp size={16} />
@@ -269,9 +269,9 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 {ambientSounds.map((sound, index) => (
                   <li
                     key={`${sound.altText}-${index}`}
-                    className={`text-center p-2 cursor-pointer rounded-lg transition-colors hover:bg-glass text-emerald-50
+                    className={`text-center p-2 cursor-pointer rounded-lg transition-colors hover:bg-glass text-foreground
                       ${currentTrackIndex === index
-                        ? "bg-glass-strong border border-emerald-400/20"
+                        ? "bg-glass-strong border border-glass-border"
                         : ""
                       }`}
                     onClick={() => setCurrentTrackIndex(index)}

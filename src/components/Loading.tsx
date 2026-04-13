@@ -10,7 +10,7 @@ const Loading: FC = () => {
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className={`absolute animate-floating-leaf-${i % 3} text-green-300/30`}
+            className={`absolute animate-floating-leaf-${i % 3} text-accent/20`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -30,7 +30,7 @@ const Loading: FC = () => {
         width="100"
         height="100"
         viewBox="0 0 100 100"
-        className="text-green-500 relative z-10"
+        className="text-accent relative z-10"
         aria-label={t('ariaLabel')}
         role="status"
       >

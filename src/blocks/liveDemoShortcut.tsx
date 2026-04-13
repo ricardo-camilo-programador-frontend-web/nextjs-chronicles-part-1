@@ -35,8 +35,8 @@ export function LiveDemoShortcut({ className, videoUrl, buttonLabel, buttonTitle
       >
         <div className="flex items-center justify-center gap-3 w-full">
           <div className="flex-shrink-0 relative w-8 h-8 flex items-center justify-center">
-            <div className="absolute inset-0 bg-white rounded-full opacity-20 group-hover:opacity-30 transition-opacity" />
-            <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-white border-b-[6px] border-b-transparent ml-1" />
+            <div className="absolute inset-0 bg-foreground rounded-full opacity-20 group-hover:opacity-30 transition-opacity" />
+            <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-foreground border-b-[6px] border-b-transparent ml-1" />
           </div>
 
           <span className="text-foreground font-medium text-lg truncate">

@@ -52,6 +52,9 @@ export default {
           "chip-start": "var(--card-chip-start)",
           "chip-end": "var(--card-chip-end)",
         },
+        success: "var(--success)",
+        warning: "var(--warning)",
+        info: "var(--info)",
       },
       keyframes: {
         "fade-in": {

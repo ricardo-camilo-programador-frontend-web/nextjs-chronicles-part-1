@@ -16,7 +16,7 @@ export function PlantBannerCard({
 }: PlantBannerCardProps) {
   return (
     <div
-      className={`flex relative justify-between items-center w-full bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-3xl lg:rounded-full py-8 lg:p-8 border border-glass-border max-w-6xl mx-auto ${className}`}
+      className={`flex relative justify-between items-center w-full bg-surface backdrop-blur-md rounded-3xl lg:rounded-full py-8 lg:p-8 border border-surface-border max-w-6xl mx-auto ${className}`}
       role="article"
       aria-label={`Plant card for ${plant.common_name || plant.scientific_name}`}
     >

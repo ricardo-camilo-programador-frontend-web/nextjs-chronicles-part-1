@@ -21,19 +21,19 @@ export const PasswordStrengthMeter: FC<PasswordStrengthMeterProps> = ({ password
   };
 
   const getPasswordStrengthColor = (strength: number): string => {
-    if (strength <= 20) return "bg-red-600";
-    if (strength <= 40) return "bg-orange-600";
-    if (strength <= 60) return "bg-yellow-600";
-    if (strength <= 80) return "bg-blue-600";
-    return "bg-green-600";
+    if (strength <= 20) return "bg-error";
+    if (strength <= 40) return "bg-warning";
+    if (strength <= 60) return "bg-yellow-500";
+    if (strength <= 80) return "bg-info";
+    return "bg-success";
   };
 
   const getPasswordStrengthLabelColor = (strength: number): string => {
-    if (strength <= 20) return "text-red-600";
-    if (strength <= 40) return "text-orange-600";
-    if (strength <= 60) return "text-yellow-600";
-    if (strength <= 80) return "text-blue-600";
-    return "text-green-600";
+    if (strength <= 20) return "text-error";
+    if (strength <= 40) return "text-warning";
+    if (strength <= 60) return "text-yellow-500";
+    if (strength <= 80) return "text-info";
+    return "text-success";
   };
 
   const getPasswordStrengthLabel = (strength: number): string => {

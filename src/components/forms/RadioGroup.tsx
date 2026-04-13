@@ -47,7 +47,7 @@ export const RadioGroup: FC<RadioGroupProps<FieldValues>> = ({
     <div className={`flex flex-col space-y-2 ${className}`}>
       {label && (
         <Label
-          className="ml-1 text-foreground w-max p-2 text-xs font-normal bg-gradient-to-r from-glass via-transparent rounded-full"
+          className="ml-1 text-foreground w-max p-2 text-xs font-normal bg-background rounded-full"
           value={label}
           htmlFor={name.toString()}
         />

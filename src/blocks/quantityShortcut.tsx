@@ -54,7 +54,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full">
             <button
               onClick={() => setIsOpen(false)}
-              className="bg-gray-500 text-white px-4 py-2 rounded-md w-full order-2 md:order-1"
+              className="bg-muted text-foreground px-4 py-2 rounded-md w-full order-2 md:order-1"
             >
               {t('cancel')}
             </button>
@@ -63,7 +63,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
                 removeItem(cartItem.item);
                 toast.warning(`${cartItem.item.common_name} ${t('removeItemDescription')}`);
               }}
-              className="bg-red-500 text-white px-4 py-2 rounded-md w-full order-1 md:order-2"
+              className="bg-error text-foreground px-4 py-2 rounded-md w-full order-1 md:order-2"
             >
               {t('removeItem')}
             </button>
@@ -76,7 +76,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
       >
         <button
           type="button"
-          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-glass transition-all duration-300"
+          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-error active:bg-glass transition-all duration-300"
           aria-label={t('decreaseQuantity')}
           title={t('decreaseQuantity')}
           onClick={() => handleWithdrawItem()}
@@ -86,7 +86,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
 
         <button
           type="button"
-          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-red-500 active:bg-glass transition-all duration-300"
+          className="w-full min-h-[3.5rem] flex items-center justify-center active:text-error active:bg-glass transition-all duration-300"
           aria-label="Remove item"
           title="Remove item"
           onClick={toggleModal}
@@ -111,7 +111,7 @@ const QuantityShortcut: FC<ShoppingCartProps> = ({
 
         <button
           type="button"
-          className="flex items-center justify-center w-full min-h-[3.5rem] text-foreground hover:text-green-500 hover:bg-glass active:text-green-500 active:bg-glass-strong active:scale-95 touch-none transition-all duration-300"
+          className="flex items-center justify-center w-full min-h-[3.5rem] text-foreground hover:text-success hover:bg-glass active:text-success active:bg-glass-strong active:scale-95 touch-none transition-all duration-300"
           aria-label={t('increaseQuantity')}
           title={t('increaseQuantity')}
           onClick={() => incrementItemQuantity(cartItem.item)}

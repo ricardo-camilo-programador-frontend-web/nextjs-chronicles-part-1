@@ -90,7 +90,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
           <Button
             type="submit"
             label={t("continue")}
-            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+            className="w-auto ml-auto bg-success hover:bg-success/90"
             disabled={!selectedShippingMethod}
           />
         )}
@@ -100,7 +100,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
             <Button
               type="button"
               label={t("next")}
-              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              className="w-auto ml-auto bg-success hover:bg-success/90"
               disabled={selectedCountry === ""}
             />
           </Link>
@@ -184,7 +184,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label={t("shipping.delivery")}
           icon={<FaTruck />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-green-500" : "bg-gray-500"
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-success" : "bg-muted"
             }`}
           onClick={() => setIsDelivery(true)}
         >
@@ -202,7 +202,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
         <Button
           label={t("shipping.pickup")}
           icon={<FaStore />}
-          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-gray-500" : "bg-green-500"
+          className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-muted" : "bg-success"
             }`}
           onClick={() => setIsDelivery(false)}
         >
@@ -307,9 +307,9 @@ const ShippingStep: FC<ShippingStepProps> = ({
               {shippingMethods.map((method) => (
                 <label
                   key={method.id}
-                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-field border-field-border text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
-                      ? "border-green-500 bg-green-50 !text-black"
-                      : "border-gray-200"
+                  className={`flex items-center justify-between p-4 border rounded-lg w-full z-[2] px-4 py-3 bg-field border-field-border text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-success focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer ${selectedShippingMethod?.id === method.id
+                      ? "border-success bg-surface"
+                      : "border-divider"
                     }`}
                 >
                   <div className="flex items-center">
@@ -325,9 +325,9 @@ const ShippingStep: FC<ShippingStepProps> = ({
                     <div>
                       <p className="font-medium">{method.name}</p>
                       <p
-                        className={`text-sm text-muted ${selectedShippingMethod?.id === method.id
-                            ? "text-green-500"
-                            : ""
+                        className={`text-sm ${selectedShippingMethod?.id === method.id
+                            ? "text-success"
+                            : "text-muted"
                           }`}
                       >
                         {method.time}

@@ -23,7 +23,7 @@ const OrdersPage: FC = () => {
           <h2 className="text-2xl font-bold mb-6">{t("ordersTitle")}</h2>
 
           {allOrders.length === 0 ? (
-            <div className="bg-glass backdrop-blur-md rounded-lg p-8 text-center border border-glass-border">
+            <div className="bg-surface backdrop-blur-md rounded-lg p-8 text-center border border-surface-border">
               <p>{t("noOrders")}</p>
             </div>
           ) : (
@@ -31,24 +31,24 @@ const OrdersPage: FC = () => {
               {allOrders.map((order) => (
                 <div
                   key={order.orderId}
-                  className="bg-glass backdrop-blur-md rounded-lg p-6 border border-glass-border space-y-4 min-w-[17rem]"
+                  className="bg-surface backdrop-blur-md rounded-lg p-6 border border-surface-border space-y-4 min-w-[17rem]"
                 >
                   <div className="flex justify-between items-center gap-4">
                     {order.shippingMethod?.name && (
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <FaMapMarkerAlt className="text-green-500" />
+                          <FaMapMarkerAlt className="text-success" />
                         <span className="font-semibold">{t("shipping")}</span>
                       </div>
-                       <p className="text-sm text-foreground/70">{order.shippingMethod?.name}</p>
-                        <p className="text-sm text-foreground/70">{order.shippingAddress.city}, {order.shippingAddress.state}</p>
+                       <p className="text-sm text-muted">{order.shippingMethod?.name}</p>
+                        <p className="text-sm text-muted">{order.shippingAddress.city}, {order.shippingAddress.state}</p>
                       </div>
                     )}
 
                     {!order.shippingMethod?.name && (
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <FaMapMarkerAlt className="text-green-500" />
+                          <FaMapMarkerAlt className="text-success" />
                           <span className="font-semibold">{t("shipping")}</span>
                         </div>
                       </div>
@@ -56,30 +56,30 @@ const OrdersPage: FC = () => {
 
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <FaCreditCard className="text-green-500" />
+                        <FaCreditCard className="text-success" />
                         <span className="font-semibold">{t("payment")}</span>
                       </div>
-                      <p className="text-sm text-foreground/70">{order.paymentInfo.paymentMethod}</p>
-                      <p className="text-sm text-green-500">{order.status}</p>
+                      <p className="text-sm text-muted">{order.paymentInfo.paymentMethod}</p>
+                      <p className="text-sm text-success">{order.status}</p>
                     </div>
 
                     <div className="space-y-2">
                       <p className="font-semibold">{t("total")}</p>
-                      <p className="text-xl font-bold text-green-400">
+                      <p className="text-xl font-bold text-accent">
                         {formatCurrency(order.total)}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 border-b border-glass-border pt-8">
-                    <FaBox className="text-green-500 w-auto h-auto" />
+                  <div className="flex items-center gap-2 border-b border-surface-border pt-8">
+                    <FaBox className="text-success w-auto h-auto" />
                     <Link
                       href={`/order/${order.orderId}`}
                       className="group text-xl flex gap-2 items-center font-semibold transition-all duration-300 ease-in-out"
                     >
                       <span className="flex items-center gap-2">
                         {t("orderId")}:{" "}
-                        <span className="text-green-400 underline decoration-dotted underline-offset-4 group-hover:text-green-300 group-hover:decoration-solid">
+                        <span className="text-accent underline decoration-dotted underline-offset-4 group-hover:text-accent/80 group-hover:decoration-solid">
                           {order.orderId}
                         </span>
                       </span>

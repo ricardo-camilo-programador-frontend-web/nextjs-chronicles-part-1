@@ -47,7 +47,7 @@ export function MobileMenu({ menuItems, className }: MobileMenuProps) {
           <Logo />
 
           <Button
-            className="flex items-center justify-end mr-4 ml-24 mt-1 text-white hover:text-red-500/90 !rounded-full p-2 border-none transition-colors duration-200 hover:bg-transparent"
+            className="flex items-center justify-end mr-4 ml-24 mt-1 text-secondary hover:text-error !rounded-full p-2 border-none transition-colors duration-200 hover:bg-transparent"
             onClick={handleToggleMenu}
           >
             <svg
@@ -85,12 +85,12 @@ export function MobileMenu({ menuItems, className }: MobileMenuProps) {
             {menuItems.map((item, index) => (
               <li
                 key={`${item.menuItemKey}-${index}-mobile-menu-${getUniqueId()}`}
-                className="w-full hover:bg-glass transition-all duration-300 hover:border-b-white border-b border-transparent"
+                className="w-full hover:bg-glass transition-all duration-300 border-b border-transparent"
               >
                 <Link
                   href={item.to}
                   aria-label={item.ariaLabel}
-                  className="flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-white rounded-md transition-colors duration-200"
+                  className="flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-secondary rounded-md transition-colors duration-200"
                   onClick={handleToggleMenu}
                 >
                   {translateMenu(item.menuItemKey)}
@@ -101,7 +101,7 @@ export function MobileMenu({ menuItems, className }: MobileMenuProps) {
         </div>
       </div>
       <Button
-        className={` min-w-screen min-h-screen bg-black/10 backdrop-blur-xs z-[5] -top-4 ${
+        className={` min-w-screen min-h-screen bg-background/60 backdrop-blur-sm z-[5] -top-4 ${
           isOpen ? "absolute inset-0" : "hidden"
         } transition-transform duration-300`}
         onClick={handleToggleMenu}

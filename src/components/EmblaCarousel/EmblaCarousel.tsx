@@ -124,19 +124,19 @@ export const EmblaCarousel: FC<PropType> = (props) => {
           <PrevButton
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
-            className="w-10 h-10 flex items-center justify-center text-white/50 bg-transparent hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -left-9"
+            className="w-10 h-10 flex items-center justify-center text-muted/50 bg-transparent hover:text-foreground transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -left-9"
           />
           <NextButton
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
-            className="w-10 h-10 flex items-center justify-center text-white/50 bg-transparent hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -right-9"
+            className="w-10 h-10 flex items-center justify-center text-muted/50 bg-transparent hover:text-foreground transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -right-9"
           />
         </div>
 
         <SelectedSnapDisplay
           selectedSnap={selectedSnap}
           snapCount={snapCount}
-          className={`text-white/70 text-sm w-full justify-center ${snapDisplayClassName}`}
+          className={`text-muted text-sm w-full justify-center ${snapDisplayClassName}`}
           onDotButtonClick={onDotButtonClick}
         />
       </div>

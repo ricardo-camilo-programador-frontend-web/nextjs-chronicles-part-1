@@ -170,7 +170,7 @@ const PaymentStep = () => {
             type="submit"
             loading={isSubmitting}
             label={tCheckout('next')}
-            className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+            className="w-auto ml-auto bg-success hover:bg-success/90"
           />
         }
 
@@ -180,7 +180,7 @@ const PaymentStep = () => {
               type="button"
               loading={isSubmitting}
               label={tCheckout('next')}
-              className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+              className="w-auto ml-auto bg-success hover:bg-success/90"
               onClick={() => {
                 setPaymentInfo({
                   paymentMethod: selectedMethod as PaymentMethod,

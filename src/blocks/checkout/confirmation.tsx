@@ -33,7 +33,7 @@ const ConfirmationStep: FC = () => {
   const toast = useToast();
 
   const renderOrderSummary = () => (
-    <div className="space-y-4 bg-black/20 rounded-lg p-4">
+    <div className="space-y-4 bg-glass rounded-lg p-4">
       <h3 className="text-xl font-semibold">{t("orderSummary")}</h3>
       <div className="space-y-2 max-h-[200px] overflow-y-auto pr-2">
         {items.map((item: CartItem) => (
@@ -46,7 +46,7 @@ const ConfirmationStep: FC = () => {
               />
               <div>
                 <p className="font-medium">{item.item.common_name}</p>
-                <p className="text-sm text-foreground/70">
+                <p className="text-sm text-muted">
                   {t("quantity")}: {item.quantity}
                 </p>
               </div>
@@ -74,9 +74,9 @@ const ConfirmationStep: FC = () => {
   );
 
   const renderDeliveryInfo = () => (
-    <div className="space-y-4 bg-black/20 rounded-lg p-4">
+    <div className="space-y-4 bg-glass rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaMapMarkerAlt className="text-green-500" />
+        <FaMapMarkerAlt className="text-success" />
         <h3 className="text-xl font-semibold">{t("deliveryInformation")}</h3>
       </div>
       {shippingAddress?.number && (
@@ -85,7 +85,7 @@ const ConfirmationStep: FC = () => {
           <p>{shippingAddress?.complement}</p>
         <p>{shippingAddress?.city}, {shippingAddress?.state}</p>
         <p>{shippingAddress?.zipCode}</p>
-        <p className="text-green-500 font-medium mt-4">
+        <p className="text-success font-medium mt-4">
           {t("estimatedDelivery")}: {selectedShippingMethod?.time}
           </p>
         </div>
@@ -97,9 +97,9 @@ const ConfirmationStep: FC = () => {
   );
 
   const renderCustomerInfo = () => (
-    <div className="space-y-4 bg-black/20 rounded-lg p-4">
+    <div className="space-y-4 bg-glass rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaUser className="text-green-500" />
+        <FaUser className="text-success" />
         <h3 className="text-xl font-semibold">{t("customerInformation")}</h3>
       </div>
       <div className="space-y-2">
@@ -111,13 +111,13 @@ const ConfirmationStep: FC = () => {
   );
 
   const renderPaymentInfo = () => (
-    <div className="space-y-4 bg-black/20 rounded-lg p-4">
+    <div className="space-y-4 bg-glass rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaCreditCard className="text-green-500" />
+        <FaCreditCard className="text-success" />
         <h3 className="text-xl font-semibold">{t("paymentInformation")}</h3>
       </div>
       <div className="flex items-center gap-2">
-        <FaBox className="text-green-500" />
+        <FaBox className="text-success" />
         <p>{paymentInfo.paymentMethod}</p>
       </div>
     </div>
@@ -167,7 +167,7 @@ const ConfirmationStep: FC = () => {
         <Button
           type="button"
           label={t("confirmOrder")}
-          className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+          className="w-auto ml-auto bg-success hover:bg-success/90"
           onClick={handleConfirmOrder}
         />
       </div>

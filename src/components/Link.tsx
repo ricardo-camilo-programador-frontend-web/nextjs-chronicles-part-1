@@ -28,7 +28,7 @@ const LinkComponent: FC<LinkProps> = ({
     <Link
       href={href}
       target={externalLink ? '_blank' : '_self'}
-      className={` hover:decoration-white active:text-white'} ${withUnderline && 'animate-underline'} ${className}`}
+      className={` hover:decoration-foreground active:text-foreground'} ${withUnderline && 'animate-underline'} ${className}`}
       rel={rel}
       title={title}
       {...props}

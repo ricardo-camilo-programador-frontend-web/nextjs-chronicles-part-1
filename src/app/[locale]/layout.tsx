@@ -122,7 +122,7 @@ export default async function RootLayout({
 
         <PortfolioShortcut
           portfolioUrl={process.env.PORTFOLIO_URL || ""}
-          customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999]"
+          customClassName="fixed bottom-4 left-4 hover:bg-glass hover:text-foreground transition-all ease-in-out duration-300 z-[9999]"
           showText={false}
         />
 
@@ -134,7 +134,6 @@ export default async function RootLayout({
           position="bottom-right"
           expand={true}
           richColors
-          theme="dark"
         />
       </body>
 

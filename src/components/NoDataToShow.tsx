@@ -17,9 +17,9 @@ export function NoDataToShow({
           🌱
         </div>
 
-        <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-emerald-400/20">
+        <div className="bg-glass backdrop-blur-lg rounded-xl p-6 shadow-lg border border-glass-border">
           <p
-            className="text-xl text-emerald-50 font-medium"
+            className="text-xl text-foreground font-medium"
             role="alert"
             aria-live="polite"
           >

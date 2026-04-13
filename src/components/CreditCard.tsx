@@ -37,8 +37,8 @@ const CreditCard: FC<Props> = ({
         <div className="flex justify-between items-start">
           <div className="w-12 h-10 bg-brand-primary/80 rounded-md bg-gradient-to-br from-card-chip-start to-card-chip-end overflow-hidden">
             <div className="h-full w-full grid grid-cols-2 gap-1 p-1">
-              <div className="bg-black/20 rounded-sm" />
-              <div className="bg-black/20 rounded-sm" />
+              <div className="bg-foreground/20 rounded-sm" />
+              <div className="bg-foreground/20 rounded-sm" />
             </div>
           </div>
           <Link

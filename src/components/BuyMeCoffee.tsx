@@ -16,9 +16,9 @@ export const BuyMeCoffee: FC<BuyMeCoffeeProps> = ({
     const baseClasses = 'inline-flex items-center gap-2 px-4 py-2 rounded-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2';
 
     const themeClasses = {
-      default: 'bg-brand-primary text-black',
+      default: 'bg-brand-primary text-foreground',
       outline: 'border-2 border-brand-primary text-brand-primary',
-      colored: 'bg-gradient-to-r from-brand-primary to-brand-secondary text-black',
+      colored: 'bg-gradient-to-r from-brand-primary to-brand-secondary text-foreground',
     }[theme];
 
     return `${baseClasses} ${themeClasses}`;

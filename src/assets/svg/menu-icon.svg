@@ -11,7 +11,7 @@
       y1="2"
       x2="29"
       y2="2"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="4"
       strokeLinecap="round"
     />
@@ -20,7 +20,7 @@
       y1="15"
       x2="29"
       y2="15"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth="4"
       strokeLinecap="round"
     />

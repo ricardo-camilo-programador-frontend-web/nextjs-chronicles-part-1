@@ -32,7 +32,7 @@ export const PhoneInput: FC<Props> = ({
     <div className={`flex flex-col ${className}`}>
       {label && (
         <Label
-          className="ml-1 -mb-2 text-foreground w-max p-2 text-xs font-normal bg-gradient-to-r from-glass via-transparent  rounded-full"
+          className="ml-1 -mb-2 text-foreground w-max p-2 text-xs font-normal bg-background rounded-full"
           value={label}
           htmlFor={name}
         />

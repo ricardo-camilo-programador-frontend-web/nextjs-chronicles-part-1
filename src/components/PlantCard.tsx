@@ -24,7 +24,7 @@ export function PlantCard({
 }: PlantCardProps) {
   return (
     <div
-      className={`relative bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-glass-border w-full md:max-w-[25rem] max-h-[35rem] flex flex-col items-center animate-fade-in ${containerClassName}`}
+      className={`relative bg-surface backdrop-blur-md rounded-[32px] p-8 border border-surface-border w-full md:max-w-[25rem] max-h-[35rem] flex flex-col items-center animate-fade-in ${containerClassName}`}
       role="article"
       aria-label={`Plant card for ${plant.common_name || plant.scientific_name
         }`}

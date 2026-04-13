@@ -27,7 +27,7 @@ export const StarRating = ({
       {Array.from({ length: maxRating }, (_, index) => (
         <svg
           key={`star-${index}-${getUniqueId()}`}
-          className={`${index < normalizedRating ? "text-yellow-400" : "text-white"}`}
+          className={`${index < normalizedRating ? "text-yellow-400" : "text-muted/40"}`}
           width={size}
           height={size}
           fill="currentColor"

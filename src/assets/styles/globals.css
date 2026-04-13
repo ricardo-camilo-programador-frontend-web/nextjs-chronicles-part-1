@@ -1,26 +1,26 @@
 @import './tailwind.css';
 
-/* ===== LIGHT THEME (default) ===== */
+/* ===== LIGHT THEME (fundo claro, texto escuro) ===== */
 :root {
   --background: #FAFBF9;
-  --foreground: #1B2316;
+  --foreground: #111827;
 
-  --primary: #222C1D;
+  --primary: #1B2316;
   --secondary: #FFFFFF;
-  --accent: #8B9A3E;
+  --accent: #6B8E23;
 
-  --surface: #F0F2ED;
-  --surface-border: #DDE1D8;
+  --surface: #FFFFFF;
+  --surface-border: #D1D5DB;
 
-  --field: #F5F7F3;
-  --field-border: #C8CEC2;
+  --field: #F9FAFB;
+  --field-border: #D1D5DB;
 
-  --muted: #6B7280;
-  --subtle: #9CA3AF;
+  --muted: #4B5563;
+  --subtle: #6B7280;
 
-  --glass: rgba(0, 0, 0, 0.04);
-  --glass-strong: rgba(0, 0, 0, 0.06);
-  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass: rgba(0, 0, 0, 0.06);
+  --glass-strong: rgba(0, 0, 0, 0.1);
+  --glass-border: rgba(0, 0, 0, 0.15);
 
   --divider: #E5E7EB;
 
@@ -33,55 +33,61 @@
   --gradient-start: #225348;
   --gradient-end: #8DB575;
 
-  --card-bg-start: #1F2937;
-  --card-bg-end: #111827;
-  --card-overlay: rgba(255, 255, 255, 0.2);
+  --card-bg-start: #F0FDF4;
+  --card-bg-end: #DCFCE7;
+  --card-overlay: rgba(0, 0, 0, 0.05);
   --card-chip-start: #FBBF24;
   --card-chip-end: #D97706;
 
   --error: #DC2626;
+  --success: #16A34A;
+  --warning: #D97706;
+  --info: #2563EB;
 }
 
-/* ===== DARK THEME (original nature aesthetic) ===== */
+/* ===== DARK THEME (fundo escuro, texto claro) ===== */
 .dark {
-  --background: #1B2316;
-  --foreground: #FFFFFF;
+  --background: #0F170A;
+  --foreground: #F3F4F6;
 
-  --primary: #222C1D;
-  --secondary: #FFFFFF;
-  --accent: #FFF84E;
+  --primary: #1a2414;
+  --secondary: #F3F4F6;
+  --accent: #8B9A3E;
 
-  --surface: #1F2937;
-  --surface-border: #374151;
+  --surface: #1a2015;
+  --surface-border: #2d3a25;
 
-  --field: #374151;
-  --field-border: #4B5563;
+  --field: #1f291a;
+  --field-border: #374151;
 
   --muted: #9CA3AF;
   --subtle: #6B7280;
 
-  --glass: rgba(255, 255, 255, 0.08);
-  --glass-strong: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-strong: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.12);
 
-  --divider: rgba(255, 255, 255, 0.15);
+  --divider: rgba(255, 255, 255, 0.1);
 
-  --scrollbar-track: #222C1D;
-  --scrollbar-thumb: #FFF84E;
+  --scrollbar-track: #1a2414;
+  --scrollbar-thumb: #6B7F3A;
 
   --brand-primary: #FFDD00;
   --brand-secondary: #FFA500;
 
-  --gradient-start: #1B2316;
-  --gradient-end: #4A7C3F;
+  --gradient-start: #1a3a30;
+  --gradient-end: #3A7560;
 
-  --card-bg-start: #1F2937;
-  --card-bg-end: #111827;
-  --card-overlay: rgba(255, 255, 255, 0.2);
-  --card-chip-start: #FBBF24;
-  --card-chip-end: #D97706;
+  --card-bg-start: #151c12;
+  --card-bg-end: #0c1109;
+  --card-overlay: rgba(255, 255, 255, 0.08);
+  --card-chip-start: #E5AC20;
+  --card-chip-end: #C06805;
 
   --error: #F87171;
+  --success: #4ADE80;
+  --warning: #FBBF24;
+  --info: #60A5FA;
 }
 
 body {

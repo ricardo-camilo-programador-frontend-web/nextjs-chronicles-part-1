@@ -6,7 +6,7 @@ body {
 
   .page-transition {
     opacity: 0;
-    background: #1B2316;
+    background: var(--background);
     transform: translateY(40px);
     filter: blur(12px);
     overflow: hidden;

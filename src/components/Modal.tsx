@@ -57,7 +57,7 @@ export const Modal: FC<ModalProps> = ({
     <dialog
       ref={modalRef}
       id={id}
-      className={`bg-surface text-foreground p-2 md:p-6 rounded-lg border border-surface-border backdrop:bg-black/50 open:animate-fade-in ${className}`}
+      className={`bg-surface text-foreground p-2 md:p-6 rounded-lg border border-surface-border backdrop:bg-background/50 open:animate-fade-in ${className}`}
       onClose={onClose}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -68,7 +68,7 @@ export const Modal: FC<ModalProps> = ({
           <h2 className="text-xl font-bold">{title}</h2>
           <button
             onClick={onClose}
-            className="text-muted hover:text-red-500"
+            className="text-muted hover:text-error"
             aria-label="Close modal"
           >
             <svg

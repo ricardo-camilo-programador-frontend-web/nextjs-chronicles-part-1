@@ -48,6 +48,9 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Overlay para garantir contraste do texto sobre a imagem de fundo */}
+      <div className="absolute inset-0 bg-background/80 dark:bg-background/70" />
+
       <div className="max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col justify-between items-start mb-16  pt-4 lg:pt-32 gap-4">
           <h1 className="text-7xl xl:text-6xl text-foreground font-semibold max-w-[40rem]">
@@ -88,7 +91,7 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
 
         <div className="lg:top-[1rem] lg:right-0 mx-auto w-[20rem] sm:w-screen md:w-[30rem] overflow-x-hidden overflow-y-visible min-h-[50rem]">
           <EmblaCarousel
-            className="relative min-w-full w-full max-w-[20rem] sm:max-w-[99vw] lg:max-w-[25rem] bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-glass-border mt-[7rem] right-0 lg:ml-0"
+            className="relative min-w-full w-full max-w-[20rem] sm:max-w-[99vw] lg:max-w-[25rem] bg-surface backdrop-blur-md rounded-[32px] p-8 border border-surface-border mt-[7rem] right-0 lg:ml-0"
             options={{ loop: true }}
             snapDisplayClassName="absolute bottom-[4rem] left-0 w-full"
           >

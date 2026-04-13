@@ -201,13 +201,13 @@ const CustomerStep: FC<CustomerStepProps> = ({
             <Button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="text-gray-400 hover:text-gray-500 border-none bg-transparent"
+              className="text-muted hover:text-muted/80 border-none bg-transparent"
               disabled={!createAccount}
             >
               {showPassword ?
-                <EyeIcon className={`w-8 h-8 ${showPassword ? "text-green-500" : "text-gray-400"}`} />
+                <EyeIcon className={`w-8 h-8 ${showPassword ? "text-success" : "text-muted"}`} />
                 :
-                <EyeOffIcon className={`w-8 h-8 ${showPassword ? "text-green-500" : "text-gray-400"}`} />
+                <EyeOffIcon className={`w-8 h-8 ${showPassword ? "text-success" : "text-muted"}`} />
               }
             </Button>
           </TextInput>
@@ -261,7 +261,7 @@ const CustomerStep: FC<CustomerStepProps> = ({
           type="submit"
           loading={isSubmitting}
           label={t('next')}
-          className="w-auto ml-auto bg-green-500 hover:bg-green-600"
+          className="w-auto ml-auto bg-success hover:bg-success/90"
         />
       </div>
     </form>

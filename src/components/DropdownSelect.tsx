@@ -90,7 +90,7 @@ const DropdownSelect: FC<Props> = ({
       {label && <Label value={label} htmlFor={name} />}
       <div
         role="button"
-        className="d-input bg-transparent w-full flex items-center justify-center min-h-[41px] border-base-gray rounded-none disabled:bg-gray-200 disabled:border-base-gray disabled:cursor-not-allowed focus:ring-1 focus:ring-primary focus:outline-none transition-all duration-200 delay-50 relative"
+        className="d-input bg-transparent w-full flex items-center justify-center min-h-[41px] border-surface-border rounded-none disabled:bg-surface/50 disabled:border-surface-border disabled:cursor-not-allowed focus:ring-1 focus:ring-primary focus:outline-none transition-all duration-200 delay-50 relative"
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -126,7 +126,7 @@ const DropdownSelect: FC<Props> = ({
               <button
                 type="button"
                 onClick={handleClear}
-                className="px-2 text-muted hover:text-red-600"
+                className="px-2 text-muted hover:text-error"
                 aria-label="Limpar seleção"
               >
                 ✕
@@ -143,7 +143,7 @@ const DropdownSelect: FC<Props> = ({
         </div>
       </div>
       {isDropdownOpen && (
-        <div className="absolute top-full left-0 w-full place-self-start flex items-center justify-center px-6 py-2 border bg-primary/90 backdrop-blur-sm border-white/20 text-white rounded-lg transition-all duration-300 text-center disabled:cursor-not-allowed border-base-gray shadow-md max-h-[20rem] overflow-hidden overflow-y-auto -mt-1">
+        <div className="absolute top-full left-0 w-full place-self-start flex items-center justify-center px-6 py-2 border bg-primary/90 backdrop-blur-sm border-glass-border text-foreground rounded-lg transition-all duration-300 text-center disabled:cursor-not-allowed border-base-gray shadow-md max-h-[20rem] overflow-hidden overflow-y-auto -mt-1">
           <ul className="list-none py-2 w-full">
             {filteredOptions.map(({ label, value }, index) => (
               <li

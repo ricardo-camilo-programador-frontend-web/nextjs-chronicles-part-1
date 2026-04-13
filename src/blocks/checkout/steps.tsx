@@ -88,7 +88,7 @@ export const CheckoutSteps: FC<CheckoutStepProps> = ({
                 tabIndex={0}
                 aria-label={`Step ${index + 1}: ${step}`}
                 aria-current={currentStep === step ? "step" : undefined}
-                className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all flex-shrink-0 duration-300 ease-in-out transform cursor-pointer hover:bg-green-600 hover:text-white ${isCompleted ? "bg-green-500 text-white scale-110" : "bg-glass text-foreground/60"
+                className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all flex-shrink-0 duration-300 ease-in-out transform cursor-pointer hover:bg-success/80 hover:text-foreground ${isCompleted ? "bg-success text-foreground scale-110" : "bg-surface border border-surface-border text-muted"
                   }`}
                 style={{ transitionDelay: animationDelay }}
                 onClick={() => handleStepChange(step as CheckoutStep)}
@@ -102,9 +102,9 @@ export const CheckoutSteps: FC<CheckoutStepProps> = ({
                 {index + 1}
               </div>
               {index < 3 && (
-                <div className="h-1 flex-1 relative bg-glass">
+                <div className="h-1 flex-1 relative bg-surface-border">
                   <div
-                    className="absolute left-0 top-0 h-full bg-green-500 transition-all duration-300 ease-in-out"
+                    className="absolute left-0 top-0 h-full bg-success transition-all duration-300 ease-in-out"
                     style={{
                       width: index < stepIndex ? '100%' :
                         index === stepIndex ? '50%' : '0%',
@@ -171,12 +171,12 @@ export const CheckoutSteps: FC<CheckoutStepProps> = ({
         <div className="text-center my-12 mt-6 w-full z-[50]">
           <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             {t('title')}
-            <span className="text-green-500">{t('process')}</span>
+            <span className="text-success">{t('process')}</span>
           </h1>
-          <p className="text-foreground/70 text-sm md:text-lg">{t('complete')}</p>
+          <p className="text-muted text-sm md:text-lg">{t('complete')}</p>
         </div>
 
-        <div className="w-full max-w-7xl grid mx-auto bg-gradient-to-r from-black/10 via-black/20 to-black/60 backdrop-blur-md rounded-[32px] p-4 md:p-8 border border-glass-border shadow-xl">
+        <div className="w-full max-w-7xl grid mx-auto bg-surface backdrop-blur-md rounded-[32px] p-4 md:p-8 border border-surface-border shadow-xl">
           <div className="flex justify-center items-center space-x-4 mb-8">
             {renderStepHeader()}
           </div>

@@ -25,7 +25,7 @@ const Label: FC<Props> = ({
         <span className="text-[1rem] font-medium w-full">
           {value}
           {required && (
-            <span className="text-red-500 ml-1" aria-hidden="true">
+            <span className="text-error ml-1" aria-hidden="true">
               *
             </span>
           )}

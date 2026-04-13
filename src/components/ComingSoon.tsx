@@ -17,12 +17,12 @@ const ComingSoon: FC<ComingSoonProps> = ({ className }) => {
           🌱
         </div>
 
-        <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-emerald-400/20">
-          <h1 className="text-4xl md:text-6xl font-bold text-emerald-50 mb-4">
+        <div className="bg-glass backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-glass-border">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
             {t('title')}
           </h1>
 
-          <p className="text-lg md:text-xl text-emerald-100 mb-8">
+          <p className="text-lg md:text-xl text-muted mb-8">
             {t('subtitle')}
           </p>
 
@@ -33,7 +33,7 @@ const ComingSoon: FC<ComingSoonProps> = ({ className }) => {
           </div>
         </div>
 
-        <p className="text-emerald-200/60 text-sm mt-8">
+        <p className="text-subtle text-sm mt-8">
           {t('description')}
         </p>
       </div>

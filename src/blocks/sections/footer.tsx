@@ -12,7 +12,7 @@ const Footer: FC = () => {
   const translateMenuItems = useTranslations('menuItems');
 
   return (
-    <footer className="z-[90] bg-primary text-white py-12 w-screen mx-auto">
+    <footer className="z-[90] bg-primary text-secondary py-12 w-screen mx-auto">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-start md:justify-between gap-8 w-full">
@@ -20,16 +20,16 @@ const Footer: FC = () => {
               <div className="flex items-center gap-2">
                 <Logo imageClassName="w-[12rem]" />
               </div>
-              <p className="text-muted max-w-md">
+              <p className="text-secondary/70 max-w-md">
                 {t.rich('description', {
-                  a: (chunks) => <a href={getRandomLinkForRedirection()} className="text-muted hover:text-white transition-colors">{chunks}</a>,
+                  a: (chunks) => <a href={getRandomLinkForRedirection()} className="text-secondary/70 hover:text-secondary transition-colors">{chunks}</a>,
                 })}
               </p>
             </div>
 
             <div className="flex flex-col gap-4 w-full max-w-[25rem] md:ml-auto">
               <div className="md:mx-auto">
-                <h3 className="text-xl font-semibold mb-4">
+                <h3 className="text-xl font-semibold mb-4 text-secondary">
                   {t('quickLinks.title')}
                 </h3>
                 <nav>
@@ -42,7 +42,7 @@ const Footer: FC = () => {
                       >
                         <a
                           href={getRandomLinkForRedirection()}
-                          className="text-muted hover:text-white transition-colors"
+                          className="text-secondary/70 hover:text-secondary transition-colors"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -56,8 +56,8 @@ const Footer: FC = () => {
             </div>
 
             <div className="flex flex-col gap-4 md:max-w-[25rem] md:ml-auto">
-              <h3 className="text-xl font-semibold mb-4">{t('newsletter.title')}</h3>
-              <p className="text-muted mb-4">
+              <h3 className="text-xl font-semibold mb-4 text-secondary">{t('newsletter.title')}</h3>
+              <p className="text-secondary/70 mb-4">
                 {t('newsletter.description')}
               </p>
 
@@ -67,26 +67,26 @@ const Footer: FC = () => {
                 <input
                   type="email"
                   placeholder={t('newsletter.emailPlaceholder')}
-                  className="bg-transparent border border-field-border rounded px-4 py-2 w-full md:w-auto"
+                  className="bg-transparent border border-secondary/30 text-secondary placeholder-secondary/50 rounded px-4 py-2 w-full md:w-auto focus:outline-none focus:ring-2 focus:ring-accent"
                   aria-label={t('newsletter.emailAriaLabel')}
                 />
                 <Button
                   type="submit"
                   label={t('newsletter.subscribeButton')}
-                  className="px-6 py-2 border border-glass-border bg-foreground text-background hover:bg-foreground/70 rounded-lg transition-all duration-300 text-center font-semibold w-full md:w-auto"
+                  className="px-6 py-2 border border-secondary/30 bg-secondary text-primary hover:bg-secondary/80 rounded-lg transition-all duration-300 text-center font-semibold w-full md:w-auto"
                 />
               </form>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-divider flex flex-col md:flex-row justify-between items-center gap-4 max-w-6xl mx-auto px-4">
+        <div className="mt-12 pt-8 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-center gap-4 max-w-6xl mx-auto px-4">
           <div className="flex gap-4">
             {socialLinks.map((social) => (
               <a
                 key={`${social.id}-${getUniqueId()}`}
                 href={getRandomLinkForRedirection()}
-                className="text-muted hover:text-white transition-colors"
+                className="text-secondary/70 hover:text-secondary transition-colors"
                 aria-label={t('social.followUs', { platform: t(social.translationKey) })}
                 rel="noopener noreferrer"
               >
@@ -94,7 +94,7 @@ const Footer: FC = () => {
               </a>
             ))}
           </div>
-          <p className="text-muted text-center md:text-end w-full">
+          <p className="text-secondary/70 text-center md:text-end w-full">
             {t('copyright', { year: new Date().getFullYear() })}
           </p>
         </div>

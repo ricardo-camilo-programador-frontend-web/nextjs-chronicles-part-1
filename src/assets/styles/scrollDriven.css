@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 0.2rem;
-  background-color: #6dec9e;
+  background-color: var(--accent);
   pointer-events: none;
   animation: scroll-indicator 2s ease-out forwards;
   animation-timeline: scroll();

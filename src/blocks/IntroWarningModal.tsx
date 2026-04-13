@@ -58,8 +58,8 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
       className="max-w-2xl absolute inset-0 mx-auto"
     >
       <div className="space-y-6 p-2">
-        <div className="bg-gradient-to-r from-green-600 to-blue-500 p-4 rounded-lg shadow-md">
-          <p className="text-white text-lg font-medium text-center">
+        <div className="bg-gradient-to-r from-success to-info p-4 rounded-lg shadow-md">
+          <p className="text-foreground text-lg font-medium text-center">
             Welcome to my study project! 🚀
           </p>
         </div>
@@ -83,14 +83,14 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
             className="flex items-center justify-center gap-2 p-3 bg-surface hover:bg-surface/80 rounded-lg transition-colors"
           >
             <svg
-              className="w-6 h-6 text-blue-600"
+              className="w-6 h-6 text-info"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
-            <span className="text-blue-600 font-medium">
+            <span className="text-info font-medium">
               Connect on LinkedIn
             </span>
           </a>
@@ -102,14 +102,14 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
           </span>
           <button
             onClick={() => setAnalyticsEnabled(!analyticsEnabled)}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${analyticsEnabled ? "bg-green-600" : "bg-gray-200"
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 ${analyticsEnabled ? "bg-success" : "bg-surface-border"
               }`}
             role="switch"
             aria-checked={analyticsEnabled}
             aria-label="Allow Analytics Tools"
           >
             <span
-              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${analyticsEnabled ? "translate-x-6" : "translate-x-1"
+              className={`inline-block h-4 w-4 transform rounded-full bg-foreground transition-transform ${analyticsEnabled ? "translate-x-6" : "translate-x-1"
                 }`}
             />
           </button>
@@ -122,7 +122,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
               href="https://www.figma.com/@dsingr"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-700 ml-1"
+              className="text-success hover:text-success/80 ml-1"
             >
               @dsingr
             </a>
@@ -132,7 +132,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
               href="https://www.figma.com/community/file/1341057411255052611"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-600 hover:text-green-700"
+              className="text-success hover:text-success/80"
             >
               View original design
             </a>

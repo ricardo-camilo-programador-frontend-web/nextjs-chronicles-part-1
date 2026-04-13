@@ -77,7 +77,7 @@ export const SelectedSnapDisplay: FC<PropType> = ({ selectedSnap, snapCount, cla
         <div
           key={`${index}selected-snap-display${getUniqueId()}`}
           aria-label={`Slide ${index + 1} of ${snapCount}`}
-          className={`h-2 rounded-full transition-all duration-300 bg-white/50 hover:bg-white/70 cursor-pointer
+          className={`h-2 rounded-full transition-all duration-300 bg-foreground/50 hover:bg-foreground/70 cursor-pointer
             ${selectedSnap === index ? 'w-6' : 'w-2'}`}
           role="button"
           onClick={() => onDotButtonClick(index)}

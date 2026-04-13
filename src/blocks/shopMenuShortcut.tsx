@@ -13,7 +13,7 @@ export const ShopMenuShortcut = ({ className }: ShopMenuShortcutProps) => {
       title="Shop"
       href="/plants"
     >
-      <Image src={shopIcon} alt="Shop icon" width={26} height={26} />
+      <Image src={shopIcon} alt="Shop icon" width={26} height={26} className="dark:invert" />
     </Link>
   );
 };

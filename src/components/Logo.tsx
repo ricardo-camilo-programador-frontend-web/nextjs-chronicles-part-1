@@ -20,7 +20,7 @@ export function Logo({ className, imageClassName, width = 128, height = 128 }: L
         alt="Logo"
         width={width}
         height={height}
-        className={`w-32 h-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-shadow ${imageClassName}`}
+        className={`w-32 h-auto object-contain drop-shadow-md hover:drop-shadow-lg transition-shadow dark:brightness-110 ${imageClassName}`}
         priority
       />
     </Link>

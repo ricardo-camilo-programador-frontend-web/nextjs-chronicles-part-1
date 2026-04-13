@@ -42,8 +42,8 @@ const PlantsPage: FC = async () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 md:gap-6 md:gap-y-[12rem]">
                 {plants.map((plant, index) => (
                   <PlantCard
-                    containerClassName="w-full bg-glass backdrop-blur-sm rounded-2xl p-6 relative flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 border border-glass-border"
-                    imageClassName="rounded-full overflow-hidden !w-[120px] !h-[120px] md:!w-[9rem] md:!h-[9rem] !-mt-[2.5rem] md:!-mt-[10rem] shadow-lg border-4 border-glass-border ml-12"
+                    containerClassName="w-full bg-surface backdrop-blur-sm rounded-2xl p-6 relative flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 border border-surface-border"
+                    imageClassName="rounded-full overflow-hidden !w-[120px] !h-[120px] md:!w-[9rem] md:!h-[9rem] !-mt-[2.5rem] md:!-mt-[10rem] shadow-lg border-4 border-surface-border ml-12"
                     shopIconClassName="min-w-[17rem] w-full"
                     quantityClassName="!min-w-[17rem] !w-full md:!ml-[11rem]"
                     key={`${plant.id}-${index}-plant-card-${getUniqueId()}`}

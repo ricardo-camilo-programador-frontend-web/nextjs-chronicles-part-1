@@ -90,7 +90,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
       >
         <Image
           src={shopIcon}
-          className="md:w-11 md:h-11 max-w-[44px] max-h-[44px]"
+          className="md:w-11 md:h-11 max-w-[44px] max-h-[44px] dark:invert"
           alt="Shop icon"
         />
         {cartItems.length > 0 && (
@@ -106,9 +106,9 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
         } transition-transform duration-300`}
       >
         <div className="relative  overflow-hidden overflow-y-auto h-[90vh]">
-          <div className="fixed bg-primary flex items-center justify-between w-full text-white border-b border-glass-border  py-2  z-[99]">
+          <div className="fixed bg-primary flex items-center justify-between w-full text-foreground border-b border-glass-border  py-2  z-[99]">
             <button
-              className="flex items-center justify-center mr-4 mt-1 text-white hover:bg-glass hover:text-gray-50 rounded-full p-2"
+              className="flex items-center justify-center mr-4 mt-1 text-foreground hover:bg-glass hover:text-muted rounded-full p-2"
               type="button"
               aria-label="Close shopping cart"
               title={translateCart('closeShoppingCart')}
@@ -145,13 +145,13 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
                 <div className="flex justify-end gap-2 w-full">
                   <button
                     onClick={() => setIsClearCartOpen(false)}
-                    className="bg-gray-500 text-white px-4 py-2 rounded-md w-full"
+                    className="bg-muted text-foreground px-4 py-2 rounded-md w-full"
                   >
                     {translateCart('cancel')}
                   </button>
                   <button
                     onClick={() => handleClearCartConfirm()}
-                    className=" text-white bg-red-500 px-4 py-2 rounded-md w-full"
+                    className="text-foreground bg-error px-4 py-2 rounded-md w-full"
                   >
                     {translateCart('clear')}
                   </button>
@@ -162,7 +162,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
                 title={translateCart('clearCart')}
                 aria-label={translateCart('clearCart')}
                 type="button"
-                className="text-white hover:text-red-500 rounded-full p-2 transition-all duration-300"
+                className="text-foreground hover:text-error rounded-full p-2 transition-all duration-300"
                 onClick={() => setIsClearCartOpen(true)}
               >
                 <svg
@@ -210,7 +210,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
       </div>
 
       <button
-        className={` min-w-screen min-h-screen bg-black/10 backdrop-blur-xs z-[5] -top-4 ${
+        className={` min-w-screen min-h-screen bg-background/60 backdrop-blur-sm z-[5] -top-4 ${
           isOpen ? "absolute inset-0" : "hidden"
         } transition-transform duration-300`}
         onClick={handleToggleMenu}

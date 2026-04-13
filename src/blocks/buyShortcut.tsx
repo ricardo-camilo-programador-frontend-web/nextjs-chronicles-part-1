@@ -54,7 +54,7 @@ export const BuyShortcut = ({
         {showIcon && (
           <Image
             src={shopIcon}
-            className={`w-11 h-11 max-w-[44px] max-h-[44px] ${shopIconClassName}`}
+            className={`w-11 h-11 max-w-[44px] max-h-[44px] dark:invert ${shopIconClassName}`}
             alt="Shop icon"
           />
         )}

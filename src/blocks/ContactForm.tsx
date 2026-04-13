@@ -69,18 +69,18 @@ export const ContactForm: FC<ContactFormProps> = ({
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center">
         <div className="text-center my-12 mt-6 z-[99]">
           <h1 className="text-5xl font-bold text-foreground mb-4">
-            {title} <span className='text-green-500'>{titleHighlight}</span>
+            {title} <span className='text-success'>{titleHighlight}</span>
           </h1>
-          <p className="text-foreground/70 text-lg">
+          <p className="text-muted text-lg">
             {subtitle}
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-gradient-to-r from-black/10 via-black/20 to-black/60 backdrop-blur-md rounded-[32px] p-8 border border-glass-border shadow-xl">
+        <div className="max-w-3xl mx-auto bg-surface backdrop-blur-md rounded-[32px] p-8 border border-surface-border shadow-xl">
           <h2 className="text-2xl font-bold text-foreground mb-2">
             {formTitle}
           </h2>
-          <p className="text-foreground/70 mb-8">
+          <p className="text-muted mb-8">
             {formSubtitle}
           </p>
 

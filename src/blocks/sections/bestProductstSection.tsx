@@ -21,7 +21,7 @@ const BestProductsSection: FC = () => {
       <div className="w-full max-w-[95vw] lg:max-w-[64rem] mx-auto mt-32">
         <EmblaCarousel
           carouselId={`embla-carousel-best-products-${getUniqueId()}`}
-          className="w-full bg-gradient-to-r from-glass via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-glass-border"
+          className="w-full bg-surface backdrop-blur-md rounded-[32px] p-8 border border-surface-border"
           options={{ loop: true }}
           snapDisplayClassName="absolute -bottom-16 md:bottom-6 ml-auto md:right-[-25rem] flex gap-2"
         >
