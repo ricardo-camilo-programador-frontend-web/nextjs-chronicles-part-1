@@ -5,7 +5,7 @@ import {
   RegisterOptions,
   Path,
 } from "react-hook-form";
-import Label from "@/components/Label";
+import Label from "@/components/forms/Label";
 
 interface Props {
   name: string;
@@ -15,11 +15,15 @@ interface Props {
   error?: string;
   register: UseFormRegister<FieldValues>;
   rules?: RegisterOptions<FieldValues, Path<FieldValues>>;
+  labelClassName?: string;
+  inputClassName?: string;
 }
 
 export const Checkbox: FC<Props> = ({
   name,
   label,
+  labelClassName,
+  inputClassName,
   className,
   disabled = false,
   error,
@@ -27,23 +31,26 @@ export const Checkbox: FC<Props> = ({
   rules,
 }: Props) => {
   return (
-    <div className={`flex flex-col items-center justify-center cursor-pointer ${className}  ${disabled ? "cursor-not-allowed" : ""}`}>
-      {label && (
+    <div className={`flex flex-col ${className}`}>
+      <div>
+        <input
+          {...register(name, rules)}
+          type="checkbox"
+          id={name}
+          disabled={disabled}
+          className={`hidden ${inputClassName}`}
+        />
         <Label
-          className={`ml-1 -mb-2 text-white p-2 text-xs font-normal bg-gradient-to-r from-white/10 via-transparent  rounded-full min-w-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50/10`}
-          value={label}
           htmlFor={name}
+          className={`flex items-center h-10 px-2 rounded cursor-pointer hover:bg-gray-400/20
+            ${disabled ? 'cursor-not-allowed opacity-50' : ''} ${labelClassName}`}
         >
-          <input
-            {...register(name, rules)}
-            type="checkbox"
-            id={name}
-            disabled={disabled}
-            className="z-[2] min-w-6 min-h-6 w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-          />
+          <span className="checkbox-inner flex items-center justify-center w-5 h-5 text-transparent border-2 border-gray-300 rounded-full 
+            peer-checked:bg-emerald-500 peer-checked:border-emerald-500">
+          </span>
+          {label && <span className="mx-4 text-sm">{label}</span>}
         </Label>
-      )}
-
+      </div>
       {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
     </div>
   );

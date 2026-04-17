@@ -19,6 +19,7 @@ export default {
         primary: "#222C1D",
         secondary: "#FFFFFF",
         accent: "#FFF84E",
+        admimprimary: "#FAFAF5",
       },
       keyframes: {
         "fade-in": {
