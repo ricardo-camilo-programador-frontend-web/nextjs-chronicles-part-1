@@ -2,7 +2,7 @@
 
 ## 📋 Resumo
 
-Esta documentação descreve a implementação completa de proteção contra caracteres Unicode invisíveis ou maliciosos no projeto SGS_WEB.
+Esta documentação descreve a implementação completa de proteção contra caracteres Unicode invisíveis ou maliciosos no projeto Breath Natural.
 
 ---
 
