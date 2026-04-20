@@ -48,7 +48,7 @@ export const LanguageSwitcher: FC<Props> = ({ className }) => {
         aria-haspopup="true"
       >
         <Globe className="h-5 w-5" aria-hidden="true" />
-        <span>{currentLang.toUpperCase()}</span>
+        <span className="text-white">{currentLang.toUpperCase()}</span>
       </button>
 
       {isOpen && (

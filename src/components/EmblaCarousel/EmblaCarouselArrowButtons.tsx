@@ -61,6 +61,7 @@ export const PrevButton = React.forwardRef<HTMLButtonElement, PropType>((props, 
       ref={ref}
       className="embla__button embla__button--prev"
       type="button"
+      aria-label={props['aria-label'] || "Previous slide"}
       {...restProps}
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">
@@ -84,6 +85,7 @@ export const NextButton = React.forwardRef<HTMLButtonElement, PropType>((props, 
       ref={ref}
       className="embla__button embla__button--next"
       type="button"
+      aria-label={props['aria-label'] || "Next slide"}
       {...restProps}
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">

@@ -10,7 +10,6 @@ export interface LinkProps extends NextLinkProps {
   variant?: 'light' | 'dark';
   rel?: string;
   title?: string;
-  animate?: boolean;
   children: ReactNode;
 }
 
@@ -22,7 +21,6 @@ const LinkComponent: FC<LinkProps> = ({
   externalLink,
   rel,
   title,
-  animate = true,
   ...props
 }: LinkProps) => {
   return (

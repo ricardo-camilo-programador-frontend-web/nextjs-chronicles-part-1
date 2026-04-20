@@ -87,7 +87,7 @@ const Footer: FC = () => {
                 key={`${social.id}-${getUniqueId()}`}
                 href={getRandomLinkForRedirection()}
                 className="text-gray-300 hover:text-white transition-colors"
-                aria-label={t('social.followUs', { platform: t(social.translationKey) })}
+                aria-label={`${t(social.translationKey)} (${social.icon})`}
                 rel="noopener noreferrer"
               >
                 {social.icon}
