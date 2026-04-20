@@ -141,20 +141,25 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
       <audio
         ref={audioRef}
         preload="metadata"
-        onError={(e) => console.error("Erro no áudio:", e)}
+        onError={(e) => {
+          // Suppress console errors for audio format fallbacks - these are expected
+          // when some audio formats don't exist on the server
+          const audioElement = e.currentTarget;
+          if (audioElement.error) {
+            const errorCode = audioElement.error.code;
+            // Only log critical errors, not format fallback failures
+            if (errorCode === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+              // Expected error when format is not supported, don't log
+              return;
+            }
+            console.error("Critical audio error:", e);
+          }
+        }}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         loop={loopEnabled}
       >
-        <source src={currentTrack.url} type="audio/mpeg" />
-        <source
-          src={currentTrack.url.replace(".mp3", ".ogg")}
-          type="audio/ogg"
-        />
-        <source
-          src={currentTrack.url.replace(".mp3", ".wav")}
-          type="audio/wav"
-        />
+        <source src={currentTrack.url} type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
 
