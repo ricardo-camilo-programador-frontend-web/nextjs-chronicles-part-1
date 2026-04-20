@@ -6,6 +6,61 @@
   --accent: #FFF84E;
 }
 
+/* Mobile-specific Lighthouse optimizations */
+@media screen and (max-width: 768px) {
+  /* Ensure touch targets are at least 48x48px */
+  button, 
+  [role="button"], 
+  input[type="button"], 
+  input[type="reset"], 
+  input[type="submit"],
+  .touch-target {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  /* Prevent text from being too small on mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  p, span, a {
+    font-size: clamp(14px, 2.5vw, 16px);
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .container, 
+  .max-w-screen-xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Optimize fixed elements for mobile */
+  .fixed {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile-specific button sizing */
+  .btn-mobile {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--primary);
