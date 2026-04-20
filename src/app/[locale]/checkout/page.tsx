@@ -1,6 +1,4 @@
 import { FC } from "react";
-import type { Metadata } from "next";
-import Script from "next/script";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { useTranslations } from "next-intl";
 import { ShippingMethod } from "@/types/shippingMethod";

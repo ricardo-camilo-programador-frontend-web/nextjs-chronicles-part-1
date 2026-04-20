@@ -66,7 +66,7 @@ const PlantsPage: FC = async () => {
           "@type": "Product",
           name: plant.common_name || plant.scientific_name,
           image: plant.image_url,
-          description: \`Beautiful \${plant.family} plant - \${plant.scientific_name}\`,
+          description: `Beautiful ${plant.family} plant - ${plant.scientific_name}`,
           brand: "Breath Natural",
           offers: {
             "@type": "Offer",
@@ -116,7 +116,7 @@ const PlantsPage: FC = async () => {
                     imageClassName="rounded-full overflow-hidden !w-[120px] !h-[120px] md:!w-[9rem] md:!h-[9rem] !-mt-[2.5rem] md:!-mt-[10rem] shadow-lg border-4 border-white/10 ml-12"
                     shopIconClassName="min-w-[17rem] w-full"
                     quantityClassName="!min-w-[17rem] !w-full md:!ml-[11rem]"
-                    key={\`\${plant.id}-\${index}-plant-card-\${getUniqueId()}\`}
+                    key={`${plant.id}-${index}-plant-card-${getUniqueId()}`}
                     plant={plant}
                     showExploreShortcut={false}
                     showPrice
