@@ -8,7 +8,8 @@
     "message": "شراء نباتاتي"
   },
   "buyShortcut": {
-    "success": "تم إضافة المنتج إلى العربة"
+    "success": "تم إضافة المنتج إلى العربة",
+    "addToCart": "أضف إلى السلة"
   },
   "quantityShortcut": {
     "cancel": "إلغاء",
@@ -310,7 +311,23 @@
     "invalidDataError": "تم استلام بيانات غير صالحة من الخادم",
     "noPlantsMessage": "لا توجد نباتات للعرض...",
     "loadError": "خطأ في تحميل النباتات: {message}",
-    "genericError": "خطأ في تحميل النباتات..."
+    "genericError": "خطأ في تحميل النباتات...",
+    "pageTitle": "مجموعة النباتات",
+    "searchPlaceholder": "ابحث بالاسم...",
+    "sortAz": "أ-ي",
+    "sortZa": "ي-أ",
+    "sortFamily": "حسب العائلة",
+    "sortBy": "ترتيب حسب",
+    "filterAll": "الكل",
+    "noResults": "لم يتم العثور على نباتات",
+    "scientificInfo": "معلومات علمية",
+    "author": "المؤلف",
+    "year": "السنة",
+    "status": "الحالة",
+    "rank": "الرتبة",
+    "bibliography": "المراجع",
+    "synonyms": "المرادفات",
+    "resultsCount": "{count} نباتات"
   },
   "footer": {
     "home": "الرئيسية",

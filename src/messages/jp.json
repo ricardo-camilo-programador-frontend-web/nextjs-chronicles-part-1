@@ -8,7 +8,8 @@
     "message": "ブレス・ナチュラルをサポートしてください"
   },
   "buyShortcut": {
-    "success": "カートに追加されました"
+    "success": "カートに追加されました",
+    "addToCart": "カートに追加"
   },
   "quantityShortcut": {
     "cancel": "キャンセル",
@@ -310,7 +311,23 @@
     "invalidDataError": "サーバーから無効なデータを受信しました",
     "noPlantsMessage": "表示する植物がありません...",
     "loadError": "植物の読み込みエラー: {message}",
-    "genericError": "植物の読み込み中にエラーが発生しました..."
+    "genericError": "植物の読み込み中にエラーが発生しました...",
+    "pageTitle": "植物コレクション",
+    "searchPlaceholder": "名前で検索...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "科別",
+    "sortBy": "並び替え",
+    "filterAll": "すべて",
+    "noResults": "植物が見つかりません",
+    "scientificInfo": "学術情報",
+    "author": "著者",
+    "year": "年",
+    "status": "ステータス",
+    "rank": "ランク",
+    "bibliography": "参考文献",
+    "synonyms": "同義語",
+    "resultsCount": "{count}件の植物"
   },
   "footer": {
     "home": "ホーム",

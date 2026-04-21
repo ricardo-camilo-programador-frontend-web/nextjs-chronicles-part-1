@@ -8,7 +8,8 @@
     "message": "Compre-me um café"
   },
   "buyShortcut": {
-    "success": "adicionado ao carrinho"
+    "success": "adicionado ao carrinho",
+    "addToCart": "Adicionar"
   },
   "quantityShortcut": {
     "cancel": "Cancelar",
@@ -310,7 +311,23 @@
     "invalidDataError": "Dados inválidos recebidos do servidor",
     "noPlantsMessage": "Nenhuma planta para ser exibida...",
     "loadError": "Erro ao carregar as plantas: {message}",
-    "genericError": "Erro ao carregar as plantas..."
+    "genericError": "Erro ao carregar as plantas...",
+    "pageTitle": "Coleção de Plantas",
+    "searchPlaceholder": "Buscar por nome...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "Por Família",
+    "sortBy": "Ordenar por",
+    "filterAll": "Todos",
+    "noResults": "Nenhuma planta encontrada",
+    "scientificInfo": "Informações Científicas",
+    "author": "Autor",
+    "year": "Ano",
+    "status": "Status",
+    "rank": "Classificação",
+    "bibliography": "Bibliografia",
+    "synonyms": "Sinônimos",
+    "resultsCount": "{count} plantas encontradas"
   },
   "footer": {
     "home": "Home",

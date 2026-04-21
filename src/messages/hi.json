@@ -8,7 +8,8 @@
     "message": "मुझे एक कॉफी खरीदो"
   },
   "buyShortcut": {
-    "success": "शामिल करें गार्डन"
+    "success": "शामिल करें गार्डन",
+    "addToCart": "कार्ट में डालें"
   },
   "quantityShortcut": {
     "cancel": "बंद करें",
@@ -310,7 +311,23 @@
     "invalidDataError": "सर्वर से अमान्य डेटा प्राप्त हुआ",
     "noPlantsMessage": "प्रदर्शित करने के लिए कोई पौधे नहीं...",
     "loadError": "पौधे लोड करने में त्रुटि: {message}",
-    "genericError": "पौधे लोड करने में त्रुटि..."
+    "genericError": "पौधे लोड करने में त्रुटि...",
+    "pageTitle": "पौधों का संग्रह",
+    "searchPlaceholder": "नाम से खोजें...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "परिवार अनुसार",
+    "sortBy": "इसके अनुसार क्रमबद्ध करें",
+    "filterAll": "सभी",
+    "noResults": "कोई पौधे नहीं मिले",
+    "scientificInfo": "वैज्ञानिक जानकारी",
+    "author": "लेखक",
+    "year": "वर्ष",
+    "status": "स्थिति",
+    "rank": "श्रेणी",
+    "bibliography": "ग्रंथ सूची",
+    "synonyms": "समानार्थी",
+    "resultsCount": "{count} पौधे मिले"
   },
   "footer": {
     "home": "होम",

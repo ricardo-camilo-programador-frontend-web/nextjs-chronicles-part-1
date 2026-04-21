@@ -1,15 +1,14 @@
 import { FC } from "react";
-import { PlantCard } from "@/components/PlantCard";
 import { NoDataToShow } from "@/components/NoDataToShow";
 import DefaultLayout from "@/layouts/DefaultLayout";
 import { PlantsService } from "@/app/api/plants/plants.service";
-import { getUniqueId } from "@/utils/getUniqueId";
 import Loading from "@/components/Loading";
 import { Suspense } from "react";
 import { getTranslations } from 'next-intl/server';
 import { unstable_cache } from 'next/cache';
 import type { Metadata } from "next";
 import Script from "next/script";
+import { PlantCatalogClient } from "@/components/plants/PlantCatalogClient";
 
 export const metadata: Metadata = {
   title: "Plant Collection | Breath Natural - Premium Indoor Plants",
@@ -105,24 +104,14 @@ const PlantsPage: FC = async () => {
           }}
         />
         <DefaultLayout>
-          <div className="py-8 px-2 md:pt-[11rem]">
+          <div className="py-8 px-4 md:pt-[11rem] max-w-7xl mx-auto">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">
+              {t('pageTitle')}
+            </h1>
             {plants.length === 0 ? (
               <NoDataToShow message={t('noPlantsMessage')} />
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 md:gap-6 md:gap-y-[12rem]">
-                {plants.map((plant, index) => (
-                  <PlantCard
-                    containerClassName="w-full bg-white/5 backdrop-blur-sm rounded-2xl p-6 relative flex flex-col items-center shadow-lg hover:shadow-xl transition-all duration-300 border border-white/10"
-                    imageClassName="rounded-full overflow-hidden !w-[120px] !h-[120px] md:!w-[9rem] md:!h-[9rem] !-mt-[2.5rem] md:!-mt-[10rem] shadow-lg border-4 border-white/10 ml-12"
-                    shopIconClassName="min-w-[17rem] w-full"
-                    quantityClassName="!min-w-[17rem] !w-full md:!ml-[11rem]"
-                    key={`${plant.id}-${index}-plant-card-${getUniqueId()}`}
-                    plant={plant}
-                    showExploreShortcut={false}
-                    showPrice
-                  />
-                ))}
-              </div>
+              <PlantCatalogClient plants={plants} />
             )}
           </div>
         </DefaultLayout>
