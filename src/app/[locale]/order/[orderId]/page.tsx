@@ -5,7 +5,7 @@ import DefaultLayout from "@/layouts/DefaultLayout";
 import { useParams } from "next/navigation";
 import { useOrderStore } from "@/store/orderStore";
 import { useTranslations } from "next-intl";
-import { FaCreditCard, FaUser, FaBox } from "react-icons/fa";
+import { CreditCard, User, Package } from "lucide-react";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 import QRCode from "react-qr-code";
 import RandomBackground from "@/blocks/randomBackground";
@@ -27,7 +27,7 @@ const PaymentPage: FC = () => {
       case "creditCard":
         return (
           <div className="bg-black/20 p-6 rounded-lg text-center">
-            <FaCreditCard className="text-4xl mx-auto mb-4 text-green-500" />
+            <CreditCard className="text-4xl mx-auto mb-4 text-green-500" />
             <h3 className="text-xl font-bold mb-2">{t("processingPayment")}</h3>
             <p>{t("creditCardProcessing")}</p>
           </div>
@@ -87,7 +87,7 @@ const PaymentPage: FC = () => {
               <div className="space-y-6">
                 <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                   <div className="flex items-center gap-2">
-                    <FaBox className="text-green-500" />
+                    <Package className="text-green-500" />
                     <h3 className="text-xl font-semibold">{t("orderSummary")}</h3>
                   </div>
                   <div className="space-y-2">
@@ -101,7 +101,7 @@ const PaymentPage: FC = () => {
 
                 <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                   <div className="flex items-center gap-2">
-                    <FaUser className="text-green-500" />
+                    <User className="text-green-500" />
                     <h3 className="text-xl font-semibold">{t("customerInfo")}</h3>
                   </div>
                   <div className="space-y-2">
@@ -113,7 +113,7 @@ const PaymentPage: FC = () => {
 
               <div className="space-y-4 bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                 <div className="flex items-center gap-2 mb-4">
-                  <FaCreditCard className="text-green-500" />
+                  <CreditCard className="text-green-500" />
                   <h3 className="text-xl font-semibold">{t("paymentMethod")}</h3>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md rounded-lg">

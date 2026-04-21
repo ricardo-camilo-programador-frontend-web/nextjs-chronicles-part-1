@@ -28,7 +28,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
   title: "Breath Natural | Premium Indoor Plants & Decorative Greenery",
   description:
     "Transform your space with our curated collection of air-purifying indoor plants, exotic succulents, and stylish decorative greenery. Expert care guides, free shipping, and sustainable packaging included.",
@@ -152,6 +154,7 @@ export default async function RootLayout({
 
       <Script
         src="https://cdn.counter.dev/script.js"
+        strategy="lazyOnload"
         data-id={process.env.COUNTER_API_KEY}
         data-utcoffset="-3"
       ></Script>

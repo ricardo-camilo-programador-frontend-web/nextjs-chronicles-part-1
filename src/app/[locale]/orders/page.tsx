@@ -7,7 +7,7 @@ import { useOrderStore } from "@/store/orderStore";
 import { useTranslations } from "next-intl";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 import Link from "@/components/Link";
-import { FaBox, FaMapMarkerAlt, FaCreditCard } from "react-icons/fa";
+import { Package, MapPin, CreditCard } from "lucide-react";
 
 const OrdersPage: FC = () => {
   const t = useTranslations("orders");
@@ -37,7 +37,7 @@ const OrdersPage: FC = () => {
                     {order.shippingMethod?.name && (
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <FaMapMarkerAlt className="text-green-500" />
+                          <MapPin className="text-green-500" />
                         <span className="font-semibold">{t("shipping")}</span>
                       </div>
                       <p className="text-sm text-white/70">{order.shippingMethod?.name}</p>
@@ -48,7 +48,7 @@ const OrdersPage: FC = () => {
                     {!order.shippingMethod?.name && (
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <FaMapMarkerAlt className="text-green-500" />
+                          <MapPin className="text-green-500" />
                           <span className="font-semibold">{t("shipping")}</span>
                         </div>
                       </div>
@@ -56,7 +56,7 @@ const OrdersPage: FC = () => {
 
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <FaCreditCard className="text-green-500" />
+                        <CreditCard className="text-green-500" />
                         <span className="font-semibold">{t("payment")}</span>
                       </div>
                       <p className="text-sm text-white/70">{order.paymentInfo.paymentMethod}</p>
@@ -72,7 +72,7 @@ const OrdersPage: FC = () => {
                   </div>
 
                   <div className="flex items-center gap-2 border-b border-white/10 pt-8">
-                    <FaBox className="text-green-500 w-auto h-auto" />
+                    <Package className="text-green-500 w-auto h-auto" />
                     <Link
                       href={`/order/${order.orderId}`}
                       className="group text-xl flex gap-2 items-center font-semibold transition-all duration-300 ease-in-out"

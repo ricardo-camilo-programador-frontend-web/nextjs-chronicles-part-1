@@ -28,7 +28,7 @@ export function PlantBannerCard({
               alt={plant.common_name || plant.scientific_name}
               width={240}
               height={240}
-              loading="lazy"
+              sizes="(max-width: 768px) 160px, 240px"
               className={`object-cover w-[17rem] h-[17rem] rounded-2xl absolute -top-[9rem] right-0 lg:-top-[11rem] lg:left-0 scale-150 ${imageClassName}`}
             />
           )}
