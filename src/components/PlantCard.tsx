@@ -9,9 +9,10 @@ const DEFAULT_PRICE = "$59.99";
 
 interface PlantCardProps {
   plant: Plant;
+  showScientificDetails?: boolean;
 }
 
-export function PlantCard({ plant }: PlantCardProps) {
+export function PlantCard({ plant, showScientificDetails = false }: PlantCardProps) {
   const displayName = plant.common_name || plant.scientific_name;
 
   return (
@@ -71,7 +72,7 @@ export function PlantCard({ plant }: PlantCardProps) {
       </div>
 
       {/* Botanical details accordion */}
-      <BotanicalDetailsAccordion plant={plant} />
+      {showScientificDetails && <BotanicalDetailsAccordion plant={plant} />}
     </div>
   );
 }
