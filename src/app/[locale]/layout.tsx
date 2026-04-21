@@ -55,13 +55,6 @@ export const metadata: Metadata = {
     "indoor plant consultation"
   ],
   openGraph: {
-  twitter: {
-    card: "summary_large_image",
-    title: "Breath Natural | Premium Plants",
-    description: "Transform your space with our designer-curated plant collection featuring rare species and air-purifying greens.",
-    site: "@ricardo_camilo",
-    creator: "@ricardo_camilo"
-  },
     title: "Breath Natural | Premium Indoor Plants & Modern Plant Decor",
     description:
       "Create your urban jungle with our designer-curated plant collection. Shop rare species, air-purifying greens, and complete plant care solutions for homes and offices.",
@@ -75,6 +68,13 @@ export const metadata: Metadata = {
         alt: "Breath Natural's curated indoor plant collection in modern home setting"
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Breath Natural | Premium Plants",
+    description: "Transform your space with our designer-curated plant collection featuring rare species and air-purifying greens.",
+    site: "@ricardo_camilo",
+    creator: "@ricardo_camilo"
   },
 };
 
