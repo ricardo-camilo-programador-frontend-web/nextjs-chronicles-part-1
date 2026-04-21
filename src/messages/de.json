@@ -8,7 +8,8 @@
     "message": "Kaffee kaufen"
   },
   "buyShortcut": {
-    "success": "zum Warenkorb hinzugefügt"
+    "success": "zum Warenkorb hinzugefügt",
+    "addToCart": "In den Warenkorb"
   },
   "quantityShortcut": {
     "cancel": "Abbrechen",
@@ -310,7 +311,23 @@
     "invalidDataError": "Ungültige Daten vom Server erhalten",
     "noPlantsMessage": "Keine Pflanzen zum Anzeigen...",
     "loadError": "Fehler beim Laden der Pflanzen: {message}",
-    "genericError": "Fehler beim Laden der Pflanzen..."
+    "genericError": "Fehler beim Laden der Pflanzen...",
+    "pageTitle": "Pflanzensammlung",
+    "searchPlaceholder": "Nach Name suchen...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "Nach Familie",
+    "sortBy": "Sortieren nach",
+    "filterAll": "Alle",
+    "noResults": "Keine Pflanzen gefunden",
+    "scientificInfo": "Wissenschaftliche Informationen",
+    "author": "Autor",
+    "year": "Jahr",
+    "status": "Status",
+    "rank": "Rang",
+    "bibliography": "Bibliografie",
+    "synonyms": "Synonyme",
+    "resultsCount": "{count} Pflanzen gefunden"
   },
   "footer": {
     "home": "Startseite",

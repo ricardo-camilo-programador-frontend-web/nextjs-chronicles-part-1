@@ -8,7 +8,8 @@
     "message": "Kup mi kawę"
   },
   "buyShortcut": {
-    "success": "dodane do koszyka"
+    "success": "dodane do koszyka",
+    "addToCart": "Dodaj do koszyka"
   },
   "quantityShortcut": {
     "cancel": "Anuluj",
@@ -310,7 +311,23 @@
     "invalidDataError": "Otrzymano nieprawidłowe dane z serwera",
     "noPlantsMessage": "Brak roślin do wyświetlenia...",
     "loadError": "Błąd podczas ładowania roślin: {message}",
-    "genericError": "Błąd podczas ładowania roślin..."
+    "genericError": "Błąd podczas ładowania roślin...",
+    "pageTitle": "Kolekcja roślin",
+    "searchPlaceholder": "Szukaj po nazwie...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "Wg rodziny",
+    "sortBy": "Sortuj według",
+    "filterAll": "Wszystkie",
+    "noResults": "Nie znaleziono roślin",
+    "scientificInfo": "Informacje naukowe",
+    "author": "Autor",
+    "year": "Rok",
+    "status": "Status",
+    "rank": "Ranga",
+    "bibliography": "Bibliografia",
+    "synonyms": "Synonimy",
+    "resultsCount": "Znaleziono {count} roślin"
   },
   "footer": {
     "home": "Strona główna",

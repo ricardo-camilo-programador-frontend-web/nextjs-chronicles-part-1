@@ -8,7 +8,8 @@
     "message": "Buy me a coffee"
   },
   "buyShortcut": {
-    "success": "added to cart"
+    "success": "added to cart",
+    "addToCart": "Add to cart"
   },
   "quantityShortcut": {
     "cancel": "Cancel",
@@ -310,7 +311,23 @@
     "invalidDataError": "Invalid data received from server",
     "noPlantsMessage": "No plants to display...",
     "loadError": "Error loading plants: {message}",
-    "genericError": "Error loading plants..."
+    "genericError": "Error loading plants...",
+    "pageTitle": "Plant Collection",
+    "searchPlaceholder": "Search by name...",
+    "sortAz": "A-Z",
+    "sortZa": "Z-A",
+    "sortFamily": "By Family",
+    "sortBy": "Sort by",
+    "filterAll": "All",
+    "noResults": "No plants found matching your search",
+    "scientificInfo": "Scientific Information",
+    "author": "Author",
+    "year": "Year",
+    "status": "Status",
+    "rank": "Rank",
+    "bibliography": "Bibliography",
+    "synonyms": "Synonyms",
+    "resultsCount": "{count} plants found"
   },
   "menuItems": {
     "portfolio": "Portfolio",
