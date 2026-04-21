@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
 
 interface Props {
   onToggle: () => void;
@@ -35,7 +35,7 @@ const ChevronButton: FC<Props> = ({ label, className, isOpen, onToggle }) => {
       <div
         className={`${chevronStyle} transition-transform duration-200`}
       >
-        <FaChevronDown className="text-white/80" />
+        <ChevronDown className="text-white/80" />
       </div>
       {label && (
         <span className="text-white/90">

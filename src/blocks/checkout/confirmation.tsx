@@ -7,7 +7,7 @@ import { useCartStore } from "@/store/cartStore";
 import { useCustomerStore } from "@/store/customerStore";
 import { useCheckoutStore } from "@/store/checkoutStore";
 import { useTranslations } from "next-intl";
-import { FaBox, FaCreditCard, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import { Package, CreditCard, MapPin, User } from "lucide-react";
 import { CartItem } from "@/types/cartItem";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
 import { usePaymentStore } from "@/store/paymentStore";
@@ -76,7 +76,7 @@ const ConfirmationStep: FC = () => {
   const renderDeliveryInfo = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaMapMarkerAlt className="text-green-500" />
+        <MapPin className="text-green-500" />
         <h3 className="text-xl font-semibold">{t("deliveryInformation")}</h3>
       </div>
       {shippingAddress?.number && (
@@ -99,7 +99,7 @@ const ConfirmationStep: FC = () => {
   const renderCustomerInfo = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaUser className="text-green-500" />
+        <User className="text-green-500" />
         <h3 className="text-xl font-semibold">{t("customerInformation")}</h3>
       </div>
       <div className="space-y-2">
@@ -113,11 +113,11 @@ const ConfirmationStep: FC = () => {
   const renderPaymentInfo = () => (
     <div className="space-y-4 bg-black/20 rounded-lg p-4">
       <div className="flex items-center gap-2">
-        <FaCreditCard className="text-green-500" />
+        <CreditCard className="text-green-500" />
         <h3 className="text-xl font-semibold">{t("paymentInformation")}</h3>
       </div>
       <div className="flex items-center gap-2">
-        <FaBox className="text-green-500" />
+        <Package className="text-green-500" />
         <p>{paymentInfo.paymentMethod}</p>
       </div>
     </div>
