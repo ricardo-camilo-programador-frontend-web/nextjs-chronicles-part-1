@@ -13,7 +13,7 @@ import {
 import { useAddressByCep } from "@/hooks/useAddressByCep";
 import Button from "@/components/Button";
 import { ShippingMethod } from "@/types/shippingMethod";
-import { FaTruck, FaStore } from "react-icons/fa";
+import { Truck, Store } from "lucide-react";
 import DropdownSelect from "@/components/forms/DropdownSelect";
 import { Country } from "@/types/country";
 import { useTranslations } from "next-intl";
@@ -183,7 +183,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <Button
           label={t("shipping.delivery")}
-          icon={<FaTruck />}
+          icon={<Truck />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-green-500" : "bg-gray-500"
             }`}
           onClick={() => setIsDelivery(true)}
@@ -201,7 +201,7 @@ const ShippingStep: FC<ShippingStepProps> = ({
 
         <Button
           label={t("shipping.pickup")}
-          icon={<FaStore />}
+          icon={<Store />}
           className={`flex-row-reverse text-2xl font-bold mb-6 gap-4 ${isDelivery ? "bg-gray-500" : "bg-green-500"
             }`}
           onClick={() => setIsDelivery(false)}

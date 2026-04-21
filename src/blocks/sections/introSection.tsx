@@ -47,8 +47,8 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
         src={background}
         alt="Background decorative plants"
         fill
-        priority={false}
-        placeholder="blur"
+        priority={true}
+        fetchPriority="high"
         className="object-cover"
         sizes="100vw"
       />
