@@ -104,7 +104,7 @@ const PlantsPage: FC = async () => {
           }}
         />
         <DefaultLayout>
-          <div className="py-8 px-4 md:pt-[11rem] max-w-7xl mx-auto">
+          <div className="py-8 px-4 max-w-7xl mx-auto">
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-8">
               {t('pageTitle')}
             </h1>
