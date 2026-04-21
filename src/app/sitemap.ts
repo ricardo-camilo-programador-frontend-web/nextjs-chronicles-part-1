@@ -15,7 +15,6 @@ const dynamicRoutes = locales.flatMap((locale) => [
   `${locale}/contact`,
   `${locale}/orders`,
   `${locale}/plants`,
-  `${locale}/robots.txt`
 ]);
 
 const routes = [
