@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_URL: https://breath-natural-nextjs-chronicles.netlify.app/
 
     steps:
       - name: Checkout

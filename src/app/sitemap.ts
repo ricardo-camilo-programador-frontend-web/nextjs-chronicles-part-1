@@ -9,7 +9,7 @@ const staticRoutes = [
   'sitemap.xml'
 ]
 
-const dynamicRoutes = locales.flatMap(locale => [
+const dynamicRoutes = locales.flatMap((locale) => [
   locale,
   `${locale}/checkout`,
   `${locale}/contact`,

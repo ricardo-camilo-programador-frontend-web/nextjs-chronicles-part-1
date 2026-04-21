@@ -90,6 +90,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={getDirection(locale as Locale) ? "rtl" : "ltr"}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -133,11 +134,11 @@ export default async function RootLayout({
 
         <PortfolioShortcut
           portfolioUrl={process.env.PORTFOLIO_URL || ""}
-          customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999]"
+          customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8"
           showText={false}
         />
 
-        <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999]">
+        <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999] md:bottom-[6.5rem] md:left-6 lg:bottom-[7.5rem] lg:left-8">
           <AmbientSound />
         </div>
 

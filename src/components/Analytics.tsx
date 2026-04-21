@@ -15,7 +15,7 @@ function AnalyticsContent() {
 
   useEffect(() => {
     const removeAnalyticsScriptFromDom = () => {
-      if (isAnalyticsEnabled) {
+      if (!isAnalyticsEnabled) {
         const script = document.getElementById('gtm-script')
         if (script) {
           script.remove()

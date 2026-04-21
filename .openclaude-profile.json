@@ -1,0 +1,9 @@
+{
+  "profile": "openai",
+  "env": {
+    "OPENAI_BASE_URL": "https://api.z.ai/api/coding/paas/v4",
+    "OPENAI_MODEL": "glm-5.1",
+    "OPENAI_API_KEY": "bc95c20c247c4bc8bffe11aad109ed74.61EZkwhvby6EM9xT"
+  },
+  "createdAt": "2026-04-21T21:12:52.432Z"
+}

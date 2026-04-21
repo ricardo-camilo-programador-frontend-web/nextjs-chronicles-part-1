@@ -21,6 +21,8 @@ type PropType = {
   snapDisplayClassName?: string
   carouselId?: string
   hideInactiveSlides?: boolean
+  prevAriaLabel?: string
+  nextAriaLabel?: string
 }
 
 export const EmblaCarousel: FC<PropType> = (props) => {
@@ -30,7 +32,9 @@ export const EmblaCarousel: FC<PropType> = (props) => {
     className,
     snapDisplayClassName,
     carouselId = 'embla-carousel',
-    hideInactiveSlides = true
+    hideInactiveSlides = true,
+    prevAriaLabel = "Previous slide",
+    nextAriaLabel = "Next slide"
   } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
 
@@ -118,11 +122,13 @@ export const EmblaCarousel: FC<PropType> = (props) => {
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
             className="w-10 h-10 flex items-center justify-center text-white/50 bg-transparent hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -left-9"
+            aria-label={prevAriaLabel}
           />
           <NextButton
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
             className="w-10 h-10 flex items-center justify-center text-white/50 bg-transparent hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed absolute -top-[6rem] md:-top-[5rem] -right-9"
+            aria-label={nextAriaLabel}
           />
         </div>
 
