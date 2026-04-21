@@ -10,33 +10,11 @@ const staticRoutes = [
 ]
 
 const dynamicRoutes = locales.flatMap((locale) => [
-const dynamicRoutes = locales.flatMap(locale => [
   locale,
   `${locale}/checkout`,
   `${locale}/contact`,
   `${locale}/orders`,
   `${locale}/plants`,
-  // TODO: Add individual plant routes dynamically when plant data is available
-  // Example: `${locale}/plants/${plant.slug}` for each plant in the database
-]);
-const dynamicRoutes = async () => {
-  const routes = []
-  for (const locale of locales) {
-    // Fetch plants for each locale and generate routes
-    routes.push(`${locale}/plants`,
-      `${locale}/checkout`,
-      `${locale}/contact`,
-      `${locale}/orders`
-    )
-  }
-  return routes
-};
-  `${locale}`,
-  `${locale}/checkout`,
-  `${locale}/contact`,
-  `${locale}/orders`,
-  `${locale}/plants`,
-  `${locale}/robots.txt`
 ]);
 
 const routes = [

@@ -28,7 +28,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || ""),
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
   title: "Breath Natural | Premium Indoor Plants & Decorative Greenery",
   description:
     "Transform your space with our curated collection of air-purifying indoor plants, exotic succulents, and stylish decorative greenery. Expert care guides, free shipping, and sustainable packaging included.",
@@ -55,13 +57,6 @@ export const metadata: Metadata = {
     "indoor plant consultation"
   ],
   openGraph: {
-  twitter: {
-    card: "summary_large_image",
-    title: "Breath Natural | Premium Plants",
-    description: "Transform your space with our designer-curated plant collection featuring rare species and air-purifying greens.",
-    site: "@ricardo_camilo",
-    creator: "@ricardo_camilo"
-  },
     title: "Breath Natural | Premium Indoor Plants & Modern Plant Decor",
     description:
       "Create your urban jungle with our designer-curated plant collection. Shop rare species, air-purifying greens, and complete plant care solutions for homes and offices.",
@@ -75,6 +70,13 @@ export const metadata: Metadata = {
         alt: "Breath Natural's curated indoor plant collection in modern home setting"
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Breath Natural | Premium Plants",
+    description: "Transform your space with our designer-curated plant collection featuring rare species and air-purifying greens.",
+    site: "@ricardo_camilo",
+    creator: "@ricardo_camilo"
   },
 };
 
@@ -90,6 +92,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={getDirection(locale as Locale) ? "rtl" : "ltr"}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -133,11 +136,11 @@ export default async function RootLayout({
 
         <PortfolioShortcut
           portfolioUrl={process.env.PORTFOLIO_URL || ""}
-          customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999]"
+          customClassName="fixed bottom-4 left-4 hover:bg-gray-500 hover:text-white transition-all ease-in-out duration-300 z-[9999 md:bottom-6 md:left-6 lg:bottom-8 lg:left-8"
           showText={false}
         />
 
-        <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999]">
+        <div className="fixed bottom-[5rem] left-4 transition-all ease-in-out duration-300 z-[9999] md:bottom-[6.5rem] md:left-6 lg:bottom-[7.5rem] lg:left-8">
           <AmbientSound />
         </div>
 
@@ -151,6 +154,7 @@ export default async function RootLayout({
 
       <Script
         src="https://cdn.counter.dev/script.js"
+        strategy="lazyOnload"
         data-id={process.env.COUNTER_API_KEY}
         data-utcoffset="-3"
       ></Script>

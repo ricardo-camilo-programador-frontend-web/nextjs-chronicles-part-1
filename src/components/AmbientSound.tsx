@@ -3,14 +3,14 @@
 import { FC } from "react";
 import { useState, useRef, useEffect } from "react";
 import {
-  FaVolumeUp,
-  FaVolumeMute,
-  FaStepForward,
-  FaStepBackward,
-  FaPlay,
-  FaPause,
-  FaRedo,
-} from "react-icons/fa";
+  Volume2,
+  VolumeX,
+  SkipForward,
+  SkipBack,
+  Play,
+  Pause,
+  RotateCcw,
+} from "lucide-react";
 import { ambientSounds } from "@/static/ambientSounds";
 import { isClickOutsideElement } from "@/utils/isClickOutsideElement";
 
@@ -141,20 +141,25 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
       <audio
         ref={audioRef}
         preload="metadata"
-        onError={(e) => console.error("Erro no áudio:", e)}
+        onError={(e) => {
+          // Suppress console errors for audio format fallbacks - these are expected
+          // when some audio formats don't exist on the server
+          const audioElement = e.currentTarget;
+          if (audioElement.error) {
+            const errorCode = audioElement.error.code;
+            // Only log critical errors, not format fallback failures
+            if (errorCode === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+              // Expected error when format is not supported, don't log
+              return;
+            }
+            console.error("Critical audio error:", e);
+          }
+        }}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         loop={loopEnabled}
       >
-        <source src={currentTrack.url} type="audio/mpeg" />
-        <source
-          src={currentTrack.url.replace(".mp3", ".ogg")}
-          type="audio/ogg"
-        />
-        <source
-          src={currentTrack.url.replace(".mp3", ".wav")}
-          type="audio/wav"
-        />
+        <source src={currentTrack.url} type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
 
@@ -164,7 +169,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
           className="bg-white/10 backdrop-blur-lg p-3 rounded-full shadow-lg transition-colors hover:bg-white/20 border border-emerald-400/20"
           aria-label="Show ambient sound player"
         >
-          {isPlaying ? <FaVolumeUp size={20} className="text-emerald-50" /> : <FaVolumeMute size={20} className="text-emerald-50" />}
+          {isPlaying ? <Volume2 size={20} className="text-emerald-50" /> : <VolumeX size={20} className="text-emerald-50" />}
         </button>
       ) : (
         <div
@@ -202,7 +207,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 className="p-2 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
                 aria-label="Previous track"
               >
-                <FaStepBackward size={16} />
+                <SkipBack size={16} />
               </button>
 
               <button
@@ -211,7 +216,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 aria-label={isPlaying ? "Pause" : "Play"}
                 disabled={isLoading}
               >
-                {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+                {isPlaying ? <Pause size={20} /> : <Play size={20} />}
               </button>
 
               <button
@@ -219,7 +224,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 className="p-2 rounded-full hover:bg-white/10 transition-colors text-emerald-50"
                 aria-label="Next track"
               >
-                <FaStepForward size={16} />
+                <SkipForward size={16} />
               </button>
 
               <button
@@ -229,7 +234,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 }`}
                 aria-label={loopEnabled ? "Disable loop" : "Enable loop"}
               >
-                <FaRedo size={16} />
+                <RotateCcw size={16} />
               </button>
             </div>
 
@@ -249,7 +254,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
 
             {showVolumeControl && (
               <div className="flex items-center gap-2 text-emerald-50">
-                <FaVolumeMute size={16} />
+                <VolumeX size={16} />
                 <input
                 type="range"
                 min="0"
@@ -260,7 +265,7 @@ export const AmbientSound: FC<AmbientSoundProps> = ({ initialVolume = 1, showVol
                 className="w-full accent-emerald-400"
                 aria-label="Volume control"
               />
-                <FaVolumeUp size={16} />
+                <Volume2 size={16} />
               </div>
             )}
 

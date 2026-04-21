@@ -1,7 +1,5 @@
-import { Injectable } from '@nestjs/common';
 import { PlantApiResponse } from '@/types/plant.types';
 
-@Injectable()
 export class PlantsService {
   private readonly apiUrl = process.env.TREFLE_API_KEY;
 
