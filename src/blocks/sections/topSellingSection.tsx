@@ -1,6 +1,7 @@
 import { QuotedTitle } from "@/components/QuotedTitle";
 import { useMockupPlants } from "@/hooks/mockupPlants";
-import { PlantCard } from "@/components/PlantCard";
+import { HomePlantCard } from "@/components/HomePlantCard";
+import { getUniqueId } from "@/utils/getUniqueId";
 import { useTranslations } from 'next-intl';
 
 export default function TopSellingSection() {
@@ -15,11 +16,13 @@ export default function TopSellingSection() {
         </QuotedTitle>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center h-auto min-h-[90rem] w-full gap-[10rem] md:gap-y-[8rem] lg:gap-4 mt-[11rem] gap-y-[15rem]">
         {mockupPlants.slice(1, mockupPlants.length).map((plant, index) => (
-          <PlantCard
-            key={`${plant.id}-${index}-top-selling`}
+          <HomePlantCard
+            containerClassName="w-full max-w-full min-w-full"
+            key={`${plant.id}-${index}-top-selling-${getUniqueId()}`}
             plant={plant}
+            showPrice={true}
           />
         ))}
       </div>
