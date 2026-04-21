@@ -92,7 +92,7 @@ export function PlantCatalogClient({ plants }: PlantCatalogClientProps) {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredPlants.map((plant) => (
-            <PlantCard key={plant.id} plant={plant} />
+            <PlantCard key={plant.id} plant={plant} showScientificDetails />
           ))}
         </div>
       )}
