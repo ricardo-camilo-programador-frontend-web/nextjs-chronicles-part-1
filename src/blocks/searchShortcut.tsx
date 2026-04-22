@@ -50,13 +50,13 @@ export const SearchShortcut = ({ className, label }: SearchShortcutProps) => {
   return (
     <>
       <Button
-        className={`mt-3 md:mt-0 px-6 py-2  text-[1.75rem] hover:bg-white/10 transition-all duration-300 text-center flex items-center gap-2 border-none ${className}`}
+        className={`mt-3 md:mt-0 px-2 py-1.5 hover:bg-white/10 transition-all duration-300 text-center flex items-center gap-2 border-none ${className}`}
         title={`Search for plants`}
         onClick={handleToggle}
       >
         <Image
           alt="Search icon"
-          className="md:w-10 md:h-10 max-w-max max-h-[34px]"
+          className="md:w-8 md:h-8 max-w-max max-h-[34px]"
           width={26}
           height={26}
           src={searchIcon}
