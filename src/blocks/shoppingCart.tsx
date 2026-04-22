@@ -6,7 +6,7 @@ import shopIcon from "@/assets/svg/shop-icon.svg";
 import CheckoutShortcut from "./checkoutShortcut";
 import { useCartStore } from "@/store/cartStore";
 import QuantityShortcut  from "./quantityShortcut";
-import { Modal } from "@/components/Modal";
+import { ClearCartModal } from "@/components/cart/ClearCartModal";
 import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from 'next-intl';
@@ -132,32 +132,12 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
             </p>
 
             <div className="flex flex-col gap-1">
-            <Modal
+            <ClearCartModal
               isOpen={isClearCartOpen}
               onClose={() => setIsClearCartOpen(false)}
-              id="clear-cart-modal"
-              title={translateCart('clearCart')}
-            >
-              <div className="flex flex-col gap-4 justify-start">
-                <p className="text-lg text-center">
-                  {translateCart('clearCartConfirmation')}
-                </p>
-                <div className="flex justify-end gap-2 w-full">
-                  <button
-                    onClick={() => setIsClearCartOpen(false)}
-                    className="bg-gray-500 text-white px-4 py-2 rounded-md w-full"
-                  >
-                    {translateCart('cancel')}
-                  </button>
-                  <button
-                    onClick={() => handleClearCartConfirm()}
-                    className=" text-white bg-red-500 px-4 py-2 rounded-md w-full"
-                  >
-                    {translateCart('clear')}
-                  </button>
-                </div>
-              </div>
-            </Modal>
+              onConfirm={handleClearCartConfirm}
+              itemCount={cartItems.length}
+            />
               <button
                 title={translateCart('clearCart')}
                 aria-label={translateCart('clearCart')}

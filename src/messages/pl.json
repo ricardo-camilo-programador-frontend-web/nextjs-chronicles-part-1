@@ -26,6 +26,15 @@
     "divider": "TEJ OPERACJI NIE MOŻNA COFNĄĆ",
     "quantity": "Ilość: {qty}"
   },
+  "clearCartModal": {
+    "title": "Wyczyścić cały koszyk?",
+    "description": "Wszystkie <bold>{count} produkty</bold> zostaną usunięte z koszyka. Tej operacji nie można cofnąć.",
+    "summaryTitle": "Koszyk",
+    "itemCount": "{count} produktów",
+    "confirmButton": "Usuń wszystko",
+    "cancelButton": "Zachowaj produkty",
+    "divider": "WSZYSTKIE PRODUKTY ZOSTANĄ USUNIĘTE"
+  },
   "hero": {
     "title": "Breath Natural - Twoja Wewnętrzna Zielona Oaza",
     "description": "Przekształć swój dom w naturalną oazę dzięki naszej kolekcji premium roślin domowych. Każda roślina jest starannie dobrana, aby oczyszczać powietrze, redukować stres i tworzyć zdrowsze i bardziej harmonijne środowisko. Odkryj moc natury w przekształcaniu Twojej przestrzeni i samopoczucia dzięki naszym zrównoważonym i łatwym w utrzymaniu roślinom.",
