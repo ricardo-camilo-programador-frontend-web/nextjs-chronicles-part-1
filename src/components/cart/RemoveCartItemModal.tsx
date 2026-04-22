@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -23,6 +24,11 @@ export function RemoveCartItemModal({
   const t = useTranslations("removeModal");
   const modalRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const plant = cartItem.item;
   const displayName = plant.common_name || plant.scientific_name;
@@ -77,9 +83,9 @@ export function RemoveCartItemModal({
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
+  const modal = (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
       role="dialog"
@@ -215,4 +221,6 @@ export function RemoveCartItemModal({
       </div>
     </div>
   );
+
+  return createPortal(modal, document.body);
 }
