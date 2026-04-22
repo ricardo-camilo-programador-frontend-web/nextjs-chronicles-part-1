@@ -81,22 +81,21 @@ export function RemoveCartItemModal({
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="remove-modal-title"
       aria-describedby="remove-modal-desc"
+      onClick={onClose}
     >
       {/* Overlay */}
-      <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in" />
 
       {/* Modal */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-[400px] bg-[#1a2e1a] border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-slide-up"
+        className="relative w-full max-w-[400px] max-h-[90dvh] overflow-y-auto bg-[#1a2e1a] border border-white/10 rounded-3xl shadow-2xl animate-slide-up"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Bloco superior — Preview do produto */}
         <div className="relative bg-white/5 border-b border-white/10 p-4 flex items-center gap-4 overflow-hidden">
