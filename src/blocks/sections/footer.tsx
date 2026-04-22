@@ -12,7 +12,7 @@ const Footer: FC = () => {
   const translateMenuItems = useTranslations('menuItems');
 
   return (
-    <footer className="z-[90] bg-primary text-white py-12 w-screen mx-auto">
+    <footer className="z-[90] bg-primary text-white py-12 w-full mx-auto overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-start md:justify-between gap-8 w-full">

@@ -12,7 +12,7 @@ export default function DefaultLayout({ children }: Props) {
     <div className="bg-background min-h-screen overflow-x-hidden grid">
       <Header menuItems={menuItems} />
 
-      <main className="grid mx-auto py-16">
+      <main className="grid w-full mx-auto py-16">
         {children}
       </main>
 
