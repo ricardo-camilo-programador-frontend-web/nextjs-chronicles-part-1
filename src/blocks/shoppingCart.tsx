@@ -4,7 +4,6 @@ import { useState, useMemo, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
-import CheckoutShortcut from "./checkoutShortcut";
 import { useCartStore } from "@/store/cartStore";
 import QuantityShortcut from "./quantityShortcut";
 import { ClearCartModal } from "@/components/cart/ClearCartModal";
@@ -12,6 +11,7 @@ import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from "next-intl";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
+import Link from "@/components/Link";
 
 interface ShoppingCartProps {
   className?: string;
@@ -219,7 +219,12 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
               </span>
             </div>
 
-            <CheckoutShortcut className="w-full" />
+            <Link
+              href="/checkout?step=shipping"
+              className="flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-medium text-sm transition-all duration-300 shadow-lg shadow-emerald-500/25 w-full"
+            >
+              {translateCart("checkout")}
+            </Link>
           </div>
         )}
       </div>
