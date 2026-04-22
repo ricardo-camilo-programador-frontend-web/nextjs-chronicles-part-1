@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
 import CheckoutShortcut from "./checkoutShortcut";
@@ -25,6 +26,10 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
   };
 
   const totalItems = useMemo(() => {
@@ -98,43 +103,19 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
     [formatCurrency, translateCart]
   );
 
-  return (
-    <div className={`relative flex items-center ${className}`}>
-      {/* Cart icon button */}
-      <button
-        className="flex items-center justify-center relative"
-        onClick={handleToggleMenu}
-        aria-label={translateCart("shoppingCart")}
-      >
-        <Image
-          src={shopIcon}
-          className="w-8 h-8 md:w-9 md:h-9"
-          alt="Shop icon"
-          width={36}
-          height={36}
-        />
-        {cartItems.length > 0 && (
-          <span className="absolute -top-1 -right-1 text-[10px] font-bold rounded-full bg-emerald-500 w-5 h-5 flex items-center justify-center text-white">
-            {totalItems}
-          </span>
-        )}
-      </button>
-
+  const panel = isOpen ? (
+    <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[9998] transition-opacity duration-300 ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-        onClick={handleToggleMenu}
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm animate-fade-in"
+        style={{ zIndex: 9998 }}
+        onClick={handleClose}
       />
 
       {/* Slide-out panel */}
       <div
-        className={`fixed top-0 right-0 h-dvh w-full sm:w-96 bg-[#1a2e1a] border-l border-white/10 shadow-2xl z-[9999] flex flex-col transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className="fixed top-0 right-0 h-dvh w-full sm:w-96 bg-[#1a2e1a] border-l border-white/10 shadow-2xl flex flex-col translate-x-0 transition-transform duration-300"
+        style={{ zIndex: 9999 }}
       >
         {/* Panel header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 flex-shrink-0">
@@ -143,7 +124,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
             type="button"
             aria-label={translateCart("closeShoppingCart")}
             title={translateCart("closeShoppingCart")}
-            onClick={handleToggleMenu}
+            onClick={handleClose}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -161,17 +142,14 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
             </svg>
           </button>
 
-          <h2 className="text-white font-semibold text-base" style={{ fontFamily: "Georgia, serif" }}>
+          <h2
+            className="text-white font-semibold text-base"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             {translateCart("shoppingCart")}
           </h2>
 
           <div className="flex items-center gap-2">
-            <ClearCartModal
-              isOpen={isClearCartOpen}
-              onClose={() => setIsClearCartOpen(false)}
-              onConfirm={handleClearCartConfirm}
-              itemCount={cartItems.length}
-            />
             {cartItems.length > 0 && (
               <button
                 title={translateCart("clearCart")}
@@ -203,7 +181,9 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
         {/* Cart items list */}
         <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3">
           {cartItems.length > 0 ? (
-            cartItems.map((cartItem, index) => renderCartItem(cartItem, index))
+            cartItems.map((cartItem, index) =>
+              renderCartItem(cartItem, index)
+            )
           ) : (
             <div className="flex flex-col items-center justify-center gap-4 py-16 text-white/30">
               <svg
@@ -229,8 +209,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
 
         {/* Footer: summary + checkout */}
         {cartItems.length > 0 && (
-          <div className="flex-shrink-0 border-t border-white/10 px-4 py-4 bg-[#1a2e1a]">
-            {/* Summary */}
+          <div className="flex-shrink-0 border-t border-white/10 px-4 pt-3 pb-4 bg-[#1a2e1a]">
             <div className="flex justify-between items-center mb-3 text-sm">
               <span className="text-white/50">
                 {totalItems} {totalItems === 1 ? "item" : "items"}
@@ -244,6 +223,40 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
           </div>
         )}
       </div>
+
+      {/* Modals — z-index 10000, above cart panel */}
+      <ClearCartModal
+        isOpen={isClearCartOpen}
+        onClose={() => setIsClearCartOpen(false)}
+        onConfirm={handleClearCartConfirm}
+        itemCount={cartItems.length}
+      />
+    </>
+  ) : null;
+
+  return (
+    <div className={`relative flex items-center ${className}`}>
+      {/* Cart icon button */}
+      <button
+        className="flex items-center justify-center relative"
+        onClick={handleToggleMenu}
+        aria-label={translateCart("shoppingCart")}
+      >
+        <Image
+          src={shopIcon}
+          className="w-8 h-8 md:w-9 md:h-9"
+          alt="Shop icon"
+          width={36}
+          height={36}
+        />
+        {cartItems.length > 0 && (
+          <span className="absolute -top-1 -right-1 text-[10px] font-bold rounded-full bg-emerald-500 w-5 h-5 flex items-center justify-center text-white">
+            {totalItems}
+          </span>
+        )}
+      </button>
+
+      {typeof document !== "undefined" && panel && createPortal(panel, document.body)}
     </div>
   );
 }

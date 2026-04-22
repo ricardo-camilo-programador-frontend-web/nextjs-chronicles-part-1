@@ -30,7 +30,7 @@ const ScrollToTop: FC<ScrollToTopProps> = ({ className }) => {
 
   return isVisible ? (
     <Button
-      className={`fixed bottom-4 right-4 bg-primary text-white !rounded-full w-16 h-16 max-w-[4rem] max-h-[4rem] active:scale-95 z-[9999] ${className}`}
+      className={`fixed bottom-4 right-4 bg-primary text-white !rounded-full w-16 h-16 max-w-[4rem] max-h-[4rem] active:scale-95 z-[100] ${className}`}
       onClick={scrollToTop}
     >
       <ArrowUp />
