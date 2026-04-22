@@ -288,9 +288,8 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
             <div className="px-4 pb-4 pt-1">
               <Link
                 href="/checkout?step=shipping"
-                className="group relative flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-primary py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 w-full overflow-hidden"
+                className="group flex items-center justify-between bg-accent hover:bg-accent/90 text-primary py-3.5 px-4 rounded-xl font-semibold text-sm transition-all duration-300 w-full"
               >
-                <span className="relative z-10 flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -305,7 +304,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
                     <rect width="20" height="14" x="2" y="5" rx="2" />
                     <line x1="2" x2="22" y1="10" y2="10" />
                   </svg>
-                  {translateCart("checkout")}
+                  <span>{translateCart("checkout")}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -321,7 +320,6 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>
-                </span>
               </Link>
             </div>
           </div>
