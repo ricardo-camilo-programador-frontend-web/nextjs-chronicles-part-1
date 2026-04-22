@@ -34,7 +34,7 @@ export function PlantBannerCard({
           )}
         </div>
 
-        <div className="w-full max-w-[45rem] px-6">
+        <div className="w-full max-w-[45rem] px-6 overflow-hidden">
           <h3 className="text-white text-2xl font-semibold mb-2">
             {plant.common_name || plant.scientific_name}
           </h3>

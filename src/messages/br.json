@@ -26,6 +26,15 @@
     "divider": "ESTA ACAO NAO PODE SER DESFEITA",
     "quantity": "Qtd: {qty}"
   },
+  "clearCartModal": {
+    "title": "Limpar carrinho?",
+    "description": "Isso removera todos os <bold>{count} itens</bold> do seu carrinho. Esta acao nao pode ser desfeita.",
+    "summaryTitle": "Carrinho de Compras",
+    "itemCount": "{count} itens",
+    "confirmButton": "Limpar tudo",
+    "cancelButton": "Manter itens",
+    "divider": "TODOS OS ITENS SERAO REMOVIDOS"
+  },
   "hero": {
     "title": "Breath Natural - Seu Oásis Online",
     "description": "Transforme sua casa em um santuário natural com nossa coleção premium de plantas para interiores. Cada planta é cuidadosamente selecionada para purificar o ar, reduzir o estresse e criar um ambiente mais saudável e harmonioso. Descubra o poder da natureza em transformar seu espaço e bem-estar com nossas plantas sustentáveis e de fácil manutenção.",

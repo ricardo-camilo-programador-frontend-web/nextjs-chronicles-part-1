@@ -9,6 +9,7 @@ import { unstable_cache } from 'next/cache';
 import type { Metadata } from "next";
 import Script from "next/script";
 import { PlantCatalogClient } from "@/components/plants/PlantCatalogClient";
+import { homePlants } from "@/data/homePlants";
 
 export const metadata: Metadata = {
   title: "Plant Collection | Breath Natural - Premium Indoor Plants",
@@ -111,7 +112,7 @@ const PlantsPage: FC = async () => {
             {plants.length === 0 ? (
               <NoDataToShow message={t('noPlantsMessage')} />
             ) : (
-              <PlantCatalogClient plants={plants} />
+              <PlantCatalogClient plants={plants} homePlants={homePlants} />
             )}
           </div>
         </DefaultLayout>

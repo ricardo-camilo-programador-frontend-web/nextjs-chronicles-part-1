@@ -15,14 +15,14 @@ export const Header: FC<HeaderProps> = ({ menuItems }) => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-primary/90 backdrop-blur-sm z-[9999] px-2">
       <nav className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between h-16 gap-16">
+        <div className="flex items-center justify-between h-16 gap-2 sm:gap-4 lg:gap-8">
           <div className="flex-shrink-0">
             <Logo />
           </div>
 
           <DesktopMenu />
 
-          <div className="grid grid-cols-4 md:grid-cols-3 place-items-center gap-4">
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
             <LanguageSwitcher />
 
             <SearchShortcut />

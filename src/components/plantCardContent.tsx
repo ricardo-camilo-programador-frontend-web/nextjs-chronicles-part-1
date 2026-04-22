@@ -70,7 +70,7 @@ export function PlantCardContent({
           </p>
 
           <p
-            className={`text-white text-sm md:text-xl font-semibold my-3 h-auto md:h-36 w-full md:line-clamp-3 overflow-ellipsis overflow-y-auto  ${titleClassName}`}
+            className={`text-white text-sm md:text-xl font-semibold my-3 h-auto md:h-36 w-full line-clamp-3 overflow-hidden text-ellipsis ${titleClassName}`}
           >
             {plant.bibliography + " " + plant.scientific_name}
           </p>
