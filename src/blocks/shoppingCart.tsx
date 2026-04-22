@@ -304,7 +304,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
                     <rect width="20" height="14" x="2" y="5" rx="2" />
                     <line x1="2" x2="22" y1="10" y2="10" />
                   </svg>
-                  <span>{translateCart("checkout")}</span>
+                  <span className="flex-1 text-center">{translateCart("checkout")}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
