@@ -11,7 +11,7 @@ import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from "next-intl";
 import { useFormatCurrency } from "@/hooks/useFormatCurrency";
-import Link from "@/components/Link";
+import Link from "next/link";
 
 interface ShoppingCartProps {
   className?: string;
