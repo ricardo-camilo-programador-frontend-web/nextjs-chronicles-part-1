@@ -132,7 +132,7 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
 
       {/* Slide-out panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-[#1a2e1a] border-l border-white/10 shadow-2xl z-[9999] flex flex-col transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-dvh w-full sm:w-96 bg-[#1a2e1a] border-l border-white/10 shadow-2xl z-[9999] flex flex-col transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
