@@ -5,8 +5,8 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import shopIcon from "@/assets/svg/shop-icon.svg";
 import { useCartStore } from "@/store/cartStore";
-import QuantityShortcut from "./quantityShortcut";
 import { ClearCartModal } from "@/components/cart/ClearCartModal";
+import { RemoveCartItemModal } from "@/components/cart/RemoveCartItemModal";
 import { getUniqueId } from "@/utils/getUniqueId";
 import { CartItem } from "@/types/cartItem";
 import { useTranslations } from "next-intl";
@@ -56,51 +56,115 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
     [cartItems]
   );
 
+  const incrementItemQuantity = useCartStore((state) => state.addItem);
+  const decrementItemQuantity = useCartStore((state) => state.decrementItemQuantity);
+  const removeItem = useCartStore((state) => state.removeItem);
+  const [removingItemId, setRemovingItemId] = useState<number | null>(null);
+
   const renderCartItem = useCallback(
     (cartItem: CartItem, index: number) => {
       const displayName =
         cartItem.item.common_name || cartItem.item.scientific_name;
+      const unitPrice = cartItem.item.genus_id;
+      const lineTotal = unitPrice * cartItem.quantity;
+
+      const handleDecrement = () => {
+        if (cartItem.quantity === 1) {
+          setRemovingItemId(cartItem.item.id);
+          return;
+        }
+        decrementItemQuantity(cartItem.item);
+      };
+
+      const handleIncrement = () => {
+        incrementItemQuantity(cartItem.item);
+      };
 
       return (
         <div
           key={`${cartItem.item.id}-${index}-cart-item-${getUniqueId()}`}
-          className="flex w-full items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5"
+          className="group relative bg-white/[0.03] hover:bg-white/[0.06] rounded-2xl border border-white/[0.06] hover:border-white/10 transition-all duration-300 overflow-hidden"
         >
-          {/* Thumbnail */}
-          <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-            <Image
-              src={cartItem.item.image_url}
-              alt={displayName}
-              fill
-              sizes="64px"
-              className="object-cover"
-            />
+          <div className="flex gap-3 p-3">
+            {/* Thumbnail */}
+            <div className="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-black/20">
+              <Image
+                src={cartItem.item.image_url}
+                alt={displayName}
+                fill
+                sizes="80px"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+              <div>
+                <p className="text-white font-medium text-[0.8rem] leading-tight truncate pr-6">
+                  {displayName}
+                </p>
+                <p className="text-white/25 text-[0.65rem] mt-0.5">
+                  {formatCurrency(unitPrice)} each
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between mt-1.5">
+                {/* Quantity controls */}
+                <div className="flex items-center gap-0">
+                  <button
+                    type="button"
+                    onClick={handleDecrement}
+                    className="w-7 h-7 flex items-center justify-center rounded-lg text-white/40 hover:text-white hover:bg-white/10 active:scale-90 transition-all duration-150"
+                    aria-label="Decrease quantity"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                      <path d="M5 12h14" />
+                    </svg>
+                  </button>
+
+                  <span className="w-7 text-center text-white text-xs font-semibold tabular-nums">
+                    {cartItem.quantity}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={handleIncrement}
+                    className="w-7 h-7 flex items-center justify-center rounded-lg text-white/40 hover:text-emerald-400 hover:bg-emerald-500/10 active:scale-90 transition-all duration-150"
+                    aria-label="Increase quantity"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                      <path d="M12 5v14" />
+                      <path d="M5 12h14" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Line total */}
+                <p className="text-white font-bold text-sm tabular-nums">
+                  {formatCurrency(lineTotal)}
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Info */}
-          <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-            <p className="text-white font-medium text-sm truncate">
-              {displayName}
-            </p>
-            <p className="text-white/40 text-xs">
-              {translateCart("checkout") === "Checkout"
-                ? "Qty"
-                : "Qtd"}: {cartItem.quantity}
-            </p>
-            <p className="text-emerald-400 text-sm font-semibold">
-              {formatCurrency(cartItem.item.genus_id * cartItem.quantity)}
-            </p>
-          </div>
-
-          {/* Quantity controls */}
-          <QuantityShortcut
-            cartItem={cartItem}
-            className="!flex-col !min-w-[2.5rem] !w-[2.5rem] !relative !border-none !min-h-[5rem]"
-          />
+          {/* Remove button — appears on hover */}
+          <button
+            type="button"
+            onClick={() => {
+              setRemovingItemId(cartItem.item.id);
+            }}
+            className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full text-white/0 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200 group-hover:text-white/20"
+            aria-label="Remove item"
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 6L6 18" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       );
     },
-    [formatCurrency, translateCart]
+    [formatCurrency, incrementItemQuantity, decrementItemQuantity]
   );
 
   const panel = isOpen ? (
@@ -209,22 +273,57 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
 
         {/* Footer: summary + checkout */}
         {cartItems.length > 0 && (
-          <div className="flex-shrink-0 border-t border-white/10 px-4 pt-3 pb-4 bg-[#1a2e1a]">
-            <div className="flex justify-between items-center mb-3 text-sm">
-              <span className="text-white/50">
-                {totalItems} {totalItems === 1 ? "item" : "items"}
+          <div className="flex-shrink-0 border-t border-white/10 bg-[#1a2e1a]">
+            {/* Total */}
+            <div className="flex justify-between items-center px-5 pt-4 pb-2">
+              <span className="text-white/40 text-xs uppercase tracking-wider">
+                {translateCart("checkout")}
               </span>
-              <span className="text-white font-bold text-lg">
+              <span className="text-white font-bold text-xl" style={{ fontFamily: "Georgia, serif" }}>
                 {formatCurrency(totalPrice)}
               </span>
             </div>
 
-            <Link
-              href="/checkout?step=shipping"
-              className="flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-medium text-sm transition-all duration-300 shadow-lg shadow-emerald-500/25 w-full"
-            >
-              {translateCart("checkout")}
-            </Link>
+            {/* Checkout button */}
+            <div className="px-4 pb-4 pt-1">
+              <Link
+                href="/checkout?step=shipping"
+                className="group relative flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-primary py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 w-full overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                    <line x1="2" x2="22" y1="10" y2="10" />
+                  </svg>
+                  {translateCart("checkout")}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            </div>
           </div>
         )}
       </div>
@@ -236,6 +335,22 @@ export function ShoppingCart({ className }: ShoppingCartProps) {
         onConfirm={handleClearCartConfirm}
         itemCount={cartItems.length}
       />
+
+      {removingItemId !== null && (() => {
+        const targetItem = cartItems.find(ci => ci.item.id === removingItemId);
+        if (!targetItem) return null;
+        return (
+          <RemoveCartItemModal
+            isOpen={true}
+            onClose={() => setRemovingItemId(null)}
+            cartItem={targetItem}
+            onConfirm={() => {
+              removeItem(targetItem.item);
+              setRemovingItemId(null);
+            }}
+          />
+        );
+      })()}
     </>
   ) : null;
 
