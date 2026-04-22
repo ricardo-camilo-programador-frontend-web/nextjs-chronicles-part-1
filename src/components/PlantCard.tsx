@@ -53,7 +53,7 @@ export function PlantCard({ plant, showScientificDetails = false }: PlantCardPro
           {displayName}
         </h3>
         {plant.common_name && (
-          <p className="text-white/60 text-sm italic mt-1">
+          <p className="text-white/60 text-sm italic mt-1 truncate">
             {plant.scientific_name}
           </p>
         )}

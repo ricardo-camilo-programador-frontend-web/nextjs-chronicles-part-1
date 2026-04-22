@@ -11,7 +11,7 @@ export function DesktopMenu({ className }: DesktopMenuProps) {
   const t = useTranslations('menuItems');
 
   return (
-    <ul className={`hidden lg:flex items-center space-x-8 ${className}`}>
+    <ul className={`hidden lg:flex items-center space-x-4 xl:space-x-6 ${className}`}>
       {menuItems.map((menuItem, index) => (
         <li key={`${menuItem.menuItemKey}-${index}-desktop-menu-${getUniqueId()}`}>
           <Link

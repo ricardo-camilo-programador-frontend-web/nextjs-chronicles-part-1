@@ -11,14 +11,14 @@ const BestProductsSection: FC = () => {
   const t = useTranslations('bestProducts');
 
   return (
-    <div className="relative min-h-[35rem] max-w-[95vw] md:max-w-7xl mx-auto pt-32 px-2 h-full pb-6">
+    <div className="relative min-h-[35rem] max-w-full md:max-w-7xl mx-auto pt-32 px-2 h-full pb-6">
       <div className="flex flex-col items-center max-w-[40rem] mx-auto">
         <QuotedTitle className="text-center text-white">
           {t('title')}
         </QuotedTitle>
       </div>
 
-      <div className="w-full max-w-[95vw] lg:max-w-[64rem] mx-auto mt-32">
+      <div className="w-full max-w-full lg:max-w-[64rem] mx-auto mt-32">
         <EmblaCarousel
           carouselId={`embla-carousel-best-products-${getUniqueId()}`}
           className="w-full bg-gradient-to-r from-white/10 via-transparent to-transparent backdrop-blur-md rounded-[32px] p-8 border border-white/10"
@@ -27,7 +27,7 @@ const BestProductsSection: FC = () => {
         >
           {mockupPlants.map((plant, index) => (
             <div
-              className="flex-[0_0_100%] min-w-[90vw] sm:min-w-[40rem] md:min-w-[50rem] lg:min-w-[60rem] relative"
+              className="flex-[0_0_100%] min-w-full sm:min-w-[40rem] md:min-w-[50rem] lg:min-w-[60rem] relative"
               key={`${plant.id}-${index}-best-product-${getUniqueId()}`}
             >
               <PlantCardContent

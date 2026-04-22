@@ -1,9 +1,8 @@
 "use client";
 
 import Button from "@/components/Button";
-import { Modal } from "@/components/Modal";
-import VideoPlayer from "@/components/VideoPlayer";
-import { useState } from 'react';
+import { VideoModal } from "@/components/VideoModal";
+import { useState } from "react";
 
 interface LiveDemoShortcutProps {
   className?: string;
@@ -14,16 +13,15 @@ interface LiveDemoShortcutProps {
   modalTitle: string;
 }
 
-export function LiveDemoShortcut({ className, videoUrl, buttonLabel, buttonTitle, text, modalTitle }: LiveDemoShortcutProps) {
+export function LiveDemoShortcut({
+  className,
+  videoUrl,
+  buttonLabel,
+  buttonTitle,
+  text,
+  modalTitle,
+}: LiveDemoShortcutProps) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
-
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
 
   return (
     <>
@@ -31,7 +29,7 @@ export function LiveDemoShortcut({ className, videoUrl, buttonLabel, buttonTitle
         className={`min-w-[20rem] md:min-w-[13rem] group flex items-center gap-3 px-6 py-3 rounded-full w-full border-none ${className}`}
         aria-label={buttonLabel}
         title={buttonTitle}
-        onClick={handleOpenModal}
+        onClick={() => setIsOpen(true)}
       >
         <div className="flex items-center justify-center gap-3 w-full">
           <div className="flex-shrink-0 relative w-8 h-8 flex items-center justify-center">
@@ -45,18 +43,12 @@ export function LiveDemoShortcut({ className, videoUrl, buttonLabel, buttonTitle
         </div>
       </Button>
 
-      <Modal
-        id="live-demo-modal"
-        title={modalTitle}
+      <VideoModal
         isOpen={isOpen}
-        onClose={handleCloseModal}
-        className="min-w-[17rem] max-w-2xl"
-      >
-        <VideoPlayer
-          src={videoUrl}
-          isModalOpen={isOpen}
-        />
-      </Modal>
+        onClose={() => setIsOpen(false)}
+        videoUrl={videoUrl}
+        title={modalTitle}
+      />
     </>
   );
 }
