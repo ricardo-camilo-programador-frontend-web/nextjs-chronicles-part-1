@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 
@@ -11,6 +11,57 @@ interface VideoModalProps {
   title: string;
 }
 
+interface VideoProvider {
+  reg: RegExp;
+  url: string;
+  params: Record<string, string>;
+}
+
+const videoProviders: VideoProvider[] = [
+  {
+    reg: /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/i,
+    url: "https://www.youtube.com/embed/$5",
+    params: {
+      "picture-in-picture": "1",
+      accelerometer: "1",
+      gyroscope: "1",
+    },
+  },
+  {
+    reg: /^.*vimeo.com\/(\d+)($|\/|\b)/i,
+    url: "https://player.vimeo.com/video/$1",
+    params: {
+      title: "0",
+      byline: "0",
+      portrait: "0",
+    },
+  },
+  {
+    reg: /^.*(?:\/video|dai.ly)\/([A-Za-z0-9]+)([^#\&\?]*).*/i,
+    url: "https://www.dailymotion.com/embed/video/$1",
+    params: {
+      autoplay: "0",
+    },
+  },
+];
+
+function resolveEmbedUrl(rawUrl: string): string | null {
+  if (!rawUrl) return null;
+
+  for (const provider of videoProviders) {
+    const match = provider.reg.exec(rawUrl);
+    if (match) {
+      const query = Object.entries(provider.params)
+        .map(([k, v]) => `${k}=${v}`)
+        .join("&");
+      const sep = provider.url.includes("?") ? "&" : "?";
+      return rawUrl.replace(provider.reg, provider.url) + sep + query;
+    }
+  }
+
+  return null;
+}
+
 export function VideoModal({
   isOpen,
   onClose,
@@ -19,6 +70,7 @@ export function VideoModal({
 }: VideoModalProps) {
   const t = useTranslations("liveDemo");
   const modalRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -26,7 +78,15 @@ export function VideoModal({
     setMounted(true);
   }, []);
 
+  const embedUrl = useMemo(() => resolveEmbedUrl(videoUrl), [videoUrl]);
+
   const handleClose = useCallback(() => {
+    // Stop video playback on close
+    if (iframeRef.current) {
+      const src = iframeRef.current.src;
+      iframeRef.current.src = "";
+      iframeRef.current.src = src;
+    }
     onClose();
   }, [onClose]);
 
@@ -147,10 +207,11 @@ export function VideoModal({
 
         {/* Video content */}
         <div className="relative w-full aspect-video bg-black">
-          {videoUrl ? (
+          {embedUrl ? (
             <iframe
+              ref={iframeRef}
               className="absolute inset-0 w-full h-full border-0"
-              src={videoUrl}
+              src={embedUrl}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               title={title}

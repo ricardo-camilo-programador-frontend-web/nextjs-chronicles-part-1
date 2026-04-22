@@ -10,21 +10,29 @@ import { PlantSortDropdown, SortOption } from "@/components/plants/PlantSortDrop
 
 interface PlantCatalogClientProps {
   plants: Plant[];
+  homePlants?: Plant[];
 }
 
-export function PlantCatalogClient({ plants }: PlantCatalogClientProps) {
+export function PlantCatalogClient({ plants, homePlants = [] }: PlantCatalogClientProps) {
   const t = useTranslations("plants");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFamily, setSelectedFamily] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>("az");
 
+  // Merge: home plants first, then API plants (deduplicated by id)
+  const allPlants = useMemo(() => {
+    const homeIds = new Set(homePlants.map((p) => p.id));
+    const apiOnly = plants.filter((p) => !homeIds.has(p.id));
+    return [...homePlants, ...apiOnly];
+  }, [plants, homePlants]);
+
   const families = useMemo(
-    () => [...new Set(plants.map((p) => p.family))].filter(Boolean).sort(),
-    [plants]
+    () => [...new Set(allPlants.map((p) => p.family))].filter(Boolean).sort(),
+    [allPlants]
   );
 
   const filteredPlants = useMemo(() => {
-    let result = [...plants];
+    let result = [...allPlants];
 
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
@@ -60,7 +68,7 @@ export function PlantCatalogClient({ plants }: PlantCatalogClientProps) {
     }
 
     return result;
-  }, [plants, searchQuery, selectedFamily, sortBy]);
+  }, [allPlants, searchQuery, selectedFamily, sortBy]);
 
   return (
     <div>
