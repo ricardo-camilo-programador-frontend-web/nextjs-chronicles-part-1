@@ -55,6 +55,48 @@ pnpm dev
 
 Then open [http://localhost:3000](http://localhost:3000)
 
+## 📊 Code Quality
+
+This project uses **SonarQube Community** for continuous code quality analysis.
+
+### Local Setup (SonarLint)
+
+To run analysis locally in your IDE:
+
+1. **VS Code:**
+   ```bash
+   code --install-extension SonarSource.sonarlint-vscode
+   ```
+
+2. Configure connection in VS Code:
+   - Open Settings → Extensions → SonarLint
+   - Add connection: `http://localhost:9000`
+   - Authenticate with token (generated in SonarQube → My Account → Security)
+
+3. Select project: `nextjs-chronicles-part-1`
+
+### Run Scan Manually
+
+```bash
+# Install SonarQube Scanner (first time)
+npm install -g sonarqube-scanner
+
+# Run analysis
+sonar-scanner \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=YOUR_TOKEN_HERE
+```
+
+### GitHub Actions
+
+Automatic analysis runs on:
+- **Push** to branches `master`, `main`, `develop`
+- **Pull Requests** (opened, synchronized, reopened)
+
+Check results at:
+- **SonarQube Dashboard:** http://localhost:9000/dashboard?id=nextjs-chronicles-part-1
+- **GitHub Actions:** Repository → Actions → SonarQube
+
 <h2 id="português">Português</h2>
 
 ## 🎯 Visão Geral do Projeto
@@ -94,6 +136,48 @@ Pretendo fazer integração com o NextJS, que seria um novo e complexo aprendiza
 
 ## API
 - Trefle - https://trefle.io/
+
+## 📊 Qualidade de Código
+
+Este projeto utiliza **SonarQube Community** para análise contínua de qualidade de código.
+
+### Configuração Local (SonarLint)
+
+Para executar análise localmente em sua IDE:
+
+1. **VS Code:**
+   ```bash
+   code --install-extension SonarSource.sonarlint-vscode
+   ```
+
+2. Configurar conexão em VS Code:
+   - Abrir Settings → Extensions → SonarLint
+   - Adicionar connection: `http://localhost:9000`
+   - Autenticar com token (gerado em SonarQube → My Account → Security)
+
+3. Selecionar projeto: `nextjs-chronicles-part-1`
+
+### Executar Scan Manualmente
+
+```bash
+# Instalar SonarQube Scanner (primeira vez)
+npm install -g sonarqube-scanner
+
+# Executar análise
+sonar-scanner \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=SEU_TOKEN_AQUI
+```
+
+### GitHub Actions
+
+Análises automáticas são executadas em:
+- **Push** para branches `master`, `main`, `develop`
+- **Pull Requests** (abertura, sincronização, reabertura)
+
+Verifique os resultados em:
+- **Dashboard SonarQube:** http://localhost:9000/dashboard?id=nextjs-chronicles-part-1
+- **GitHub Actions:** Repositório → Actions → SonarQube
 
 ## 🎨 Design Credits
 UI/UX inspired by https://www.figma.com/community/file/1341057411255052611 by dsingr - https://www.figma.com/@dsingr, adapted and implemented with modern web technologies.
