@@ -61,7 +61,7 @@ const Footer: FC = () => {
                 {t('newsletter.description')}
               </p>
 
-              <BuyMeCoffee username={process.env.BUY_ME_A_COFFEE_USERNAME || ''} />
+              <BuyMeCoffee url={process.env.NEXT_PUBLIC_BUYMEACOFFEE_URL || ''} />
 
               <form className="flex gap-2 flex-wrap md:flex-nowrap truncate">
                 <input
