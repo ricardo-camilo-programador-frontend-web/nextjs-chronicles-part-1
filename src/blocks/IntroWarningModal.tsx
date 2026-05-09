@@ -6,11 +6,11 @@ import { PortfolioShortcut } from "@/blocks/portfolioShortcut";
 import { useIntroModalStore } from "@/store/introModalStore";
 
 interface IntroWarningModalProps {
-  linkedinUsername: string;
+  linkedinUrl: string;
   portfolioUrl: string;
 }
 
-export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: IntroWarningModalProps) {
+export default function IntroWarningModal({ linkedinUrl, portfolioUrl }: IntroWarningModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -77,7 +77,7 @@ export default function IntroWarningModal({ linkedinUsername, portfolioUrl }: In
           />
 
           <a
-            href={`https://www.linkedin.com/in/${linkedinUsername}`}
+            href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"

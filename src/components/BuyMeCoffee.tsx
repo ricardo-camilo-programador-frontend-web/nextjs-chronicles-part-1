@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { useMemo } from 'react';
 
 interface BuyMeCoffeeProps {
-  username: string;
+  url: string;
   theme?: 'default' | 'outline' | 'colored';
 }
 
 export const BuyMeCoffee: FC<BuyMeCoffeeProps> = ({
-  username,
+  url,
   theme = 'default',
 }) => {
   const t = useTranslations('BuyMeCoffee');
@@ -26,7 +26,7 @@ export const BuyMeCoffee: FC<BuyMeCoffeeProps> = ({
 
   return (
     <a
-      href={`https://www.buymeacoffee.com/${username}`}
+      href={url}
       target="_blank"
       rel="noopener noreferrer"
       className={`${buttonClass} text-center flex items-center justify-center`}

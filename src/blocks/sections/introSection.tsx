@@ -71,7 +71,7 @@ const IntroSection: FC<IntroSectionProps> = ({ className }) => {
             />
 
             <LiveDemoShortcut
-              videoUrl={process.env.LIVE_DEMO_VIDEO_URL ?? ""}
+              videoUrl={process.env.NEXT_PUBLIC_LIVE_DEMO_VIDEO_URL ?? ""}
               className="w-full"
               buttonLabel={liveDemo('buttonLabel')}
               buttonTitle={liveDemo('buttonTitle')}

@@ -43,6 +43,38 @@ A NextJS application showcasing plants with data from the [Trefle API](https://t
 - Code organization
 - Responsive design
 
+## 🔧 Environment Variables
+
+Copy `.env.example` to `.env` and fill in the values:
+
+```bash
+cp .env.example .env
+```
+
+| Variable | Description | Required |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Site base URL | Yes |
+| `NEXT_PUBLIC_API_URL` | API base URL | Yes |
+| `NEXT_PUBLIC_PORTFOLIO_URL` | Portfolio site URL | No |
+| `NEXT_PUBLIC_GITHUB_URL` | GitHub profile URL | No |
+| `NEXT_PUBLIC_LINKEDIN_URL` | LinkedIn profile URL | No |
+| `NEXT_PUBLIC_X_URL` | X (Twitter) profile URL | No |
+| `NEXT_PUBLIC_INSTAGRAM_URL` | Instagram profile URL | No |
+| `NEXT_PUBLIC_YOUTUBE_URL` | YouTube channel URL | No |
+| `NEXT_PUBLIC_FACEBOOK_URL` | Facebook profile URL | No |
+| `NEXT_PUBLIC_99FREELAS_URL` | 99Freelas profile URL | No |
+| `NEXT_PUBLIC_WORKANA_URL` | Workana profile URL | No |
+| `NEXT_PUBLIC_BUYMEACOFFEE_URL` | Buy Me a Coffee URL | No |
+| `NEXT_PUBLIC_FIGMA_URL` | Figma profile URL | No |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Contact email address | No |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics measurement ID | No |
+| `NEXT_PUBLIC_GTM_ID` | Google Tag Manager ID | No |
+| `NEXT_PUBLIC_COUNTER_DEV_ID` | Counter.dev analytics ID | No |
+| `NEXT_PUBLIC_LIVE_DEMO_VIDEO_URL` | Live demo video URL | No |
+| `TREFLE_API_KEY` | Trefle API key (server-side only) | No |
+
+> **Note:** All `NEXT_PUBLIC_*` variables are exposed to the browser. Server-side variables (no prefix) are only available in API routes and server components.
+
 ## 🚀 Getting Started
 
 ```bash
