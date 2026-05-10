@@ -11,12 +11,16 @@ jobs:
     name: Validar Linting e Formatacao
     runs-on: self-hosted
     timeout-minutes: 10
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Instalar dependencias
         run: pnpm install --ignore-scripts
@@ -53,6 +57,11 @@ jobs:
 
       - name: Setup PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Instalar dependencias
         run: pnpm install --ignore-scripts
@@ -77,6 +86,11 @@ jobs:
 
       - name: Setup PATH
         run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Instalar dependencias
         run: pnpm install --ignore-scripts
@@ -100,3 +114,53 @@ jobs:
           fi
 
           exit "$status"
+
+  sonar:
+    name: Analise SonarQube
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Instalar dependencias
+        run: pnpm install --ignore-scripts
+
+      - name: Run SonarScanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: /opt/sonar-scanner/bin/sonar-scanner
+
+  deploy:
+    name: Deploy Netlify
+    runs-on: self-hosted
+    needs: [build]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PATH
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/pnpm/store
+          key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Instalar dependencias
+        run: pnpm install --ignore-scripts
+
+      - name: Build do projeto
+        run: pnpm run build
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx netlify deploy --prod --dir=dist

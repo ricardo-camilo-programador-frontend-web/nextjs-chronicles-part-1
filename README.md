@@ -1,3 +1,4 @@
+[![CI](https://github.com/ricardo-camilo-programador-frontend-web/nextjs-chronicles-part-1/actions/workflows/ci.yml/badge.svg)](https://github.com/ricardo-camilo-programador-frontend-web/nextjs-chronicles-part-1/actions)
 # 🌳 Breath Natural - NextJS Chronicles Part 1
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d47b2f19-f948-4850-926f-40a3fdf478e8/deploy-status)](https://app.netlify.com/sites/breath-natural-nextjs-chronicles/deploys)
